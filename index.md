@@ -6,14 +6,18 @@ permalink: /
 
 {% include image.html url="images/photo.jpg" caption="" max_width="300px" align="right" %}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Wellcome!
+
+My name is Yichen Luo. I am a PhD student in the [Department of Computer Science](https://www.ucl.ac.uk/computer-science/ucl-computer-science) at [University College London](https://www.ucl.ac.uk/). I am supervised by [Dr. Paolo Tasca](https://www.paolotasca.com/) and [Dr. Jiahua Xu](https://jiahua-xu.com/). I am interested in blockchain, decentralized finance, and machine learning. I am also a member of [Financial Computing and Analytics Research Group](https://www.ucl.ac.uk/computer-science/research/research-groups/financial-computing-and-analytics).
 
 ## Contact
 
-Rebel base <br />
-[Yavin] <br />
-Galaxy far far away<br />
-Email: [chewy@rebel.com]
+Computer Science Department <br />
+University College London <br />
+Gower Street <br />
+London <br />
+WC1E 6BT <br />
+Email: [ucesy34@ucl.ac.uk]
 
 
 [Yavin]: https://en.wikipedia.org/wiki/Yavin
