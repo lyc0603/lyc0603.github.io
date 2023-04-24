@@ -1,17 +1,17 @@
-title: Geeky corner
-description: Much-Worse Jekyll theme for academic page and blog
+title: Yichen Luo
+description: personal homepage of Yichen Luo
 sourcecode: "https://github.com/gchauras/much-worse-jekyll-theme"
 
 permalink: blog/:year/:month/:day/:title
 exclude: ["Makefile", "README.md"]
 
-url: "http://gchauras.github.io"     # the base hostname & protocol for your site
-baseurl: "/much-worse-jekyll-theme"                   # the subpath of your site, e.g. /blog
+url: "https://lyc0603.github.io/"     # the base hostname & protocol for your site
+baseurl: "/"                   # the subpath of your site, e.g. /blog
 
 author:
-    name:
-    facebook:
-    scholar:
+    name: Yicen Luo
+    facebook: Yichen Luo
+    scholar: Yichen LUo
 
 # Build settings
 markdown: kramdown
