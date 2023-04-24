@@ -1,0 +1,108 @@
+---
+layout: default
+---
+
+<h1>Cross-language clone detection by
+    learning over abstract syntax trees</h1>
+
+<div class="info">
+    This paper was presented at <a href="https://2019.msrconf.org/">MSR'19</a>.
+    <br>
+    The paper is available <a
+        href="https://static.perez.sh/research/2019/cross-language-clone-detection/clone-detection-msr19.pdf">here</a>.
+</div>
+
+<p>
+    In this page, we briefly present the different tools and datasets we built and used in this paper.
+</p>
+
+<h2><span class="mono">bigcode-tools</span>
+    <a class="very minor" href="https://github.com/danhper/bigcode-tools"><i class="fa fa-github"></i> GitHub repo</a>
+</h2>
+
+<p>
+    <span class="mono">bigcode-tools</span> is a set of tools to help to work with
+    source code. It contains multiple tools to fetch source code, transform source code into AST,
+    visualize generated ASTs or learn embedding for AST nodes.
+</p>
+<p>
+    Documentation can be found in the <a
+        href="https://github.com/danhper/bigcode-tools/blob/master/README.md">repository README</a>
+    and a <a href="https://github.com/danhper/bigcode-tools/blob/master/doc/tutorial.md">tutorial is available</a>
+    to quickly get started.
+</p>
+<h3>Dataset</h3>
+<p>
+    We created two datasets containing a large amount of code in Java and in Python.
+
+<dl>
+    <dt>Java dataset
+        <span class="plain">[<a
+                href="https://static.perez.sh/research/2019/cross-language-clone-detection/datasets/apache-projects.tar.gz">download
+                link</a>]
+            (463M, md5sum: <span class="mono">043496410add508610c07e7d318d9875</span>)</span>
+    </dt>
+    <dd>Contains all the Java files found on GitHub in the Apache organization</dd>
+    <dt>Python dataset
+        <span class="plain">[<a
+                href="https://static.perez.sh/research/2019/cross-language-clone-detection/datasets/python-popular-projects.tar.gz">download
+                link</a>]
+            (204M, md5sum: <span class="mono">f0f004849681a23443f0e1ca7dc325e6</span>)</span>
+    </dt>
+    <dd>Contains all Python files of popular Python projects on GitHub.</dd>
+</dl>
+</p>
+
+More information about these dataset can be found in the paper.
+
+
+<h2><span>Clone detection tool</span>
+    <a class="very minor" href="https://github.com/danhper/suplearn-clone-detection"><i class="fa fa-github"></i> GitHub
+        repo</a>
+</h2>
+
+<p>
+    This repository contains the implementation of our prototype to perform cross-language clone detection.
+    It uses <a href="https://tensorflow.org/">Tensorflow</a> and <a href="https://keras.io">Keras</a>
+    for the model implementation.
+</p>
+<p>
+    Documentation can be found in the
+    <a href="https://github.com/danhper/suplearn-clone-detection/blob/master/README.md">repository README</a>.
+</p>
+
+<h3>Dataset</h3>
+<p>
+    We created a cross-language clones dataset by
+    using data from the Japanese competitive programming
+    website <a href="https://atcoder.jp">AtCoder</a>.
+</p>
+
+<dl>
+    <dt>SQLite3 database
+        <span class="plain">[<a
+                href="https://static.perez.sh/research/2019/cross-language-clone-detection/datasets/java-python-clones.db.gz">download
+                link</a>]
+            (75M, md5sum: <span class="mono">be8de11ceae996d2a77b4c954dc369b4</span>)</span>
+    </dt>
+    <dd>SQLite3 database containing the metadata, the source code and their ASTs.
+        See <a href="https://github.com/danhper/suplearn-clone-detection/blob/master/README.md">repository README</a>
+        for information about the schema.</dd>
+    <dt>Raw data
+        <span class="plain">[<a
+                href="https://static.perez.sh/research/2019/cross-language-clone-detection/datasets/java-python-clones.tar.gz">download
+                link</a>]
+            (122M, md5sum: <span class="mono">b2846f2a1f3e1b9fe7fdfe3635630a5f</span>)</span>
+    </dt>
+    <dd>Archive containing the raw data used to create the SQLite3 database.
+        This file should generally not be needed.
+    </dd>
+</dl>
+</p>
+
+
+<p>
+    More information about the data can be found in the paper
+    and in the <a href="https://github.com/danhper/suplearn-clone-detection/blob/master/README.md">repository
+        README</a>.
+</p>
