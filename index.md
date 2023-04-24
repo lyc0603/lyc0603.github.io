@@ -4,7 +4,7 @@ title: About
 permalink: /
 ---
 
-{% include image.html url="images/photo.png" caption="" max_width="300px" align="right" %}
+{% include image.html url="images/photo.png" caption="" max_width="300px" align="left" %}
 
 Wellcome!
 
@@ -17,7 +17,7 @@ University College London <br />
 Gower Street <br />
 London <br />
 WC1E 6BT <br />
-Email: [ucesy34@ucl.ac.uk]
+Email: [ucesy34@ucl.ac.uk](ucesy34@ucl.ac.uk)
 
 
 [Yavin]: https://en.wikipedia.org/wiki/Yavin
