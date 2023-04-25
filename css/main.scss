@@ -3,14 +3,13 @@
 ---
 
 $base-font-family: 'EB Garamond', serif;
-$base-font-size: large;
+$base-font-size: median;
 $small-font-size: 0.875em;
 $vsmall-font-size: 0.66em;
 $base-line-height: 1.5;
 $spacing-unit: 1.5em;
 
-$white: #fff;
-$grey-vlight: #eee;
+$grey-vlight: #fdfdfd;
 $grey-light: #ccc;
 $grey: #888;
 $grey-dark: #444;
@@ -19,8 +18,8 @@ $blue: #0091ed;
 $orange: #ca6c18;
 $red: #b6321c;
 
-$background: $white;
-$dark-background: darken($background, 5%);
+$background: $grey-vlight;
+$dark-background: darken($background, 2%);
 $text-color: $grey-vdark;
 $text-light-color: $grey;
 $url-color: $red;
