@@ -9,6 +9,7 @@ $vsmall-font-size: 0.66em;
 $base-line-height: 1.5;
 $spacing-unit: 1.5em;
 
+$white: #fff;
 $grey-vlight: #eee;
 $grey-light: #ccc;
 $grey: #888;
@@ -18,7 +19,7 @@ $blue: #0091ed;
 $orange: #ca6c18;
 $red: #b6321c;
 
-$background: $grey-vlight;
+$background: $white;
 $dark-background: darken($background, 5%);
 $text-color: $grey-vdark;
 $text-light-color: $grey;
