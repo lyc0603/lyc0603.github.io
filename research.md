@@ -16,7 +16,6 @@ wps:
 {% for item in page.wps %}
 [**{{item.title}}**]({% if item.internal %}{{item.url | prepend: site.baseurl}}
 {% else %}{{item.url}}{% endif %}){:target="_blank"}
-<br />
-{{item.author}} ({{item.year}})<br />
-Brief: {{item.brief}}
+- {{item.author}} ({{item.year}})
+- Brief: {{item.brief}}
 {% endfor %}
