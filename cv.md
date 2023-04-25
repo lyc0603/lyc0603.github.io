@@ -4,6 +4,6 @@ title: CV
 permalink: /cv/
 ---
 
-Download [PDF version](/pdf/cv.pdf). The PDF should be embedded underneath -- uses Google Docs for embedding and works if the PDF is on dropbox. Works sporadically if PDF is elsewhere too.
+Download [PDF version](/pdf/cv.pdf).
 
-{% include embedpdf.html source="/pdf/cv.pdf" width=100 height=800 %}
+{% include embedpdf.html source="https://www.dropbox.com/s/7ubr4z8pztlciuj/cv.pdf?dl=0" width=100 height=800 %}
