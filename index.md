@@ -11,10 +11,10 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
 <h2>Contact information</h2>
  <dl class="inline">
     <dt><i class="fa-solid fa-envelope fa-sm"></i></dt>
-    <dd>{{ site.author.email }}</dd>
+    <dd> {{ site.author.email }}</dd>
 
     <dt><i class="fa-brands fa-square-github"></i></dt>
-    <dd><a href="https://github.com/{{ site.author.github_username }}">GitHub</a></dd>
+    <dd><a href="https://github.com/{{ site.author.github_username }}"> GitHub</a></dd>
 
   </dl>
 
