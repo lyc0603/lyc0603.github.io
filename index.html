@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<h2>About me</h2>
+
+<div class="intro">
+  <img class="image" src="{{ site.author.avatar | prepend: "/images/" | relative_url }}" alt="Profile picture">
+  <p>
+    My name is Daniel Perez. I am a software engineer and researcher based in London.
+    These days, I have mostly been working on blockchain systems and smart contracts.
+    I am the co-founder of <a href="https://backd.fund/">Backd</a>, a yield farming
+    protocol allowing for reactive liquidity, and <a href="https://gyro.finance">Gyroscope</a>,
+    an all-weather algorithmic stablecoin.
+  </p>
+
+  <p>
+    I am also finishing PhD at
+    <a href="https://www.imperial.ac.uk/">Imperial College London</a>,
+    supervised by <a href="https://www.doc.ic.ac.uk/~livshits/">
+      professor Ben Livshits</a> and sponsored by the <a href="https://ethereum.org/en/foundation/">Ethereum Foundation</a>.
+    My research theme is about how to secure distributed ledgers and their
+    ecosystem. I focus mostly on using programming language techniques to improve
+    the security of blockchains' virtual machines, as well as the applications running on
+    top of them. Before that, I received my Master's in Computer Science from
+    <a href="https://www.u-tokyo.ac.jp/en/">The University of Tokyo</a> under the supervision of <a href="https://chibash.github.io/">professor Shigeru Chiba</a>,
+    during which I worked on applying machine learning techniques to programming languages.
+  </p>
+
+  <h2>News</h2>
+  <dl class="inline news">
+    {% for news in site.data.news limit:6 %}
+    <dt>{{ news.date }}</dt>
+    <dd>{{ news.content }}</dd>
+    {% endfor %}
+  </dl>
+
+
+  <h2>Contact information</h2>
+  <dl class="inline">
+    <dt><i class="fa fa-envelope"></i></dt>
+    <dd>{{ site.author.email }}</dd>
+
+    <dt><i class="fa fa-github"></i></dt>
+    <dd><a href="https://github.com/{{ site.author.github_username }}">GitHub</a></dd>
+
+    <dt><i class="fa fa-linkedin"></i></dt>
+    <dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}/">LinkedIn</a></dd>
+
+    <dt><i class="fa fa-graduation-cap"></i></dt>
+    <dd><a href="https://scholar.google.com/citations?user={{ site.author.google_scholar_username }}">Google Scholar</a></dd>
+
+    <dt><i class="fa fa-facebook"></i></dt>
+    <dd><a href="https://www.facebook.com/{{ site.author.facebook_username }}">Facebook</a></dd>
+
+    <dt><i class="fa fa-twitter"></i></dt>
+    <dd><a href="https://twitter.com/{{ site.author.twitter_username }}">Twitter</a></dd>
+
+    <dt><i class="fa fa-key"></i></dt>
+    <dd><a href="{{ "misc/daniel-perez.asc.txt" | relative_url }}">PGP key</a></dd>
+  </dl>
+</div>
