@@ -11,7 +11,7 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
 ## Contact
 
  <dl class="inline">
-    <dt><i class="fa-solid fa-envelope"></i></dt>
+    <dt><i class="fa-solid fa-envelope fa-sm"></i></dt>
     <dd>{{ site.author.email }}</dd>
 
     <dt><i class="fa-brands fa-square-github"></i></dt>
