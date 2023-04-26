@@ -9,9 +9,10 @@ url: "http://www.yichen-luo.com/"     # the base hostname & protocol for your si
 baseurl: "/"                   # the subpath of your site, e.g. /blog
 
 author:
-    name: Yicen Luo
+    name: Yichen Luo
     facebook: Yichen Luo
-    scholar: Yichen LUo
+    scholar: Yichen Luo
+    email: usesy34@ucl.ac.uk
 
 # Build settings
 markdown: kramdown

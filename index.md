@@ -11,10 +11,10 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
 ## Contact
 
  <dl class="inline">
-    <dt><i class="fa fa-envelope"></i></dt>
+    <dt><i class="fa-solid fa-envelope"></i></dt>
     <dd>{{ site.author.email }}</dd>
 
-    <dt><i class="fa fa-github"></i></dt>
+    <dt><i class="fa-brands fa-square-github"></i></dt>
     <dd><a href="https://github.com/{{ site.author.github_username }}">GitHub</a></dd>
 
     <dt><i class="fa fa-linkedin"></i></dt>
@@ -29,8 +29,6 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
     <dt><i class="fa fa-twitter"></i></dt>
     <dd><a href="https://twitter.com/{{ site.author.twitter_username }}">Twitter</a></dd>
 
-    <dt><i class="fa fa-key"></i></dt>
-    <dd><a href="{{ "misc/daniel-perez.asc.txt" | relative_url }}">PGP key</a></dd>
   </dl>
 
 
