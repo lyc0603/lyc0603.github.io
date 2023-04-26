@@ -17,18 +17,6 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
     <dt><i class="fa-brands fa-square-github"></i></dt>
     <dd><a href="https://github.com/{{ site.author.github_username }}">GitHub</a></dd>
 
-    <dt><i class="fa fa-linkedin"></i></dt>
-    <dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}/">LinkedIn</a></dd>
-
-    <dt><i class="fa fa-graduation-cap"></i></dt>
-    <dd><a href="https://scholar.google.com/citations?user={{ site.author.google_scholar_username }}">Google Scholar</a></dd>
-
-    <dt><i class="fa fa-facebook"></i></dt>
-    <dd><a href="https://www.facebook.com/{{ site.author.facebook_username }}">Facebook</a></dd>
-
-    <dt><i class="fa fa-twitter"></i></dt>
-    <dd><a href="https://twitter.com/{{ site.author.twitter_username }}">Twitter</a></dd>
-
   </dl>
 
 

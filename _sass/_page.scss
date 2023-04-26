@@ -53,3 +53,9 @@
 .post-link {
     display: block;
 }
+
+dl.inline {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content auto;
+}
