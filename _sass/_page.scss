@@ -54,8 +54,8 @@
     display: block;
 }
 
-dl.inline {
-    width: 100%;
-    display: grid;
-    grid-template-columns: max-content auto;
+.intro .image {
+    float: right;
+    margin: 0 1em;
+    max-width: 35%;
 }

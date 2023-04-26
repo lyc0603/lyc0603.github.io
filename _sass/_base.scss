@@ -72,6 +72,22 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 20pt;
+}
+
+h3 {
+    font-size: 16pt;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
 // Links
 a {
     color: $url-color;
@@ -159,4 +175,29 @@ ul.listing li.listing-item time {
 
 ul.listing li.listing-item a {
     color: $url-color;
+}
+
+dl {
+    &.emph {
+        dt {
+            font-weight: bold;
+        }
+    }
+
+    &.inline {
+        width: 100%;
+        display: grid;
+        grid-template-columns: max-content auto;
+        dt {
+            grid-column-start: 1;
+            margin: 0;
+            margin-right: 0.5em;
+            padding: 0;
+        }
+        dd {
+            grid-column-start: 2;
+            margin: 0;
+            padding: 0;
+        }
+    }
 }
