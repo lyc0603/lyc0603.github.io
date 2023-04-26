@@ -54,20 +54,8 @@
     display: block;
 }
 
-// dl.inline {
-//     width: 100%;
-//     display: grid;
-//     grid-template-columns: max-content auto;
-// }
-
-.inline dt {
-    display: inline-block; /* 将dt元素变成行内块元素 */
-    vertical-align: middle; /* 将dt元素垂直居中对齐 */
-    width: 30px; /* 设置dt元素的固定宽度 */
-}
-  
-.inline dd {
-    display: inline-block; /* 将dd元素变成行内块元素 */
-    margin-left: 5px; /* 设置dd元素的左侧间距 */
-    vertical-align: middle; /* 将dd元素垂直居中对齐 */
+dl.inline {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content auto;
 }
