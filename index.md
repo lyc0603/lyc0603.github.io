@@ -10,13 +10,6 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
 
 ## Contact
 
-<!-- Computer Science Department <br />
-University College London <br />
-Gower Street <br />
-London <br />
-WC1E 6BT <br />
-Email: ucesy34@ucl.ac.uk -->
-
  <dl class="inline">
     <dt><i class="fa fa-envelope"></i></dt>
     <dd>{{ site.author.email }}</dd>
@@ -41,5 +34,5 @@ Email: ucesy34@ucl.ac.uk -->
   </dl>
 
 
-[Yavin]: https://en.wikipedia.org/wiki/Yavin
-[chewy@rebel.com]: mailto:chewy@rebel.com
+<!-- [Yavin]: https://en.wikipedia.org/wiki/Yavin
+[chewy@rebel.com]: mailto:chewy@rebel.com -->
