@@ -10,12 +10,35 @@ Wellcome! My name is Yichen Luo. I am a PhD student in the [Department of Comput
 
 ## Contact
 
-Computer Science Department <br />
+<!-- Computer Science Department <br />
 University College London <br />
 Gower Street <br />
 London <br />
 WC1E 6BT <br />
-Email: ucesy34@ucl.ac.uk
+Email: ucesy34@ucl.ac.uk -->
+
+ <dl class="inline">
+    <dt><i class="fa fa-envelope"></i></dt>
+    <dd>{{ site.author.email }}</dd>
+
+    <dt><i class="fa fa-github"></i></dt>
+    <dd><a href="https://github.com/{{ site.author.github_username }}">GitHub</a></dd>
+
+    <dt><i class="fa fa-linkedin"></i></dt>
+    <dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}/">LinkedIn</a></dd>
+
+    <dt><i class="fa fa-graduation-cap"></i></dt>
+    <dd><a href="https://scholar.google.com/citations?user={{ site.author.google_scholar_username }}">Google Scholar</a></dd>
+
+    <dt><i class="fa fa-facebook"></i></dt>
+    <dd><a href="https://www.facebook.com/{{ site.author.facebook_username }}">Facebook</a></dd>
+
+    <dt><i class="fa fa-twitter"></i></dt>
+    <dd><a href="https://twitter.com/{{ site.author.twitter_username }}">Twitter</a></dd>
+
+    <dt><i class="fa fa-key"></i></dt>
+    <dd><a href="{{ "misc/daniel-perez.asc.txt" | relative_url }}">PGP key</a></dd>
+  </dl>
 
 
 [Yavin]: https://en.wikipedia.org/wiki/Yavin
