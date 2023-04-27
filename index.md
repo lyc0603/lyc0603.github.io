@@ -6,9 +6,9 @@ permalink: /
 
 {% include image.html url="assets/images/photo.png" caption="" max_width="300px" align="right" %}
 
-Wellcome! My name is Yichen Luo. I am a Ph.D. student in the [Department of Computer Science](https://www.ucl.ac.uk/computer-science/ucl-computer-science) at [University College London](https://www.ucl.ac.uk/), supervised and sponsored by [Dr. Paolo Tasca](https://www.paolotasca.com/) and [Dr. Jiahua Xu](https://jiahua-xu.com/). I am also a member of [Financial Computing and Analytics Research Group](https://www.ucl.ac.uk/computer-science/research/research-groups/financial-computing-and-analytics). Before that, I received my B.Sc. in Finance from [Durham University](https://www.dur.ac.uk/). I am also a member of [St. Chad's College](https://www.stchads.ac.uk/) in Durham.
+Welcome! My name is Yichen Luo. I am a Ph.D. student in the [Department of Computer Science](https://www.ucl.ac.uk/computer-science/ucl-computer-science) at [University College London](https://www.ucl.ac.uk/), supervised and funded by [Dr. Paolo Tasca](https://www.paolotasca.com/) and [Dr. Jiahua Xu](https://jiahua-xu.com/). I am also a member of the [Financial Computing and Analytics Research Group](https://www.ucl.ac.uk/computer-science/research/research-groups/financial-computing-and-analytics). Previously, I received my B.Sc. in Finance from [Durham University](https://www.dur.ac.uk/). I am also a member of [St. Chad's College](https://www.stchads.ac.uk/), Durham.
 
-I work on interdisciplinary research in computer science and finance. My research interests are blockchain technology, decentralised finance and machine learning.
+I work on interdisciplinary research in computer science and finance. My research interests include blockchain technology, decentralised finance and machine learning.
 
 <h2> Education </h2>
 <img src="assets/images/ucl.png" alt="ucl-icon-1" height="16" width="32"> Ph.D. in Computer Science, University College London, 2023 - present <br />
