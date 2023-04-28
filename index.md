@@ -19,4 +19,4 @@ I work on interdisciplinary research in computer science and finance. My researc
 <h2> Contact Information </h2>
 <i class="fa-solid fa-envelope"></i>  {{ site.author.email }}<br />
 <i class="fa-brands fa-square-github fa-lg"></i><a href="https://github.com/{{ site.author.github_username }}"> GitHub</a> <br />
-<i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">Linkedin</a> <br />
+<i class="fa-brands fa-linkedin fa-lg"></i><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/"> Linkedin</a> <br />
