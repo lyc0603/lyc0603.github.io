@@ -16,6 +16,7 @@ wps:
 {% for item in page.wps %}
 [**{{item.title}}**]({% if item.internal %}{{item.url | prepend: site.baseurl}}
 {% else %}{{item.url}}{% endif %}){:target="_blank"}
+
 - Working Paper ({{item.year}})
 - {{item.author}}
 - Brief: {{item.brief}}
