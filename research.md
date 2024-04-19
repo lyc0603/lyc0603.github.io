@@ -13,10 +13,10 @@ greenFinance:
 computerScience:
 
     - title:   "Piercing the Veil of TVL: DeFi Reappraised"
-    - author: "Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca"
-    - brief: "We propose a new metric, Total Value Redeemable (TVR), to accurately assess the value within DeFi, addressing the "double counting" issue in Total Value Locked (TVL) calculations."
-    - year: "2024"
-    - url: "https://arxiv.org/abs/2404.11745"
+      author: "Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca"
+      brief: "We propose a new metric, Total Value Redeemable (TVR), to accurately assess the value within DeFi, addressing the "double counting" issue in Total Value Locked (TVL) calculations."
+      year: "2024"
+      url: "https://arxiv.org/abs/2404.11745"
 
 ---
 
