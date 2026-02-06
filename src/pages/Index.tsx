@@ -82,7 +82,7 @@ const Index = () => {
     year      = {2026},
     doi       = {10.1145/3774904.3792635}
 }`}
-                  visualizationUrl="asset/visualization/meme_mas.png"
+                  visualizationUrl="/asset/visualization/meme_mas.png"
                   visualizationAlt="meme_mas"
                   visualizationCaption="Copy Trading Profit per Investment"
                 />
@@ -106,7 +106,7 @@ const Index = () => {
     address = {Cham},
     pages = {3--19}
 }`}
-                  visualizationUrl="asset/visualization/tvl.png"
+                  visualizationUrl="/asset/visualization/tvl.png"
                   visualizationAlt="tvl"
                   visualizationCaption="TVL and TVR of All DeFi Protocols"
                 />
@@ -136,7 +136,7 @@ const Index = () => {
    year = {2024}
 }
 `}
-                  visualizationUrl="asset/visualization/esg.png"
+                  visualizationUrl="/asset/visualization/esg.png"
                   visualizationAlt="esg"
                   visualizationCaption="Optimal ESG Investment"
                 />
