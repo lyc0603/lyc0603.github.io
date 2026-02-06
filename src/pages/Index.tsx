@@ -1,0 +1,192 @@
+import ProfileSidebar from '@/components/ProfileSidebar';
+import Section from '@/components/Section';
+import PublicationCard from '@/components/PublicationCard';
+import { GraduationCap, Building2 } from 'lucide-react';
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-6xl mx-auto px-4 py-6 lg:py-8">
+        {/* Header */}
+        <header className="mb-6 pb-3 border-b border-section-border">
+          <p className="text-sm text-muted-foreground uppercase tracking-wider">
+            Main Page
+          </p>
+        </header>
+
+        {/* Main Layout */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          <ProfileSidebar />
+
+          {/* Main Content */}
+          <main className="flex-1 min-w-0">
+            {/* About Me */}
+            <Section id="about" title="About Me">
+              <p className="text-foreground leading-relaxed">
+                I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into interesting and rigorous research. If you come across compelling or conter-intuitive financial or blockchain anecdotes, I would love to hear about them.
+              </p>
+            </Section>
+
+            <div className="section-divider" />
+
+            {/* Current Position */}
+            <Section id="position" title="Current Position">
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3">
+                  <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Visiting Scholar, HKU FinTech Academy, 2026</span>
+                </li>
+              </ul>
+            </Section>
+
+            <div className="section-divider" />
+
+            {/* Education */}
+            <Section id="education" title="Education">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Ph.D. in Computer Science, UCL, 2023-Now</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>M.Sc. in Banking and Digital Finance, UCL, 2022-2023</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>B.S. in Finance, Durham University, 2019 - 2022</span>
+                </li>
+              </ul>
+            </Section>
+
+            <div className="section-divider" />
+
+            {/* Publications */}
+            <Section id="publications" title="Publications">
+              <div className="divide-y divide-border">
+                <PublicationCard
+                  badge="WWW'26"
+                  title="Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning"
+                  authors="Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu"
+                  venue="The ACM Web Conference"
+                  year="2026"
+                  abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models and structured chain-of-thought reasoning.'
+                  links={[
+                    { label: 'PDF', url: 'https://arxiv.org/pdf/2601.08641' },
+                    { label: 'BIB', url: '#' },
+                  ]}
+                  bibtex={`@inproceedings{luo2026resisting,
+    title     = {Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning},
+    author    = {Yichen Luo and Yebo Feng and Jiahua Xu and Yang Liu},
+    booktitle = {Proceedings of the ACM Web Conference (WWW)},
+    year      = {2026},
+    doi       = {10.1145/3774904.3792635}
+}`}
+                  visualizationUrl="asset/visualization/meme_mas.png"
+                  visualizationAlt="meme_mas"
+                  visualizationCaption="Copy Trading Profit per Investment"
+                />
+                <PublicationCard
+                  badge="FC'25"
+                  title="Piercing the Veil of TVL: DeFi Reappraised"
+                  authors="Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca"
+                  venue="Financial Cryptography and Data Security"
+                  year="2025"
+                  abstract="The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi."
+                  links={[
+                    { label: 'Paper', url: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1' },
+                    { label: 'BIB', url: '#' },
+                  ]}
+                  bibtex={`@inproceedings{luo2025piercing,
+    author = {Luo, Yichen and Feng, Yebo and Xu, Jiahua and Tasca, Paolo},
+    title = {Piercing the Veil of TVL: DeFi Reappraised},
+    booktitle = {Financial Cryptography and Data Security 2025},
+    year = {2025},
+    publisher = {Springer Nature Switzerland},
+    address = {Cham},
+    pages = {3--19}
+}`}
+                  visualizationUrl="asset/visualization/tvl.png"
+                  visualizationAlt="tvl"
+                  visualizationCaption="TVL and TVR of All DeFi Protocols"
+                />
+                <PublicationCard
+                  badge="FI"
+                  title="ESG Scores, Scandal Probability, and Event Returns"
+                  authors="Wenya Sun, Yichen Luo, S.M. Yiu, Luping Yu, Wenzhi Ding"
+                  venue="Financial Innovation"
+                  year="2024"
+                  abstract="High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot."
+                  links={[
+                    { label: 'Paper', url: 'https://link.springer.com/article/10.1186/s40854-024-00635-1' },
+                    { label: 'BIB', url: '#' },
+                  ]}
+                  bibtex={`@article{Sun2024,
+   author = {Wenya Sun and Yichen Luo and Siu Ming Yiu and Luping Yu and Wenzhi Ding},
+   doi = {10.1186/s40854-024-00635-1},
+   issn = {21994730},
+   issue = {1},
+   journal = {Financial Innovation},
+   month = {7},
+   pages = {121-},
+   publisher = {SpringerOpen},
+   title = {ESG scores, scandal probability, and event returns},
+   volume = {10},
+   url = {https://link.springer.com/article/10.1186/s40854-024-00635-1},
+   year = {2024}
+}
+`}
+                  visualizationUrl="asset/visualization/esg.png"
+                  visualizationAlt="esg"
+                  visualizationCaption="Optimal ESG Investment"
+                />
+              </div>
+            </Section>
+
+            <div className="section-divider" />
+
+            {/* Working Papers */}
+            <Section id="working-papers" title="Working Papers">
+              <div className="divide-y divide-border">
+                <PublicationCard
+                  badge="WP"
+                  title="Blockchain Technology and Market Efficiency: A Theoretical Framework"
+                  authors="Your Name, Co-author Four, Co-author Five"
+                  links={[
+                    { label: 'SSRN', url: '#' },
+                    { label: 'PDF', url: '#' },
+                  ]}
+                  abstract="This paper develops a theoretical framework to analyze how blockchain technology affects market efficiency. We model the interaction between decentralized systems and traditional financial markets."
+                  visualizationUrl="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop"
+                  visualizationAlt="Blockchain visualization"
+                />
+                <PublicationCard
+                  badge="WP"
+                  title="The Role of Information Asymmetry in Digital Markets"
+                  authors="Your Name, Co-author Six"
+                  links={[
+                    { label: 'SSRN', url: '#' },
+                  ]}
+                  abstract="We examine how information asymmetry affects pricing and competition in digital marketplaces. Using novel transaction-level data, we identify key mechanisms that drive market outcomes."
+                />
+                <PublicationCard
+                  badge="WP"
+                  title="Algorithmic Trading and Price Discovery: New Evidence"
+                  authors="Your Name"
+                  links={[
+                    { label: 'Draft', url: '#' },
+                  ]}
+                  abstract="This study investigates the impact of algorithmic trading on price discovery mechanisms in modern financial markets."
+                  visualizationUrl="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop"
+                  visualizationAlt="Trading chart"
+                />
+              </div>
+            </Section>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
