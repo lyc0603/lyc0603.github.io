@@ -113,7 +113,7 @@ const Index = () => {
                 <PublicationCard
                   badge="FI"
                   title="ESG Scores, Scandal Probability, and Event Returns"
-                  authors="Wenya Sun, Yichen Luo, S.M. Yiu, Luping Yu, Wenzhi Ding"
+                  authors="Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding"
                   venue="Financial Innovation"
                   year="2024"
                   abstract="High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot."
@@ -150,35 +150,28 @@ const Index = () => {
               <div className="divide-y divide-border">
                 <PublicationCard
                   badge="WP"
-                  title="Blockchain Technology and Market Efficiency: A Theoretical Framework"
-                  authors="Your Name, Co-author Four, Co-author Five"
+                  title="Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market"
+                  authors="Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin"
                   links={[
-                    { label: 'SSRN', url: '#' },
-                    { label: 'PDF', url: '#' },
+                    { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
+                    // { label: 'PDF', url: '#' },
                   ]}
-                  abstract="This paper develops a theoretical framework to analyze how blockchain technology affects market efficiency. We model the interaction between decentralized systems and traditional financial markets."
-                  visualizationUrl="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop"
-                  visualizationAlt="Blockchain visualization"
+                  abstract="Use blockchain account-level transaction data to decompose the effects of several market manipulation strategies on asset performance and participant profits. These strategies are popular yet hard to measure in traditional financial markets. Meme coin market provides some evaluations that can be applied to the traditional market."
+                  visualizationUrl="/asset/visualization/meme.png"
+                  visualizationAlt="meme"
+                  visualizationCaption="DID Treatment Effects of Manipulative Bots on Trader Participation"
                 />
                 <PublicationCard
                   badge="WP"
-                  title="The Role of Information Asymmetry in Digital Markets"
-                  authors="Your Name, Co-author Six"
+                  title="LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management"
+                  authors="Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca, Yang Liu"
                   links={[
-                    { label: 'SSRN', url: '#' },
+                    { label: 'ArXiv', url: 'https://arxiv.org/abs/2501.00826' },
                   ]}
-                  abstract="We examine how information asymmetry affects pricing and competition in digital marketplaces. Using novel transaction-level data, we identify key mechanisms that drive market outcomes."
-                />
-                <PublicationCard
-                  badge="WP"
-                  title="Algorithmic Trading and Price Discovery: New Evidence"
-                  authors="Your Name"
-                  links={[
-                    { label: 'Draft', url: '#' },
-                  ]}
-                  abstract="This study investigates the impact of algorithmic trading on price discovery mechanisms in modern financial markets."
-                  visualizationUrl="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop"
-                  visualizationAlt="Trading chart"
+                  abstract="We propose a multi-agent system for automated crypto portfolio management, leveraging multimodal large language models (LLMs) to analyze market data and execute trading strategies. The system consists of specialized agents for market analysis, strategy formulation, and trade execution, demonstrating the potential of agents in financial applications."
+                  visualizationUrl="/asset/visualization/mas.png"
+                  visualizationAlt="mas"
+                  visualizationCaption="Multi-Agent System Architecture for Crypto Portfolio Management"
                 />
               </div>
             </Section>
