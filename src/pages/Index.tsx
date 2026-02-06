@@ -23,7 +23,7 @@ const Index = () => {
             {/* About Me */}
             <Section id="about" title="About Me">
               <p className="text-foreground leading-relaxed">
-                I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into interesting and rigorous research. If you come across compelling or conter-intuitive financial or blockchain anecdotes, I would love to hear about them.
+                I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into interesting and rigorous research. If you come across compelling or counterintuitive financial or blockchain anecdotes, I would love to hear about them.
               </p>
             </Section>
 
@@ -70,7 +70,7 @@ const Index = () => {
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu"
                   venue="The ACM Web Conference"
                   year="2026"
-                  abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models and structured chain-of-thought reasoning.'
+                  abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.'
                   links={[
                     { label: 'PDF', url: 'https://arxiv.org/pdf/2601.08641' },
                     { label: 'BIB', url: '#' },
