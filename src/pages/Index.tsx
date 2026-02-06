@@ -159,7 +159,7 @@ const Index = () => {
                   abstract="Use blockchain account-level transaction data to decompose the effects of several market manipulation strategies on asset performance and participant profits. These strategies are popular yet hard to measure in traditional financial markets. Meme coin market provides some evaluations that can be applied to the traditional market."
                   visualizationUrl="/asset/visualization/meme.png"
                   visualizationAlt="meme"
-                  visualizationCaption="DID Treatment Effects of Manipulative Bots on Trader Participation"
+                  visualizationCaption="DID Treatment Effects of Manipulative Bot on Trader Participation"
                 />
                 <PublicationCard
                   badge="WP"
