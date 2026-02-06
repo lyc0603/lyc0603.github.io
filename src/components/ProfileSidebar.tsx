@@ -9,7 +9,7 @@ const ProfileSidebar = () => {
           <div className="w-36 h-36 rounded-lg overflow-hidden bg-secondary">
             <img
               /* load from asset/profile.jpg in production */
-              src="asset/profile.jpg"
+              src="/asset/profile.jpg"
               alt="Profile"
               className="w-full h-full object-cover"
             />
