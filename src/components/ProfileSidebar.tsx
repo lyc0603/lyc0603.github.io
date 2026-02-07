@@ -53,18 +53,18 @@ const ProfileSidebar = () => {
           <a href="#about" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
             About
           </a>
-          <a href="#research" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
-            Research
-          </a>
           <a href="#publications" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
             Publications
+          </a>
+          <a href="#working-papers" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
+            Working Papers
           </a>
         </nav>
 
         {/* CV Link */}
         <div className="text-center pt-3">
           <a
-            href="#"
+            href="/asset/pdf/cv.pdf"
             className="inline-flex items-center gap-2 text-sm hover:text-primary text-foreground"
           >
             <FileText className="w-4 h-4" />
