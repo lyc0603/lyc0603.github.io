@@ -4,6 +4,12 @@ import PublicationCard from '@/components/PublicationCard';
 import { GraduationCap, Building2 } from 'lucide-react';
 
 const Index = () => {
+  const badgeColors = {
+    conference: '#0b7fae',
+    journal: '#1f4f99',
+    workingPaper: '#6b7280',
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto px-4 py-6 lg:py-8">
@@ -33,7 +39,7 @@ const Index = () => {
             <Section id="position" title="Current Position">
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <Building2 className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
                   <span>Visiting Scholar, HKU FinTech Academy, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding</span>
                 </li>
               </ul>
@@ -45,15 +51,15 @@ const Index = () => {
             <Section id="education" title="Education">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <GraduationCap className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
                   <span>Ph.D. in Computer Science, UCL, 2024 - Now</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <GraduationCap className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
                   <span>M.Sc. in Banking and Digital Finance, UCL, 2022 - 2023</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <GraduationCap className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
                   <span>B.Sc. in Finance, Durham University, 2019 - 2022</span>
                 </li>
               </ul>
@@ -66,6 +72,7 @@ const Index = () => {
               <div className="divide-y divide-border">
                 <PublicationCard
                   badge="WWW'26"
+                  badgeColor={badgeColors.conference}
                   title="Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning"
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu"
                   venue="The ACM Web Conference"
@@ -88,6 +95,7 @@ const Index = () => {
                 />
                 <PublicationCard
                   badge="FC'25"
+                  badgeColor={badgeColors.conference}
                   title="Piercing the Veil of TVL: DeFi Reappraised"
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca"
                   venue="Financial Cryptography and Data Security"
@@ -112,6 +120,7 @@ const Index = () => {
                 />
                 <PublicationCard
                   badge="FI"
+                  badgeColor={badgeColors.journal}
                   title="ESG Scores, Scandal Probability, and Event Returns"
                   authors="Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding"
                   venue="Financial Innovation"
@@ -150,6 +159,7 @@ const Index = () => {
               <div className="divide-y divide-border">
                 <PublicationCard
                   badge="WP"
+                  badgeColor={badgeColors.workingPaper}
                   title="Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market"
                   authors="Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin"
                   links={[
@@ -163,6 +173,7 @@ const Index = () => {
                 />
                 <PublicationCard
                   badge="WP"
+                  badgeColor={badgeColors.workingPaper}
                   title="LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management"
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca, Yang Liu"
                   links={[

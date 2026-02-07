@@ -8,6 +8,7 @@ import {
 
 interface PublicationCardProps {
   badge?: string;
+  badgeColor?: string;
   title: string;
   authors: string;
   venue?: string;
@@ -66,6 +67,7 @@ const BibTexDisplay = ({ bibtex }: { bibtex: string }) => {
 
 const PublicationCard = ({
   badge,
+  badgeColor,
   title,
   authors,
   venue,
@@ -92,7 +94,9 @@ const PublicationCard = ({
         {/* Badge */}
         {badge && (
           <div className="flex-shrink-0">
-            <span className="publication-badge">{badge}</span>
+            <span className="publication-badge" style={badgeColor ? { backgroundColor: badgeColor } : undefined}>
+              {badge}
+            </span>
           </div>
         )}
 
