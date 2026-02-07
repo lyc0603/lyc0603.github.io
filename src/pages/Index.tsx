@@ -34,7 +34,7 @@ const Index = () => {
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
                   <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Visiting Scholar, HKU FinTech Academy, 2026</span>
+                  <span>Visiting Scholar, HKU FinTech Academy, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding</span>
                 </li>
               </ul>
             </Section>
@@ -46,15 +46,15 @@ const Index = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Ph.D. in Computer Science, UCL, 2023-Now</span>
+                  <span>Ph.D. in Computer Science, UCL, 2024 - Now</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>M.Sc. in Banking and Digital Finance, UCL, 2022-2023</span>
+                  <span>M.Sc. in Banking and Digital Finance, UCL, 2022 - 2023</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <GraduationCap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>B.S. in Finance, Durham University, 2019 - 2022</span>
+                  <span>B.Sc. in Finance, Durham University, 2019 - 2022</span>
                 </li>
               </ul>
             </Section>
