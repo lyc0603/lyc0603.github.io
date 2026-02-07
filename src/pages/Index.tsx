@@ -29,7 +29,7 @@ const Index = () => {
             {/* About Me */}
             <Section id="about" title="About Me">
               <p className="text-foreground leading-relaxed">
-                I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into interesting and rigorous research. If you come across compelling or counterintuitive financial or blockchain anecdotes, I would love to hear about them.
+                I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into rigorous research. If you come across compelling or counterintuitive financial anecdotes, I would love to hear about them.
               </p>
             </Section>
 
