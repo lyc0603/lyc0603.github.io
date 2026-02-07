@@ -160,8 +160,24 @@ const Index = () => {
                 <PublicationCard
                   badge="WP"
                   badgeColor={badgeColors.workingPaper}
+                  title="Liquidity Position Hedging with Transaction Costs in Automated Market Makers"
+                  authors="Yichen Luo, Damien Ackerer, Jiahua Xu"
+                  year="2026"
+                  links={[
+                    // { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
+                    // { label: 'PDF', url: '#' },
+                  ]}
+                  abstract="We develop a stochastic model for delta hedging of AMM liquidity provision under realistic market conditions."
+                  visualizationUrl="/asset/visualization/hedging.png"
+                  visualizationAlt="hedging"
+                  visualizationCaption="Gamma Bleed"
+                />
+                <PublicationCard
+                  badge="WP"
+                  badgeColor={badgeColors.workingPaper}
                   title="Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market"
                   authors="Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin"
+                  year="2025"
                   links={[
                     { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
                     // { label: 'PDF', url: '#' },
@@ -176,6 +192,7 @@ const Index = () => {
                   badgeColor={badgeColors.workingPaper}
                   title="LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management"
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca, Yang Liu"
+                  year="2025"
                   links={[
                     { label: 'ArXiv', url: 'https://arxiv.org/abs/2501.00826' },
                   ]}
