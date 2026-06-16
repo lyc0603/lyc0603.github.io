@@ -79,7 +79,7 @@ const Index = () => {
                   year="2026"
                   abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.'
                   links={[
-                    { label: 'PDF', url: 'https://arxiv.org/pdf/2601.08641' },
+                    { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3774904.3792635' },
                     { label: 'BIB', url: '#' },
                   ]}
                   bibtex={`@inproceedings{luo2026resisting,
@@ -160,17 +160,17 @@ const Index = () => {
                 <PublicationCard
                   badge="WP"
                   badgeColor={badgeColors.workingPaper}
-                  title="Liquidity Position Hedging with Transaction Costs in Automated Market Makers"
-                  authors="Yichen Luo, Damien Ackerer, Jiahua Xu"
+                  title="Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance"
+                  authors="Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan"
                   year="2026"
                   links={[
-                    // { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
-                    // { label: 'PDF', url: '#' },
+                    { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6952538' },
+                    { label: 'PDF', url: '/asset/pdf/dao_governance.pdf' },
                   ]}
-                  abstract="We develop a stochastic model for delta hedging of AMM liquidity provision under realistic market conditions."
-                  visualizationUrl="/asset/visualization/hedging.png"
-                  visualizationAlt="hedging"
-                  visualizationCaption="Gamma Bleed"
+                  abstract="We study whether small token holders have a voice in DAO governance, and whether that voice creates value. We build a model where users learn governance consequences through protocol usage, then test it on account-level data covering 2,830 proposals from DeFi DAOs: deliberation and delegation raise small holders' participation and influence, and their rare victories earn positive abnormal returns."
+                  visualizationUrl="/asset/visualization/dynamic_delegation.png"
+                  visualizationAlt="dynamic_delegation"
+                  visualizationCaption="Small-Holder Influence Rises After Delegation is Enabled"
                 />
                 <PublicationCard
                   badge="WP"
@@ -199,7 +199,22 @@ const Index = () => {
                   abstract="We propose a multi-agent system for automated crypto portfolio management, leveraging multimodal large language models (LLMs) to analyze market data and execute trading strategies. The system consists of specialized agents for market analysis, strategy formulation, and trade execution, demonstrating the potential of agents in financial applications."
                   visualizationUrl="/asset/visualization/mas.png"
                   visualizationAlt="mas"
-                  visualizationCaption="Multi-Agent System Architecture for Crypto Portfolio Management"
+                  visualizationCaption="Risk-Return Profile of MAS Strategies vs. Single-Agent and Deep Learning Baselines"
+                />
+                <PublicationCard
+                  badge="WP"
+                  badgeColor={badgeColors.workingPaper}
+                  title="Liquidity Position Hedging with Transaction Costs in Automated Market Makers"
+                  authors="Yichen Luo, Damien Ackerer, Jiahua Xu"
+                  year="2026"
+                  links={[
+                    // { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
+                    // { label: 'PDF', url: '#' },
+                  ]}
+                  abstract="We develop a stochastic model for delta hedging of AMM liquidity provision under realistic market conditions."
+                  visualizationUrl="/asset/visualization/hedging.png"
+                  visualizationAlt="hedging"
+                  visualizationCaption="Gamma Bleed"
                 />
               </div>
             </Section>
