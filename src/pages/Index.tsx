@@ -80,6 +80,7 @@ const Index = () => {
                   abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.'
                   links={[
                     { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3774904.3792635' },
+                    { label: 'PDF', url: '/asset/pdf/meme_mas.pdf' },
                     { label: 'BIB', url: '#' },
                   ]}
                   bibtex={`@inproceedings{luo2026resisting,
@@ -103,6 +104,7 @@ const Index = () => {
                   abstract="The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi."
                   links={[
                     { label: 'Paper', url: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1' },
+                    { label: 'PDF', url: '/asset/pdf/tvl.pdf' },
                     { label: 'BIB', url: '#' },
                   ]}
                   bibtex={`@inproceedings{luo2025piercing,
@@ -128,6 +130,7 @@ const Index = () => {
                   abstract="High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot."
                   links={[
                     { label: 'Paper', url: 'https://link.springer.com/article/10.1186/s40854-024-00635-1' },
+                    { label: 'PDF', url: '/asset/pdf/esg.pdf' },
                     { label: 'BIB', url: '#' },
                   ]}
                   bibtex={`@article{Sun2024,
@@ -180,7 +183,7 @@ const Index = () => {
                   year="2025"
                   links={[
                     { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
-                    // { label: 'PDF', url: '#' },
+                    { label: 'PDF', url: '/asset/pdf/meme.pdf' },
                   ]}
                   abstract="Use blockchain account-level transaction data to decompose the effects of several market manipulation strategies on asset performance and participant profits. These strategies are popular yet hard to measure in traditional financial markets. Meme coin market provides some evaluations that can be applied to the traditional market."
                   visualizationUrl="/asset/visualization/meme.png"
@@ -195,6 +198,7 @@ const Index = () => {
                   year="2025"
                   links={[
                     { label: 'ArXiv', url: 'https://arxiv.org/abs/2501.00826' },
+                    { label: 'PDF', url: '/asset/pdf/mas.pdf' },
                   ]}
                   abstract="We propose a multi-agent system for automated crypto portfolio management, leveraging multimodal large language models (LLMs) to analyze market data and execute trading strategies. The system consists of specialized agents for market analysis, strategy formulation, and trade execution, demonstrating the potential of agents in financial applications."
                   visualizationUrl="/asset/visualization/mas.png"

@@ -100,7 +100,7 @@
   }
 
   .publication-badge {
-    @apply inline-flex items-center justify-center px-2.5 py-1 text-sm font-semibold rounded bg-badge text-badge-foreground min-w-[60px];
+    @apply inline-flex items-center justify-center px-2.5 py-1 text-sm font-semibold rounded bg-badge text-badge-foreground w-[72px] whitespace-nowrap;
   }
 
   .paper-link-btn {
