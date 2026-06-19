@@ -168,7 +168,7 @@ const Index = () => {
                   year="2026"
                   presentations={[
                     { name: 'Nanyang Blockchain Conference', year: '2026' },
-                    { name: 'Warwick Business School Gillmore Centre Academic Conference', year: '2026' },
+                    // { name: 'Warwick Business School Gillmore Centre Academic Conference', year: '2026' },
                   ]}
                   links={[
                     { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6952538' },
