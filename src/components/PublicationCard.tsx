@@ -13,6 +13,7 @@ interface PublicationCardProps {
   authors: string;
   venue?: string;
   year?: string;
+  presentations?: { name: string; year?: string }[];
   links?: { label: string; url: string }[];
   abstract?: string;
   visualizationUrl?: string;
@@ -72,6 +73,7 @@ const PublicationCard = ({
   authors,
   venue,
   year,
+  presentations = [],
   links = [],
   abstract,
   visualizationUrl,
@@ -107,6 +109,11 @@ const PublicationCard = ({
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
               {venue}{year && `, ${year}`}
+            </p>
+          )}
+          {presentations.length > 0 && (
+            <p className="text-sm text-muted-foreground italic mt-1">
+              Presented at: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
             </p>
           )}
 

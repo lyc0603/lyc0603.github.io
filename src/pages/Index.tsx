@@ -166,6 +166,10 @@ const Index = () => {
                   title="Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance"
                   authors="Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan"
                   year="2026"
+                  presentations={[
+                    { name: 'Nanyang Blockchain Conference', year: '2026' },
+                    { name: 'Warwick Business School Gillmore Centre Academic Conference', year: '2026' },
+                  ]}
                   links={[
                     { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6952538' },
                     { label: 'PDF', url: '/asset/pdf/dao_governance.pdf' },
@@ -181,6 +185,9 @@ const Index = () => {
                   title="Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market"
                   authors="Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin"
                   year="2025"
+                  presentations={[
+                    { name: 'SBFC', year: '2025' },
+                  ]}
                   links={[
                     { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5953738' },
                     { label: 'PDF', url: '/asset/pdf/meme.pdf' },
