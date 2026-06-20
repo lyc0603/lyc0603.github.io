@@ -113,7 +113,7 @@ const PublicationCard = ({
           )}
           {presentations.length > 0 && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              Presented at: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
+              Presentation: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
             </p>
           )}
 
