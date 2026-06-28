@@ -171,7 +171,7 @@ const Index = () => {
                     { name: 'Warwick Business School Gillmore Centre Academic Conference', year: '2026' },
                   ]}
                   links={[
-                    { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6952538' },
+                    { label: 'SSRN', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6865699' },
                     { label: 'PDF', url: '/asset/pdf/dao_governance.pdf' },
                   ]}
                   abstract="We study whether small token holders have a voice in DAO governance, and whether that voice creates value. We build a model where users learn governance consequences through protocol usage, then test it on account-level data covering 2,830 proposals from DeFi DAOs: deliberation and delegation raise small holders' participation and influence, and their rare victories earn positive abnormal returns."
