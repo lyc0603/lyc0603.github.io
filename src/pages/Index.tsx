@@ -75,7 +75,7 @@ const Index = () => {
                   badgeColor={badgeColors.conference}
                   title="Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning"
                   authors="Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu"
-                  venue="The ACM Web Conference"
+                  venue="The ACM Web Conference (Oral)"
                   year="2026"
                   abstract='This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.'
                   links={[
