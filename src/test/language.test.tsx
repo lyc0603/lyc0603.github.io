@@ -38,6 +38,13 @@ describe("language switching", () => {
     expect(document.documentElement.lang).toBe("zh-CN");
   });
 
+  it("treats /zh/ the same as /zh, since GitHub Pages serves it as a directory", () => {
+    renderAt("/zh/");
+
+    expect(screen.getByRole("heading", { name: "关于我" })).toBeInTheDocument();
+    expect(document.documentElement.lang).toBe("zh-CN");
+  });
+
   it("switches to Chinese when the toggle is clicked", () => {
     renderAt("/");
 

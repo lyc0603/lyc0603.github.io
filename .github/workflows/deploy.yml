@@ -28,8 +28,12 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # SPA fallback: GitHub Pages serves 404.html for paths like /zh
-      - run: cp dist/index.html dist/404.html
+      # Serve /zh/ as a real 200 page, with 404.html as the SPA fallback
+      # for every other client-side route.
+      - run: |
+          mkdir -p dist/zh
+          cp dist/index.html dist/zh/index.html
+          cp dist/index.html dist/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
