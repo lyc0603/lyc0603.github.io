@@ -37,8 +37,8 @@ export const aboutText: Localized = {
 
 export const positions: Localized[] = [
   {
-    en: 'Visiting Scholar, HKU FinTech Academy, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
-    zh: '访问学者，香港大学金融科技学院，2026 年，合作导师：林晨教授、丁文治教授',
+    en: 'Visiting Scholar, HKU Business School, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
+    zh: '访问学者，香港大学经济及工商管理学院，2026 年，合作导师：林晨教授、丁文治教授',
   },
 ];
 
@@ -86,7 +86,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'conference',
     title: {
       en: 'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
-      zh: '抵御 Meme 币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
+      zh: '抵御迷因币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
     },
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu',
@@ -96,7 +96,7 @@ export const publications: Paper[] = [
     year: '2026',
     abstract: {
       en: 'This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.',
-      zh: '本文研究操纵型机器人如何在流动性匮乏的 meme 币市场中利用跟单交易牟利，并提出一套防御框架：以多模态大语言模型（LLM）驱动的多智能体系统，结合结构化的思维链（CoT）推理。',
+      zh: '本文研究操纵型机器人如何在流动性匮乏的迷因币市场中利用跟单交易牟利，并提出一套防御框架：以多模态大语言模型（LLM）驱动的多智能体系统，结合结构化的思维链（CoT）推理。',
     },
     links: [
       { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3774904.3792635' },
@@ -122,7 +122,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'conference',
     title: {
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
-      zh: '刺破 TVL 的面纱：DeFi 价值重估',
+      zh: '刺破 TVL 的面纱：DeFi（去中心化金融）价值重估',
     },
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
@@ -213,7 +213,7 @@ export const workingPapers: Paper[] = [
     badgeColorKey: 'workingPaper',
     title: {
       en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
-      zh: '小股东有话语权吗？DAO 治理中的审议、委托与价值',
+      zh: '小股东有话语权吗？DAO（去中心化自治组织）治理中的审议、委托与价值',
     },
     authors: {
       en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
@@ -230,7 +230,7 @@ export const workingPapers: Paper[] = [
     ],
     abstract: {
       en: "We study whether small token holders have a voice in DAO governance, and whether that voice creates value. We build a model where users learn governance consequences through protocol usage, then test it on account-level data covering 2,830 proposals from DeFi DAOs: deliberation and delegation raise small holders' participation and influence, and their rare victories earn positive abnormal returns.",
-      zh: '我们研究小额代币持有者在 DAO 治理中是否拥有话语权，以及这种话语权能否创造价值。我们构建了一个用户通过使用协议来了解治理后果的模型，并在覆盖 DeFi DAO 共 2,830 项提案的账户级数据上进行检验：审议与委托提高了小额持有者的参与度和影响力，而他们为数不多的胜利带来了显著为正的超额收益。',
+      zh: '我们研究小额代币持有者在 DAO 治理中是否拥有话语权，以及这种话语权能否创造价值。我们构建了一个用户通过使用协议来了解治理后果的模型，并在覆盖 DeFi（去中心化金融）DAO 共 2,830 项提案的账户级数据上进行检验：审议与委托提高了小额持有者的参与度和影响力，而他们为数不多的胜利带来了显著为正的超额收益。',
     },
     visualizationUrl: '/asset/visualization/dynamic_delegation.png',
     visualizationAlt: 'dynamic_delegation',
@@ -244,7 +244,7 @@ export const workingPapers: Paper[] = [
     badgeColorKey: 'workingPaper',
     title: {
       en: 'Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market',
-      zh: '分解市场操纵策略：来自链上 Meme 币市场的证据',
+      zh: '分解市场操纵策略：来自链上迷因币市场的证据',
     },
     authors: {
       en: 'Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin',
@@ -261,7 +261,7 @@ export const workingPapers: Paper[] = [
     ],
     abstract: {
       en: 'Use blockchain account-level transaction data to decompose the effects of several market manipulation strategies on asset performance and participant profits. These strategies are popular yet hard to measure in traditional financial markets. Meme coin market provides some evaluations that can be applied to the traditional market.',
-      zh: '本文利用区块链账户级交易数据，分解多种市场操纵策略对资产表现与参与者收益的影响。这些策略在传统金融市场中很常见，却难以度量；meme 币市场提供了可迁移到传统市场的量化评估。',
+      zh: '本文利用区块链账户级交易数据，分解多种市场操纵策略对资产表现与参与者收益的影响。这些策略在传统金融市场中很常见，却难以度量；迷因币市场提供了可迁移到传统市场的量化评估。',
     },
     visualizationUrl: '/asset/visualization/meme.png',
     visualizationAlt: 'meme',

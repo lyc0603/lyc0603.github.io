@@ -65,7 +65,15 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("刺破 TVL 的面纱：DeFi 价值重估")).toBeInTheDocument();
+    expect(
+      screen.getByText("刺破 TVL 的面纱：DeFi（去中心化金融）价值重估"),
+    ).toBeInTheDocument();
+    // "meme" reads as 迷因, and DAO/DeFi are spelled out on first use.
+    expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
+    expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
+    // "meme" reads as 迷因, and DAO is spelled out on first use.
+    expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
+    expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
     expect(screen.getByText("罗奕辰、冯业博、徐家画、Paolo Tasca")).toBeInTheDocument();
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
     // Venue names stay in English on both versions.
