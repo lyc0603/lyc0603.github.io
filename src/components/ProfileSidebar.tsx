@@ -1,6 +1,10 @@
 import { Github, Mail, FileText, Linkedin } from 'lucide-react';
+import { ui } from '@/i18n/content';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const ProfileSidebar = () => {
+  const { t } = useLanguage();
+
   return (
     <aside className="w-full lg:w-56 flex-shrink-0">
       <div className="sticky top-6 space-y-4">
@@ -18,9 +22,9 @@ const ProfileSidebar = () => {
 
         {/* Name and Info */}
         <div className="text-center space-y-0.5">
-          <h1 className="text-lg font-semibold">Yichen Luo</h1>
+          <h1 className="text-lg font-semibold">{t(ui.name)}</h1>
           <p className="text-sm text-muted-foreground">yichen.luo.22@ucl.ac.uk</p>
-          <p className="text-sm text-muted-foreground">Blockchain & DeFi</p>
+          <p className="text-sm text-muted-foreground">{t(ui.researchField)}</p>
         </div>
 
         {/* Social Links */}
@@ -51,13 +55,13 @@ const ProfileSidebar = () => {
         {/* Navigation */}
         <nav className="space-y-0.5 pt-3 border-t border-border">
           <a href="#about" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
-            About
+            {t(ui.navAbout)}
           </a>
           <a href="#publications" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
-            Publications
+            {t(ui.navPublications)}
           </a>
           <a href="#working-papers" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
-            Working Papers
+            {t(ui.navWorkingPapers)}
           </a>
         </nav>
 
@@ -68,7 +72,7 @@ const ProfileSidebar = () => {
             className="inline-flex items-center gap-2 text-sm hover:text-primary text-foreground"
           >
             <FileText className="w-4 h-4" />
-            Curriculum Vitae
+            {t(ui.cv)}
           </a>
         </div>
 

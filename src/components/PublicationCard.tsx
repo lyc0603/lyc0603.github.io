@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ui } from '@/i18n/content';
+import { useLanguage } from '@/i18n/LanguageContext';
 import {
   Dialog,
   DialogContent,
@@ -82,6 +84,7 @@ const PublicationCard = ({
   bibtex,
 }: PublicationCardProps) => {
   const [showBibtex, setShowBibtex] = useState(false);
+  const { t } = useLanguage();
 
   const handleLinkClick = (link: { label: string; url: string }, e: React.MouseEvent) => {
     if (link.label.toUpperCase() === 'BIB' && bibtex) {
@@ -113,7 +116,7 @@ const PublicationCard = ({
           )}
           {presentations.length > 0 && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              Presentation: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
+              {t(ui.presentation)}: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
             </p>
           )}
 
@@ -167,7 +170,7 @@ const PublicationCard = ({
       <Dialog open={showBibtex} onOpenChange={setShowBibtex}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>BibTeX Citation</DialogTitle>
+            <DialogTitle>{t(ui.bibtexTitle)}</DialogTitle>
           </DialogHeader>
           {bibtex && <BibTexDisplay bibtex={bibtex} />}
         </DialogContent>

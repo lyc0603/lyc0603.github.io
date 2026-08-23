@@ -78,7 +78,9 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased leading-relaxed;
-    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Source Sans 3 has no CJK glyphs, so the Chinese version falls through to these. */
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
