@@ -122,7 +122,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'conference',
     title: {
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
-      zh: '刺破 TVL 的面纱：DeFi（去中心化金融）价值重估',
+      zh: '刺破 TVL 的面纱：DeFi 价值重估',
     },
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
@@ -132,7 +132,7 @@ export const publications: Paper[] = [
     year: '2025',
     abstract: {
       en: 'The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi.',
-      zh: 'DeFi 中的总锁仓价值（TVL）指标易被操纵，并因重复计算而系统性失真。我们提出可赎回总价值（TVR），用以衡量 DeFi 中真正可提取的经济价值。',
+      zh: 'DeFi（去中心化金融）中的总锁仓价值（TVL）指标易被操纵，并因重复计算而系统性失真。我们提出可赎回总价值（TVR），用以衡量 DeFi 中真正可提取的经济价值。',
     },
     links: [
       {
@@ -213,7 +213,7 @@ export const workingPapers: Paper[] = [
     badgeColorKey: 'workingPaper',
     title: {
       en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
-      zh: '小股东有话语权吗？DAO（去中心化自治组织）治理中的审议、委托与价值',
+      zh: '小股东有话语权吗？DAO 治理中的审议、委托与价值',
     },
     authors: {
       en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
@@ -230,7 +230,7 @@ export const workingPapers: Paper[] = [
     ],
     abstract: {
       en: "We study whether small token holders have a voice in DAO governance, and whether that voice creates value. We build a model where users learn governance consequences through protocol usage, then test it on account-level data covering 2,830 proposals from DeFi DAOs: deliberation and delegation raise small holders' participation and influence, and their rare victories earn positive abnormal returns.",
-      zh: '我们研究小额代币持有者在 DAO 治理中是否拥有话语权，以及这种话语权能否创造价值。我们构建了一个用户通过使用协议来了解治理后果的模型，并在覆盖 DeFi（去中心化金融）DAO 共 2,830 项提案的账户级数据上进行检验：审议与委托提高了小额持有者的参与度和影响力，而他们为数不多的胜利带来了显著为正的超额收益。',
+      zh: '我们研究小额代币持有者在 DAO（去中心化自治组织）治理中是否拥有话语权，以及这种话语权能否创造价值。我们构建了一个用户通过使用协议来了解治理后果的模型，并在覆盖 DeFi（去中心化金融）DAO 共 2,830 项提案的账户级数据上进行检验：审议与委托提高了小额持有者的参与度和影响力，而他们为数不多的胜利带来了显著为正的超额收益。',
     },
     visualizationUrl: '/asset/visualization/dynamic_delegation.png',
     visualizationAlt: 'dynamic_delegation',

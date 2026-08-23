@@ -65,12 +65,19 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(
-      screen.getByText("刺破 TVL 的面纱：DeFi（去中心化金融）价值重估"),
-    ).toBeInTheDocument();
-    // "meme" reads as 迷因, and DAO/DeFi are spelled out on first use.
+    expect(screen.getByText("刺破 TVL 的面纱：DeFi 价值重估")).toBeInTheDocument();
+    // "meme" reads as 迷因; DAO and DeFi are spelled out in the abstracts only,
+    // never in the titles.
     expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
-    expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/DeFi（去中心化金融）中的总锁仓价值/),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/在 DAO（去中心化自治组织）治理中是否拥有话语权/),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(/小股东有话语权吗？DAO（/),
+    ).not.toBeInTheDocument();
     // "meme" reads as 迷因, and DAO is spelled out on first use.
     expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
     expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
