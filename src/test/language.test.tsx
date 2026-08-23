@@ -88,10 +88,17 @@ describe("language switching", () => {
     ).toBeInTheDocument();
   });
 
+  // ESG reads as itself in Chinese and stays untranslated.
+  const titleLatinAllowlist = ["ESG"];
+
   it.each([...publications, ...workingPapers])(
-    "keeps the Chinese title of $title.en free of Latin script",
+    "keeps the Chinese title of $title.en free of untranslated Latin script",
     (paper) => {
-      expect(paper.title.zh).not.toMatch(/[A-Za-z]/);
+      const stripped = titleLatinAllowlist.reduce(
+        (title, term) => title.split(term).join(""),
+        paper.title.zh,
+      );
+      expect(stripped).not.toMatch(/[A-Za-z]/);
     },
   );
 

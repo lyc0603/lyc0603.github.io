@@ -163,7 +163,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'journal',
     title: {
       en: 'ESG Scores, Scandal Probability, and Event Returns',
-      zh: '环境社会治理评分、丑闻概率与事件收益',
+      zh: 'ESG 评分、丑闻概率与事件收益',
     },
     authors: {
       en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
