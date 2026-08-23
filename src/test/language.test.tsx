@@ -3,6 +3,7 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import Index from "@/pages/Index";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { publications, workingPapers } from "@/i18n/content";
 
 const renderAt = (path: string) =>
   render(
@@ -65,9 +66,10 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("刺破 TVL 的面纱：DeFi 价值重估")).toBeInTheDocument();
-    // "meme" reads as 迷因; DAO and DeFi are spelled out in the abstracts only,
-    // never in the titles.
+    expect(
+      screen.getByText("刺破总锁仓价值的面纱：去中心化金融价值重估"),
+    ).toBeInTheDocument();
+    // "meme" reads as 迷因, and the acronyms are spelled out in the abstracts.
     expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
     expect(
       screen.getByText(/DeFi（去中心化金融）中的总锁仓价值/),
@@ -75,9 +77,6 @@ describe("language switching", () => {
     expect(
       screen.getByText(/在 DAO（去中心化自治组织）治理中是否拥有话语权/),
     ).toBeInTheDocument();
-    expect(
-      screen.queryByText(/小股东有话语权吗？DAO（/),
-    ).not.toBeInTheDocument();
     // "meme" reads as 迷因, and DAO is spelled out on first use.
     expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
     expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
@@ -88,6 +87,13 @@ describe("language switching", () => {
       screen.getByText(/Financial Cryptography and Data Security, 2025/),
     ).toBeInTheDocument();
   });
+
+  it.each([...publications, ...workingPapers])(
+    "keeps the Chinese title of $title.en free of Latin script",
+    (paper) => {
+      expect(paper.title.zh).not.toMatch(/[A-Za-z]/);
+    },
+  );
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");

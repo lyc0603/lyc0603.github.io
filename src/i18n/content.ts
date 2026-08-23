@@ -122,7 +122,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'conference',
     title: {
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
-      zh: '刺破 TVL 的面纱：DeFi 价值重估',
+      zh: '刺破总锁仓价值的面纱：去中心化金融价值重估',
     },
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
@@ -163,7 +163,7 @@ export const publications: Paper[] = [
     badgeColorKey: 'journal',
     title: {
       en: 'ESG Scores, Scandal Probability, and Event Returns',
-      zh: 'ESG 评分、丑闻概率与事件收益',
+      zh: '环境社会治理评分、丑闻概率与事件收益',
     },
     authors: {
       en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
@@ -173,7 +173,7 @@ export const publications: Paper[] = [
     year: '2024',
     abstract: {
       en: 'High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot.',
-      zh: '较高的 ESG 评分能够降低 ESG 丑闻发生的概率，但一旦丑闻发生，损失也会更大。基于理论模型，企业的最优 ESG 投入水平存在两个均衡——要么完全不投入，要么大量投入。',
+      zh: '较高的 ESG（环境社会治理）评分能够降低 ESG 丑闻发生的概率，但一旦丑闻发生，损失也会更大。基于理论模型，企业的最优 ESG 投入水平存在两个均衡——要么完全不投入，要么大量投入。',
     },
     links: [
       {
@@ -213,7 +213,7 @@ export const workingPapers: Paper[] = [
     badgeColorKey: 'workingPaper',
     title: {
       en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
-      zh: '小股东有话语权吗？DAO 治理中的审议、委托与价值',
+      zh: '小股东有话语权吗？去中心化自治组织治理中的审议、委托与价值',
     },
     authors: {
       en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
