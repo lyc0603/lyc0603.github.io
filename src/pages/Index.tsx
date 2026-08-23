@@ -74,17 +74,14 @@ const Index = () => {
               <div className="divide-y divide-border">
                 {publications.map((paper) => (
                   <PublicationCard
-                    key={paper.title}
+                    key={paper.title.en}
                     badge={paper.badge}
                     badgeColor={badgeColors[paper.badgeColorKey]}
-                    title={paper.title}
-                    authors={paper.authors}
-                    venue={paper.venue && t(paper.venue)}
+                    title={t(paper.title)}
+                    authors={t(paper.authors)}
+                    venue={paper.venue}
                     year={paper.year}
-                    presentations={paper.presentations?.map((p) => ({
-                      name: t(p.name),
-                      year: p.year,
-                    }))}
+                    presentations={paper.presentations}
                     links={paper.links}
                     abstract={t(paper.abstract)}
                     bibtex={paper.bibtex}
@@ -105,17 +102,14 @@ const Index = () => {
               <div className="divide-y divide-border">
                 {workingPapers.map((paper) => (
                   <PublicationCard
-                    key={paper.title}
+                    key={paper.title.en}
                     badge={paper.badge}
                     badgeColor={badgeColors[paper.badgeColorKey]}
-                    title={paper.title}
-                    authors={paper.authors}
-                    venue={paper.venue && t(paper.venue)}
+                    title={t(paper.title)}
+                    authors={t(paper.authors)}
+                    venue={paper.venue}
                     year={paper.year}
-                    presentations={paper.presentations?.map((p) => ({
-                      name: t(p.name),
-                      year: p.year,
-                    }))}
+                    presentations={paper.presentations}
                     links={paper.links}
                     abstract={t(paper.abstract)}
                     bibtex={paper.bibtex}

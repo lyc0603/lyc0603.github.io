@@ -54,16 +54,32 @@ describe("language switching", () => {
     expect(document.documentElement.lang).toBe("zh-CN");
   });
 
-  it("keeps paper titles in English on both versions", () => {
+  it("translates paper titles and author names, but not venues", () => {
     const { unmount } = renderAt("/");
-    const englishTitle = "Piercing the Veil of TVL: DeFi Reappraised";
-    expect(screen.getByText(englishTitle)).toBeInTheDocument();
+    expect(
+      screen.getByText("Piercing the Veil of TVL: DeFi Reappraised"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca"),
+    ).toBeInTheDocument();
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText(englishTitle)).toBeInTheDocument();
-    // ...while the abstract is translated.
+    expect(screen.getByText("刺破 TVL 的面纱：DeFi 价值重估")).toBeInTheDocument();
+    expect(screen.getByText("罗奕辰、冯业博、徐家画、Paolo Tasca")).toBeInTheDocument();
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
+    // Venue names stay in English on both versions.
+    expect(
+      screen.getByText(/Financial Cryptography and Data Security, 2025/),
+    ).toBeInTheDocument();
+  });
+
+  it("no longer lists the Warwick presentation for the DAO paper", () => {
+    renderAt("/");
+
+    expect(screen.getByText(/Nanyang Blockchain Conference/)).toBeInTheDocument();
+    expect(screen.queryByText(/Gillmore/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Warwick/i)).not.toBeInTheDocument();
   });
 
   it("no longer lists the AMM liquidity hedging working paper", () => {

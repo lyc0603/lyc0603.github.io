@@ -38,7 +38,7 @@ export const aboutText: Localized = {
 export const positions: Localized[] = [
   {
     en: 'Visiting Scholar, HKU FinTech Academy, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
-    zh: '访问学者，香港大学金融科技学院，2026 年，合作导师：Prof. Chen Lin、Prof. Wenzhi Ding',
+    zh: '访问学者，香港大学金融科技学院，2026 年，合作导师：林晨教授、丁文治教授',
   },
 ];
 
@@ -60,12 +60,12 @@ export const education: Localized[] = [
 export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
-  /** Paper titles and author lists stay in English in both versions. */
-  title: string;
-  authors: string;
-  venue?: Localized;
+  title: Localized;
+  authors: Localized;
+  /** Venue and conference names are never translated. */
+  venue?: string;
   year?: string;
-  presentations?: { name: Localized; year?: string }[];
+  presentations?: { name: string; year?: string }[];
   links?: { label: string; url: string }[];
   abstract: Localized;
   bibtex?: string;
@@ -84,13 +84,15 @@ export const publications: Paper[] = [
   {
     badge: "WWW'26",
     badgeColorKey: 'conference',
-    title:
-      'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
-    authors: 'Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu',
-    venue: {
-      en: 'The ACM Web Conference (Oral)',
-      zh: 'ACM 国际万维网大会（口头报告）',
+    title: {
+      en: 'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
+      zh: '抵御 Meme 币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
     },
+    authors: {
+      en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu',
+      zh: '罗奕辰、冯业博、徐家画、刘杨',
+    },
+    venue: 'The ACM Web Conference (Oral)',
     year: '2026',
     abstract: {
       en: 'This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.',
@@ -118,12 +120,15 @@ export const publications: Paper[] = [
   {
     badge: "FC'25",
     badgeColorKey: 'conference',
-    title: 'Piercing the Veil of TVL: DeFi Reappraised',
-    authors: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
-    venue: {
-      en: 'Financial Cryptography and Data Security',
-      zh: '金融密码学与数据安全会议',
+    title: {
+      en: 'Piercing the Veil of TVL: DeFi Reappraised',
+      zh: '刺破 TVL 的面纱：DeFi 价值重估',
     },
+    authors: {
+      en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
+      zh: '罗奕辰、冯业博、徐家画、Paolo Tasca',
+    },
+    venue: 'Financial Cryptography and Data Security',
     year: '2025',
     abstract: {
       en: 'The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi.',
@@ -156,9 +161,15 @@ export const publications: Paper[] = [
   {
     badge: 'FI',
     badgeColorKey: 'journal',
-    title: 'ESG Scores, Scandal Probability, and Event Returns',
-    authors: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
-    venue: { en: 'Financial Innovation', zh: 'Financial Innovation' },
+    title: {
+      en: 'ESG Scores, Scandal Probability, and Event Returns',
+      zh: 'ESG 评分、丑闻概率与事件收益',
+    },
+    authors: {
+      en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
+      zh: '罗奕辰、孙文雅、姚兆明、俞路平、丁文治',
+    },
+    venue: 'Financial Innovation',
     year: '2024',
     abstract: {
       en: 'High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot.',
@@ -200,26 +211,16 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
-    title:
-      'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
-    authors: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
+    title: {
+      en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
+      zh: '小股东有话语权吗？DAO 治理中的审议、委托与价值',
+    },
+    authors: {
+      en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
+      zh: '罗奕辰、徐家画、叶乔治、Kathy Yuan',
+    },
     year: '2026',
-    presentations: [
-      {
-        name: {
-          en: 'Nanyang Blockchain Conference',
-          zh: '南洋区块链大会',
-        },
-        year: '2026',
-      },
-      {
-        name: {
-          en: 'Warwick Business School Gillmore Centre Academic Conference',
-          zh: '华威商学院 Gillmore 中心学术会议',
-        },
-        year: '2026',
-      },
-    ],
+    presentations: [{ name: 'Nanyang Blockchain Conference', year: '2026' }],
     links: [
       {
         label: 'SSRN',
@@ -241,11 +242,16 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
-    title:
-      'Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market',
-    authors: 'Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin',
+    title: {
+      en: 'Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market',
+      zh: '分解市场操纵策略：来自链上 Meme 币市场的证据',
+    },
+    authors: {
+      en: 'Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin',
+      zh: '罗奕辰、丁文治、徐家画、林晨',
+    },
     year: '2025',
-    presentations: [{ name: { en: 'SBFC', zh: 'SBFC' }, year: '2025' }],
+    presentations: [{ name: 'SBFC', year: '2025' }],
     links: [
       {
         label: 'SSRN',
@@ -267,8 +273,14 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
-    title: 'LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management',
-    authors: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca, Yang Liu',
+    title: {
+      en: 'LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management',
+      zh: '基于大语言模型的多智能体系统：加密资产组合的自动化管理',
+    },
+    authors: {
+      en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca, Yang Liu',
+      zh: '罗奕辰、冯业博、徐家画、Paolo Tasca、刘杨',
+    },
     year: '2025',
     links: [
       { label: 'ArXiv', url: 'https://arxiv.org/abs/2501.00826' },
