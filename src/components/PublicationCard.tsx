@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ui } from '@/i18n/content';
+import { linkLabels, ui } from '@/i18n/content';
 import { useLanguage } from '@/i18n/LanguageContext';
 import {
   Dialog,
@@ -132,7 +132,7 @@ const PublicationCard = ({
                   className="paper-link-btn"
                   onClick={(e) => handleLinkClick(link, e)}
                 >
-                  {link.label}
+                  {linkLabels[link.label] ? t(linkLabels[link.label]) : link.label}
                 </a>
               ))}
             </div>

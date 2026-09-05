@@ -30,6 +30,16 @@ export const ui = {
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
 
+/**
+ * Link buttons on a paper card. Only the ones that are English words get
+ * translated; PDF, SSRN and ArXiv are formats and proper nouns. The key is the
+ * label as written in the data, which is also what selects the BibTeX dialog.
+ */
+export const linkLabels: Record<string, Localized> = {
+  Paper: { en: 'Paper', zh: '论文' },
+  BIB: { en: 'BIB', zh: '引用' },
+};
+
 export const aboutText: Localized = {
   en: 'I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into rigorous research. If you come across compelling or counterintuitive financial anecdotes, I would love to hear about them.',
   zh: '我从事计算机科学与金融交叉领域的研究，热衷于把新闻事件、市场叙事以及业界见闻转化为严谨的学术研究。如果你遇到有趣或反直觉的金融现象，欢迎与我交流。',

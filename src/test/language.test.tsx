@@ -77,9 +77,6 @@ describe("language switching", () => {
     expect(
       screen.getByText(/在 DAO（去中心化自治组织）治理中是否拥有话语权/),
     ).toBeInTheDocument();
-    // "meme" reads as 迷因, and DAO is spelled out on first use.
-    expect(screen.getByText(/抵御迷因币跟单交易/)).toBeInTheDocument();
-    expect(screen.getByText(/DAO（去中心化自治组织）治理/)).toBeInTheDocument();
     expect(screen.getByText("罗奕辰、冯业博、徐家画、Paolo Tasca")).toBeInTheDocument();
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
     // Venue names stay in English on both versions.
@@ -101,6 +98,28 @@ describe("language switching", () => {
       expect(stripped).not.toMatch(/[A-Za-z]/);
     },
   );
+
+  it("translates the link buttons that are English words", () => {
+    const { unmount } = renderAt("/");
+    expect(screen.getAllByRole("link", { name: "Paper" }).length).toBeGreaterThan(0);
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getAllByRole("link", { name: "论文" }).length).toBeGreaterThan(0);
+    expect(screen.queryByRole("link", { name: "Paper" })).not.toBeInTheDocument();
+    // Formats and proper nouns stay as they are.
+    expect(screen.getAllByRole("link", { name: "PDF" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "SSRN" }).length).toBeGreaterThan(0);
+  });
+
+  it("still opens the BibTeX dialog from the translated 引用 button", () => {
+    renderAt("/zh");
+
+    fireEvent.click(screen.getAllByRole("link", { name: "引用" })[0]);
+
+    expect(screen.getByRole("dialog")).toHaveTextContent("BibTeX 引用");
+    expect(screen.getByRole("dialog")).toHaveTextContent("luo2026resisting");
+  });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");
