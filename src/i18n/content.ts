@@ -31,13 +31,16 @@ export const ui = {
 } satisfies Record<string, Localized>;
 
 /**
- * Link buttons on a paper card. Only the ones that are English words get
- * translated; PDF, SSRN and ArXiv are formats and proper nouns. The key is the
- * label as written in the data, which is also what selects the BibTeX dialog.
+ * Link buttons on a paper card. SSRN and ArXiv are both preprint repositories
+ * and read as 预印 in Chinese; PDF is a file format and stays as it is. The key
+ * is the label as written in the data, which is also what selects the BibTeX
+ * dialog, so translating the button text cannot change the click behaviour.
  */
 export const linkLabels: Record<string, Localized> = {
   Paper: { en: 'Paper', zh: '论文' },
   BIB: { en: 'BIB', zh: '引用' },
+  SSRN: { en: 'SSRN', zh: '预印' },
+  ArXiv: { en: 'ArXiv', zh: '预印' },
 };
 
 export const aboutText: Localized = {

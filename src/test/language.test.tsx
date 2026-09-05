@@ -107,9 +107,12 @@ describe("language switching", () => {
     renderAt("/zh");
     expect(screen.getAllByRole("link", { name: "论文" }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("link", { name: "Paper" })).not.toBeInTheDocument();
-    // Formats and proper nouns stay as they are.
+    // SSRN and ArXiv are both preprint repositories.
+    expect(screen.getAllByRole("link", { name: "预印" }).length).toBeGreaterThan(0);
+    expect(screen.queryByRole("link", { name: "SSRN" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "ArXiv" })).not.toBeInTheDocument();
+    // PDF is a file format, so it stays as it is.
     expect(screen.getAllByRole("link", { name: "PDF" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "SSRN" }).length).toBeGreaterThan(0);
   });
 
   it("still opens the BibTeX dialog from the translated 引用 button", () => {
