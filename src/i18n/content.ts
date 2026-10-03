@@ -274,7 +274,14 @@ export const workingPapers: Paper[] = [
       zh: '罗奕辰、丁文治、徐家画、林晨',
     },
     year: '2025',
-    presentations: [{ name: 'Sydney Banking and Financial Stability Conference', year: '2025' }],
+    presentations: [
+      {
+        name: 'Sydney Banking and Financial Stability Conference',
+        year: '2025',
+        // The organisers' site now shows 2026; this snapshot still lists the paper.
+        url: 'https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/',
+      },
+    ],
     links: [
       {
         label: 'SSRN',

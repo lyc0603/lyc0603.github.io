@@ -138,7 +138,12 @@ describe("language switching", () => {
       "href",
       "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",
     );
-    expect(screen.getByText(/Sydney Banking and Financial Stability Conference/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Sydney Banking and Financial Stability Conference" }),
+    ).toHaveAttribute(
+      "href",
+      "https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/",
+    );
     expect(screen.queryByText(/\bSBFC\b/)).not.toBeInTheDocument();
   });
 
