@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { linkLabels, ui } from '@/i18n/content';
 import { useLanguage } from '@/i18n/LanguageContext';
 import {
@@ -12,7 +12,6 @@ interface PublicationCardProps {
   badge?: string;
   badgeColor?: string;
   title: string;
-  url?: string;
   authors: string;
   venue?: string;
   venueUrl?: string;
@@ -71,7 +70,7 @@ const BibTexDisplay = ({ bibtex }: { bibtex: string }) => {
 };
 
 /** A conference name and its year, linked together to the program when we have one. */
-const ConferenceName = ({ name, url }: { name: string; url?: string }) =>
+const ConferenceName = ({ name, url }: { name: ReactNode; url?: string }) =>
   url ? (
     <a href={url} target="_blank" rel="noopener noreferrer">
       {name}
@@ -84,7 +83,6 @@ const PublicationCard = ({
   badge,
   badgeColor,
   title,
-  url,
   authors,
   venue,
   venueUrl,
@@ -121,19 +119,23 @@ const PublicationCard = ({
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-foreground leading-snug">
-            {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-link-hover">
-                {title}
-              </a>
-            ) : (
-              title
-            )}
-          </h3>
+          {/* Sized and weighted like wenzhi-ding.com: 16px bold, not a link. */}
+          <h3 className="text-[16px] font-bold text-foreground leading-snug">{title}</h3>
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
-            <p className="text-sm text-muted-foreground italic mt-1">
-              <ConferenceName name={year ? `${venue}, ${year}` : venue} url={venueUrl} />
+            <p className="text-[16px] text-muted-foreground mt-1">
+              {/* Venue in 16px bold italic like wenzhi-ding.com; the year stays plain. */}
+              <ConferenceName
+                name={
+                  <>
+                    <b>
+                      <i>{venue}</i>
+                    </b>
+                    {year && `, ${year}`}
+                  </>
+                }
+                url={venueUrl}
+              />
             </p>
           )}
           {presentations.length > 0 && (

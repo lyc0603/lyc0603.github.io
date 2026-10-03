@@ -81,7 +81,7 @@ describe("language switching", () => {
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
     // Venue names stay in English on both versions.
     expect(
-      screen.getByRole("link", { name: "Financial Cryptography and Data Security, 2025" }),
+      screen.getByRole("link", { name: /^Financial Cryptography and Data Security\s*, 2025$/ }),
     ).toBeInTheDocument();
   });
 
@@ -99,21 +99,21 @@ describe("language switching", () => {
     },
   );
 
-  it("links publication titles to the paper instead of a Paper button", () => {
+  it("shows paper titles as plain text with no Paper button", () => {
     renderAt("/");
 
     expect(screen.queryByRole("link", { name: "Paper" })).not.toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
-    ).toHaveAttribute("href", "https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1");
+      screen.queryByRole("link", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
+    ).toBeInTheDocument();
     expect(screen.getAllByText(/^Presented at:/).length).toBe(2);
   });
 
   it("translates the link buttons that are English words", () => {
     renderAt("/zh");
-    expect(
-      screen.getByRole("link", { name: "刺破总锁仓价值的面纱：去中心化金融价值重估" }),
-    ).toHaveAttribute("href", "https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1");
     // SSRN and ArXiv are both preprint repositories.
     expect(screen.getAllByRole("link", { name: "预印" }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("link", { name: "SSRN" })).not.toBeInTheDocument();
@@ -134,14 +134,14 @@ describe("language switching", () => {
   it("links conferences to their programs and spells out their names", () => {
     renderAt("/");
 
-    expect(screen.getByRole("link", { name: "The ACM Web Conference (Oral), 2026" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^The ACM Web Conference \(Oral\)\s*, 2026$/ })).toHaveAttribute(
       "href",
       "https://www2026.thewebconf.org/program/full-schedule.html",
     );
     expect(
-      screen.getByRole("link", { name: "Financial Cryptography and Data Security, 2025" }),
+      screen.getByRole("link", { name: /^Financial Cryptography and Data Security\s*, 2025$/ }),
     ).toHaveAttribute("href", "https://fc25.ifca.ai/program.html");
-    expect(screen.getByRole("link", { name: "Financial Innovation, 2024" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^Financial Innovation\s*, 2024$/ })).toHaveAttribute(
       "href",
       "https://link.springer.com/journal/40854",
     );

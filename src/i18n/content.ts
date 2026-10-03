@@ -73,7 +73,7 @@ export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
   title: Localized;
-  /** The published version; the title links here. */
+  /** The published version. Not shown on the page at the moment. */
   url?: string;
   authors: Localized;
   /** Venue and conference names are never translated. */
