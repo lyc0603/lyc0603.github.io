@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 import { linkLabels, ui } from '@/i18n/content';
 import { useLanguage } from '@/i18n/LanguageContext';
 import {
@@ -70,7 +70,7 @@ const BibTexDisplay = ({ bibtex }: { bibtex: string }) => {
 };
 
 /** A conference name and its year, linked together to the program when we have one. */
-const ConferenceName = ({ name, url }: { name: ReactNode; url?: string }) =>
+const ConferenceName = ({ name, url }: { name: string; url?: string }) =>
   url ? (
     <a href={url} target="_blank" rel="noopener noreferrer">
       {name}
@@ -119,20 +119,11 @@ const PublicationCard = ({
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          {/* Plain text, not bold: only venue and conference names are bold. */}
-          <h3 className="font-normal text-foreground leading-snug">{title}</h3>
+          <h3 className="font-semibold text-foreground leading-snug">{title}</h3>
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              <ConferenceName
-                name={
-                  <>
-                    <b>{venue}</b>
-                    {year && `, ${year}`}
-                  </>
-                }
-                url={venueUrl}
-              />
+              <ConferenceName name={year ? `${venue}, ${year}` : venue} url={venueUrl} />
             </p>
           )}
           {presentations.length > 0 && (
@@ -141,15 +132,7 @@ const PublicationCard = ({
               {presentations.map((p, i) => (
                 <span key={p.name}>
                   {i > 0 && ', '}
-                  <ConferenceName
-                    name={
-                      <>
-                        <b>{p.name}</b>
-                        {p.year && ` (${p.year})`}
-                      </>
-                    }
-                    url={p.url}
-                  />
+                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
                 </span>
               ))}
             </p>

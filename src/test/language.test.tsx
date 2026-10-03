@@ -99,21 +99,6 @@ describe("language switching", () => {
     },
   );
 
-  it("bolds only venue and conference names, not paper titles", () => {
-    renderAt("/");
-
-    const title = screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" });
-    expect(title.querySelector("b")).toBeNull();
-    expect(title).not.toHaveClass("font-semibold");
-    for (const name of [
-      "Financial Cryptography and Data Security",
-      "Nanyang Blockchain Conference",
-      "Sydney Banking and Financial Stability Conference",
-    ]) {
-      expect(screen.getByText(name).tagName).toBe("B");
-    }
-  });
-
   it("shows paper titles as plain text with no Paper button", () => {
     renderAt("/");
 
