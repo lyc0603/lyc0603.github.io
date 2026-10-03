@@ -99,10 +99,26 @@ describe("language switching", () => {
     },
   );
 
+  it("bolds only venue and conference names, not paper titles", () => {
+    renderAt("/");
+
+    const title = screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" });
+    expect(title.querySelector("b")).toBeNull();
+    expect(title).not.toHaveClass("font-semibold");
+    for (const name of [
+      "Financial Cryptography and Data Security",
+      "Nanyang Blockchain Conference",
+      "Sydney Banking and Financial Stability Conference",
+    ]) {
+      expect(screen.getByText(name).tagName).toBe("B");
+    }
+  });
+
   it("shows paper titles as plain text with no Paper button", () => {
     renderAt("/");
 
     expect(screen.queryByRole("link", { name: "Paper" })).not.toBeInTheDocument();
+    // Titles are plain text, not links.
     expect(
       screen.queryByRole("link", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
     ).not.toBeInTheDocument();
@@ -145,12 +161,12 @@ describe("language switching", () => {
       "href",
       "https://link.springer.com/journal/40854",
     );
-    expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference (2026)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^Nanyang Blockchain Conference\s*\(2026\)$/ })).toHaveAttribute(
       "href",
       "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",
     );
     expect(
-      screen.getByRole("link", { name: "Sydney Banking and Financial Stability Conference (2025)" }),
+      screen.getByRole("link", { name: /^Sydney Banking and Financial Stability Conference\s*\(2025\)$/ }),
     ).toHaveAttribute(
       "href",
       "https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/",

@@ -119,18 +119,15 @@ const PublicationCard = ({
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          {/* Sized and weighted like wenzhi-ding.com: 16px bold, not a link. */}
-          <h3 className="text-[16px] font-bold text-foreground leading-snug">{title}</h3>
+          {/* Plain text, not bold: only venue and conference names are bold. */}
+          <h3 className="font-normal text-foreground leading-snug">{title}</h3>
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
-            <p className="text-[16px] text-muted-foreground mt-1">
-              {/* Venue in 16px bold italic like wenzhi-ding.com; the year stays plain. */}
+            <p className="text-sm text-muted-foreground italic mt-1">
               <ConferenceName
                 name={
                   <>
-                    <b>
-                      <i>{venue}</i>
-                    </b>
+                    <b>{venue}</b>
                     {year && `, ${year}`}
                   </>
                 }
@@ -144,7 +141,15 @@ const PublicationCard = ({
               {presentations.map((p, i) => (
                 <span key={p.name}>
                   {i > 0 && ', '}
-                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
+                  <ConferenceName
+                    name={
+                      <>
+                        <b>{p.name}</b>
+                        {p.year && ` (${p.year})`}
+                      </>
+                    }
+                    url={p.url}
+                  />
                 </span>
               ))}
             </p>
