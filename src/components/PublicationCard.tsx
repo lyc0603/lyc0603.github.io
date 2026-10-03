@@ -123,7 +123,7 @@ const PublicationCard = ({
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-foreground leading-snug">
             {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-link">
+              <a href={url} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-link-hover">
                 {title}
               </a>
             ) : (

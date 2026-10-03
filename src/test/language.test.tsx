@@ -141,6 +141,10 @@ describe("language switching", () => {
     expect(
       screen.getByRole("link", { name: "Financial Cryptography and Data Security, 2025" }),
     ).toHaveAttribute("href", "https://fc25.ifca.ai/program.html");
+    expect(screen.getByRole("link", { name: "Financial Innovation, 2024" })).toHaveAttribute(
+      "href",
+      "https://link.springer.com/journal/40854",
+    );
     expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference (2026)" })).toHaveAttribute(
       "href",
       "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",

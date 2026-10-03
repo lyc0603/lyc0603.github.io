@@ -39,8 +39,9 @@
     /* Custom academic tokens */
     --badge-bg: 280 65% 48%;
     --badge-foreground: 0 0% 100%;
-    --link: 220 80% 50%;
-    --link-hover: 220 80% 40%;
+    /* Matches wenzhi-ding.com: #2563eb, hovering to #1d4ed8 */
+    --link: 221 83% 53%;
+    --link-hover: 224 76% 48%;
     --section-border: 0 0% 85%;
   }
 
@@ -88,7 +89,13 @@
   }
 
   a {
-    @apply text-link hover:text-link-hover transition-colors;
+    @apply text-link transition-colors duration-200;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    @apply text-link-hover underline;
   }
 }
 
@@ -105,8 +112,9 @@
     @apply inline-flex items-center justify-center px-2.5 py-1 text-sm font-semibold rounded bg-badge text-badge-foreground w-[72px] whitespace-nowrap;
   }
 
+  /* Bordered buttons already change background on hover; no underline. */
   .paper-link-btn {
-    @apply inline-flex items-center justify-center px-3 py-1 text-sm border border-border rounded hover:bg-secondary transition-colors;
+    @apply inline-flex items-center justify-center px-3 py-1 text-sm border border-border rounded hover:bg-secondary hover:no-underline transition-colors;
   }
 
   .bibtex-container {

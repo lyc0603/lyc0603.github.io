@@ -54,13 +54,13 @@ const ProfileSidebar = () => {
 
         {/* Navigation */}
         <nav className="space-y-0.5 pt-3 border-t border-border">
-          <a href="#about" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
+          <a href="#about" className="block py-1.5 text-center text-sm hover:text-link-hover text-foreground">
             {t(ui.navAbout)}
           </a>
-          <a href="#publications" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
+          <a href="#publications" className="block py-1.5 text-center text-sm hover:text-link-hover text-foreground">
             {t(ui.navPublications)}
           </a>
-          <a href="#working-papers" className="block py-1.5 text-center text-sm hover:text-primary text-foreground">
+          <a href="#working-papers" className="block py-1.5 text-center text-sm hover:text-link-hover text-foreground">
             {t(ui.navWorkingPapers)}
           </a>
         </nav>
@@ -69,7 +69,7 @@ const ProfileSidebar = () => {
         <div className="text-center pt-3">
           <a
             href="/asset/pdf/cv.pdf"
-            className="inline-flex items-center gap-2 text-sm hover:text-primary text-foreground"
+            className="inline-flex items-center gap-2 text-sm hover:text-link-hover text-foreground"
           >
             <FileText className="w-4 h-4" />
             {t(ui.cv)}

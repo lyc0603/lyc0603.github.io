@@ -78,7 +78,7 @@ export interface Paper {
   authors: Localized;
   /** Venue and conference names are never translated. */
   venue?: string;
-  /** The conference program listing this paper. */
+  /** The conference program, or the journal's home page. */
   venueUrl?: string;
   year?: string;
   presentations?: { name: string; year?: string; url?: string }[];
@@ -186,6 +186,7 @@ export const publications: Paper[] = [
       zh: '罗奕辰、孙文雅、姚兆明、俞路平、丁文治',
     },
     venue: 'Financial Innovation',
+    venueUrl: 'https://link.springer.com/journal/40854',
     year: '2024',
     abstract: {
       en: 'High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot.',
