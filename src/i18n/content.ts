@@ -26,7 +26,7 @@ export const ui = {
   navPublications: { en: 'Publications', zh: '发表论文' },
   navWorkingPapers: { en: 'Working Papers', zh: '工作论文' },
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
-  presentation: { en: 'Presentation', zh: '会议报告' },
+  presentation: { en: 'Presented at', zh: '会议报告' },
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
 
@@ -37,7 +37,6 @@ export const ui = {
  * dialog, so translating the button text cannot change the click behaviour.
  */
 export const linkLabels: Record<string, Localized> = {
-  Paper: { en: 'Paper', zh: '论文' },
   BIB: { en: 'BIB', zh: '引用' },
   SSRN: { en: 'SSRN', zh: '预印' },
   ArXiv: { en: 'ArXiv', zh: '预印' },
@@ -74,6 +73,8 @@ export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
   title: Localized;
+  /** The published version; the title links here. */
+  url?: string;
   authors: Localized;
   /** Venue and conference names are never translated. */
   venue?: string;
@@ -103,6 +104,7 @@ export const publications: Paper[] = [
       en: 'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
       zh: '抵御迷因币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
     },
+    url: 'https://dl.acm.org/doi/10.1145/3774904.3792635',
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu',
       zh: '罗奕辰、冯业博、徐家画、刘杨',
@@ -115,7 +117,6 @@ export const publications: Paper[] = [
       zh: '本文研究操纵型机器人如何在流动性匮乏的迷因币市场中利用跟单交易牟利，并提出一套防御框架：以多模态大语言模型（LLM）驱动的多智能体系统，结合结构化的思维链（CoT）推理。',
     },
     links: [
-      { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3774904.3792635' },
       { label: 'PDF', url: '/asset/pdf/meme_mas.pdf' },
       { label: 'BIB', url: '#' },
     ],
@@ -140,6 +141,7 @@ export const publications: Paper[] = [
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
       zh: '刺破总锁仓价值的面纱：去中心化金融价值重估',
     },
+    url: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1',
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
       zh: '罗奕辰、冯业博、徐家画、Paolo Tasca',
@@ -152,10 +154,6 @@ export const publications: Paper[] = [
       zh: 'DeFi（去中心化金融）中的总锁仓价值（TVL）指标易被操纵，并因重复计算而系统性失真。我们提出可赎回总价值（TVR），用以衡量 DeFi 中真正可提取的经济价值。',
     },
     links: [
-      {
-        label: 'Paper',
-        url: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1',
-      },
       { label: 'PDF', url: '/asset/pdf/tvl.pdf' },
       { label: 'BIB', url: '#' },
     ],
@@ -182,6 +180,7 @@ export const publications: Paper[] = [
       en: 'ESG Scores, Scandal Probability, and Event Returns',
       zh: 'ESG 评分、丑闻概率与事件收益',
     },
+    url: 'https://link.springer.com/article/10.1186/s40854-024-00635-1',
     authors: {
       en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
       zh: '罗奕辰、孙文雅、姚兆明、俞路平、丁文治',
@@ -193,10 +192,6 @@ export const publications: Paper[] = [
       zh: '较高的 ESG（环境社会治理）评分能够降低 ESG 丑闻发生的概率，但一旦丑闻发生，损失也会更大。基于理论模型，企业的最优 ESG 投入水平存在两个均衡——要么完全不投入，要么大量投入。',
     },
     links: [
-      {
-        label: 'Paper',
-        url: 'https://link.springer.com/article/10.1186/s40854-024-00635-1',
-      },
       { label: 'PDF', url: '/asset/pdf/esg.pdf' },
       { label: 'BIB', url: '#' },
     ],

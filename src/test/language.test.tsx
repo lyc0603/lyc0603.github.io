@@ -99,14 +99,21 @@ describe("language switching", () => {
     },
   );
 
-  it("translates the link buttons that are English words", () => {
-    const { unmount } = renderAt("/");
-    expect(screen.getAllByRole("link", { name: "Paper" }).length).toBeGreaterThan(0);
-    unmount();
+  it("links publication titles to the paper instead of a Paper button", () => {
+    renderAt("/");
 
-    renderAt("/zh");
-    expect(screen.getAllByRole("link", { name: "论文" }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("link", { name: "Paper" })).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
+    ).toHaveAttribute("href", "https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1");
+    expect(screen.getAllByText(/^Presented at:/).length).toBe(2);
+  });
+
+  it("translates the link buttons that are English words", () => {
+    renderAt("/zh");
+    expect(
+      screen.getByRole("link", { name: "刺破总锁仓价值的面纱：去中心化金融价值重估" }),
+    ).toHaveAttribute("href", "https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1");
     // SSRN and ArXiv are both preprint repositories.
     expect(screen.getAllByRole("link", { name: "预印" }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("link", { name: "SSRN" })).not.toBeInTheDocument();

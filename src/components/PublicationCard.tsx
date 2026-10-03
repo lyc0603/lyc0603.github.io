@@ -12,6 +12,7 @@ interface PublicationCardProps {
   badge?: string;
   badgeColor?: string;
   title: string;
+  url?: string;
   authors: string;
   venue?: string;
   venueUrl?: string;
@@ -83,6 +84,7 @@ const PublicationCard = ({
   badge,
   badgeColor,
   title,
+  url,
   authors,
   venue,
   venueUrl,
@@ -119,7 +121,15 @@ const PublicationCard = ({
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-foreground leading-snug">{title}</h3>
+          <h3 className="font-semibold text-foreground leading-snug">
+            {url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-link">
+                {title}
+              </a>
+            ) : (
+              title
+            )}
+          </h3>
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
