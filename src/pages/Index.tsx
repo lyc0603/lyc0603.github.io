@@ -80,6 +80,7 @@ const Index = () => {
                     title={t(paper.title)}
                     authors={t(paper.authors)}
                     venue={paper.venue}
+                    venueUrl={paper.venueUrl}
                     year={paper.year}
                     presentations={paper.presentations}
                     links={paper.links}
@@ -108,6 +109,7 @@ const Index = () => {
                     title={t(paper.title)}
                     authors={t(paper.authors)}
                     venue={paper.venue}
+                    venueUrl={paper.venueUrl}
                     year={paper.year}
                     presentations={paper.presentations}
                     links={paper.links}

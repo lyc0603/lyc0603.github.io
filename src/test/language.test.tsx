@@ -81,7 +81,7 @@ describe("language switching", () => {
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
     // Venue names stay in English on both versions.
     expect(
-      screen.getByText(/Financial Cryptography and Data Security, 2025/),
+      screen.getByRole("link", { name: "Financial Cryptography and Data Security" }),
     ).toBeInTheDocument();
   });
 
@@ -122,6 +122,24 @@ describe("language switching", () => {
 
     expect(screen.getByRole("dialog")).toHaveTextContent("BibTeX 引用");
     expect(screen.getByRole("dialog")).toHaveTextContent("luo2026resisting");
+  });
+
+  it("links conferences to their programs and spells out their names", () => {
+    renderAt("/");
+
+    expect(screen.getByRole("link", { name: "The ACM Web Conference (Oral)" })).toHaveAttribute(
+      "href",
+      "https://www2026.thewebconf.org/program/full-schedule.html",
+    );
+    expect(
+      screen.getByRole("link", { name: "Financial Cryptography and Data Security" }),
+    ).toHaveAttribute("href", "https://fc25.ifca.ai/program.html");
+    expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference" })).toHaveAttribute(
+      "href",
+      "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",
+    );
+    expect(screen.getByText(/Sydney Banking and Financial Stability Conference/)).toBeInTheDocument();
+    expect(screen.queryByText(/\bSBFC\b/)).not.toBeInTheDocument();
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

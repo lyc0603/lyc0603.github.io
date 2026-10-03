@@ -14,8 +14,9 @@ interface PublicationCardProps {
   title: string;
   authors: string;
   venue?: string;
+  venueUrl?: string;
   year?: string;
-  presentations?: { name: string; year?: string }[];
+  presentations?: { name: string; year?: string; url?: string }[];
   links?: { label: string; url: string }[];
   abstract?: string;
   visualizationUrl?: string;
@@ -68,12 +69,23 @@ const BibTexDisplay = ({ bibtex }: { bibtex: string }) => {
   );
 };
 
+/** A conference name, linked to its program when we have one. */
+const ConferenceName = ({ name, url }: { name: string; url?: string }) =>
+  url ? (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      {name}
+    </a>
+  ) : (
+    <>{name}</>
+  );
+
 const PublicationCard = ({
   badge,
   badgeColor,
   title,
   authors,
   venue,
+  venueUrl,
   year,
   presentations = [],
   links = [],
@@ -111,12 +123,19 @@ const PublicationCard = ({
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              {venue}{year && `, ${year}`}
+              <ConferenceName name={venue} url={venueUrl} />{year && `, ${year}`}
             </p>
           )}
           {presentations.length > 0 && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              {t(ui.presentation)}: {presentations.map((p) => p.name + (p.year ? ` (${p.year})` : '')).join(', ')}
+              {t(ui.presentation)}:{' '}
+              {presentations.map((p, i) => (
+                <span key={p.name}>
+                  {i > 0 && ', '}
+                  <ConferenceName name={p.name} url={p.url} />
+                  {p.year && ` (${p.year})`}
+                </span>
+              ))}
             </p>
           )}
 

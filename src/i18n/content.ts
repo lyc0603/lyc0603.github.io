@@ -77,8 +77,10 @@ export interface Paper {
   authors: Localized;
   /** Venue and conference names are never translated. */
   venue?: string;
+  /** The conference program listing this paper. */
+  venueUrl?: string;
   year?: string;
-  presentations?: { name: string; year?: string }[];
+  presentations?: { name: string; year?: string; url?: string }[];
   links?: { label: string; url: string }[];
   abstract: Localized;
   bibtex?: string;
@@ -106,6 +108,7 @@ export const publications: Paper[] = [
       zh: '罗奕辰、冯业博、徐家画、刘杨',
     },
     venue: 'The ACM Web Conference (Oral)',
+    venueUrl: 'https://www2026.thewebconf.org/program/full-schedule.html',
     year: '2026',
     abstract: {
       en: 'This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.',
@@ -142,6 +145,7 @@ export const publications: Paper[] = [
       zh: '罗奕辰、冯业博、徐家画、Paolo Tasca',
     },
     venue: 'Financial Cryptography and Data Security',
+    venueUrl: 'https://fc25.ifca.ai/program.html',
     year: '2025',
     abstract: {
       en: 'The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi.',
@@ -233,7 +237,13 @@ export const workingPapers: Paper[] = [
       zh: '罗奕辰、徐家画、叶乔治、Kathy Yuan',
     },
     year: '2026',
-    presentations: [{ name: 'Nanyang Blockchain Conference', year: '2026' }],
+    presentations: [
+      {
+        name: 'Nanyang Blockchain Conference',
+        year: '2026',
+        url: 'https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference',
+      },
+    ],
     links: [
       {
         label: 'SSRN',
@@ -264,7 +274,7 @@ export const workingPapers: Paper[] = [
       zh: '罗奕辰、丁文治、徐家画、林晨',
     },
     year: '2025',
-    presentations: [{ name: 'SBFC', year: '2025' }],
+    presentations: [{ name: 'Sydney Banking and Financial Stability Conference', year: '2025' }],
     links: [
       {
         label: 'SSRN',
