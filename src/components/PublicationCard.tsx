@@ -69,7 +69,7 @@ const BibTexDisplay = ({ bibtex }: { bibtex: string }) => {
   );
 };
 
-/** A conference name, linked to its program when we have one. */
+/** A conference name and its year, linked together to the program when we have one. */
 const ConferenceName = ({ name, url }: { name: string; url?: string }) =>
   url ? (
     <a href={url} target="_blank" rel="noopener noreferrer">
@@ -123,7 +123,7 @@ const PublicationCard = ({
           <p className="text-sm text-muted-foreground mt-1">{authors}</p>
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
-              <ConferenceName name={venue} url={venueUrl} />{year && `, ${year}`}
+              <ConferenceName name={year ? `${venue}, ${year}` : venue} url={venueUrl} />
             </p>
           )}
           {presentations.length > 0 && (
@@ -132,8 +132,7 @@ const PublicationCard = ({
               {presentations.map((p, i) => (
                 <span key={p.name}>
                   {i > 0 && ', '}
-                  <ConferenceName name={p.name} url={p.url} />
-                  {p.year && ` (${p.year})`}
+                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
                 </span>
               ))}
             </p>

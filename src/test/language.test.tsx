@@ -81,7 +81,7 @@ describe("language switching", () => {
     expect(screen.getByText(/可赎回总价值/)).toBeInTheDocument();
     // Venue names stay in English on both versions.
     expect(
-      screen.getByRole("link", { name: "Financial Cryptography and Data Security" }),
+      screen.getByRole("link", { name: "Financial Cryptography and Data Security, 2025" }),
     ).toBeInTheDocument();
   });
 
@@ -127,19 +127,19 @@ describe("language switching", () => {
   it("links conferences to their programs and spells out their names", () => {
     renderAt("/");
 
-    expect(screen.getByRole("link", { name: "The ACM Web Conference (Oral)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "The ACM Web Conference (Oral), 2026" })).toHaveAttribute(
       "href",
       "https://www2026.thewebconf.org/program/full-schedule.html",
     );
     expect(
-      screen.getByRole("link", { name: "Financial Cryptography and Data Security" }),
+      screen.getByRole("link", { name: "Financial Cryptography and Data Security, 2025" }),
     ).toHaveAttribute("href", "https://fc25.ifca.ai/program.html");
-    expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference (2026)" })).toHaveAttribute(
       "href",
       "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",
     );
     expect(
-      screen.getByRole("link", { name: "Sydney Banking and Financial Stability Conference" }),
+      screen.getByRole("link", { name: "Sydney Banking and Financial Stability Conference (2025)" }),
     ).toHaveAttribute(
       "href",
       "https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/",
