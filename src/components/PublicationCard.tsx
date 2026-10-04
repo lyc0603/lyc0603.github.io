@@ -147,9 +147,9 @@ const PublicationCard = ({
             </div>
           )}
 
-          {/* Abstract */}
+          {/* Abstract. Words hyphenate at line breaks, as in the LaTeX CV; this relies on <html lang>. */}
           {abstract && (
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed hyphens-auto">
               {abstract}
             </p>
           )}
