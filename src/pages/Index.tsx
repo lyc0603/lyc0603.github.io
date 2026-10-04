@@ -83,6 +83,7 @@ const Index = () => {
                     venueUrl={paper.venueUrl}
                     year={paper.year}
                     presentations={paper.presentations}
+                    mediaCoverage={paper.mediaCoverage}
                     links={paper.links}
                     abstract={t(paper.abstract)}
                     bibtex={paper.bibtex}
@@ -112,6 +113,7 @@ const Index = () => {
                     venueUrl={paper.venueUrl}
                     year={paper.year}
                     presentations={paper.presentations}
+                    mediaCoverage={paper.mediaCoverage}
                     links={paper.links}
                     abstract={t(paper.abstract)}
                     bibtex={paper.bibtex}

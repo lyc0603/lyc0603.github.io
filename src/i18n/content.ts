@@ -27,6 +27,7 @@ export const ui = {
   navWorkingPapers: { en: 'Working Papers', zh: '工作论文' },
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
+  mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
 
@@ -82,6 +83,8 @@ export interface Paper {
   venueUrl?: string;
   year?: string;
   presentations?: { name: string; year?: string; url?: string }[];
+  /** Outlet names stay untranslated, like venue names. */
+  mediaCoverage?: { name: string; url: string }[];
   links?: { label: string; url: string }[];
   abstract: Localized;
   bibtex?: string;
@@ -151,6 +154,13 @@ export const publications: Paper[] = [
     year: '2025',
     presentations: [
       {
+        name: 'XRP Ledger Apex',
+        year: '2025',
+        // Singapore, 10-12 June 2025. The official site is down and its agenda never
+        // listed talks; UK CBT's write-up is the record of this one.
+        url: 'https://www.ukcbt.org/post/uk-cbt-presents-xrp-ledger-apex-2025-singapore',
+      },
+      {
         name: 'Frontiers in DeFi',
         year: '2025',
         // HTW Berlin, 18 September 2025, Morning Session 1.
@@ -196,6 +206,13 @@ export const publications: Paper[] = [
     venue: 'Financial Innovation',
     venueUrl: 'https://link.springer.com/journal/40854',
     year: '2024',
+    mediaCoverage: [
+      {
+        name: 'Sing Tao Daily',
+        // 星島頭條, 3 April 2025.
+        url: 'https://www.stheadline.com/esg/3443454/ESG%E9%AB%98%E5%88%86%E6%81%90%E6%88%90%E9%9B%99%E5%88%83%E5%8A%8D%E9%86%9C%E8%81%9E%E6%A9%9F%E7%8E%87%E4%BD%8E%E6%96%BC%E5%90%8C%E6%A5%AD-%E4%B8%80%E6%97%A6%E5%87%BA%E4%BA%8B%E5%8D%BB%E8%A1%9D%E6%93%8A%E6%9B%B4%E5%A4%A7',
+      },
+    ],
     abstract: {
       en: 'High ESG scores can lower the probability of an ESG scandal but can also incur higher losses if one occurs. Based on a theoretical model, the firm has two equilibria of the optimal ESG investment level - not doing at all or doing a lot.',
       zh: '较高的 ESG（环境社会治理）评分能够降低 ESG 丑闻发生的概率，但一旦丑闻发生，损失也会更大。基于理论模型，企业的最优 ESG 投入水平存在两个均衡——要么完全不投入，要么大量投入。',

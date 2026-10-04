@@ -17,6 +17,7 @@ interface PublicationCardProps {
   venueUrl?: string;
   year?: string;
   presentations?: { name: string; year?: string; url?: string }[];
+  mediaCoverage?: { name: string; url: string }[];
   links?: { label: string; url: string }[];
   abstract?: string;
   visualizationUrl?: string;
@@ -88,6 +89,7 @@ const PublicationCard = ({
   venueUrl,
   year,
   presentations = [],
+  mediaCoverage = [],
   links = [],
   abstract,
   visualizationUrl,
@@ -160,6 +162,17 @@ const PublicationCard = ({
                 <span key={p.name}>
                   {i > 0 && ', '}
                   <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
+                </span>
+              ))}
+            </p>
+          )}
+          {mediaCoverage.length > 0 && (
+            <p className="text-sm text-muted-foreground italic mt-1">
+              {t(ui.mediaCoverage)}:{' '}
+              {mediaCoverage.map((m, i) => (
+                <span key={m.name}>
+                  {i > 0 && ', '}
+                  <ConferenceName name={m.name} url={m.url} />
                 </span>
               ))}
             </p>

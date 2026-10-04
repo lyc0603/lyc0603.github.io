@@ -111,6 +111,7 @@ describe("language switching", () => {
       screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/^Presented at:/).length).toBe(3);
+    expect(screen.getAllByText(/^Media Coverage:/).length).toBe(1);
   });
 
   it("translates the link buttons that are English words", () => {
@@ -166,6 +167,22 @@ describe("language switching", () => {
       "href",
       "https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf",
     );
+  });
+
+  it("lists XRP Ledger Apex and the Sing Tao Daily coverage", () => {
+    const { unmount } = renderAt("/");
+    expect(screen.getByRole("link", { name: "XRP Ledger Apex (2025)" })).toHaveAttribute(
+      "href",
+      "https://www.ukcbt.org/post/uk-cbt-presents-xrp-ledger-apex-2025-singapore",
+    );
+    expect(screen.getByRole("link", { name: "Sing Tao Daily" }).getAttribute("href")).toMatch(
+      /^https:\/\/www\.stheadline\.com\/esg\/3443454\//,
+    );
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByText(/^媒体报道:/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sing Tao Daily" })).toBeInTheDocument();
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {
