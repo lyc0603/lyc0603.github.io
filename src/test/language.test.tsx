@@ -111,7 +111,7 @@ describe("language switching", () => {
       screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/^Presented at:/).length).toBe(3);
-    expect(screen.getAllByText(/^Media Coverage:/).length).toBe(1);
+    expect(screen.getAllByText(/^Media Coverage:/).length).toBe(2);
   });
 
   it("translates the link buttons that are English words", () => {
@@ -133,26 +133,26 @@ describe("language switching", () => {
     expect(screen.getByRole("dialog")).toHaveTextContent("luo2026resisting");
   });
 
-  it("links conferences to their programs and spells out their names", () => {
+  it("links venues to the paper and conferences to their programs", () => {
     renderAt("/");
 
     expect(screen.getByRole("link", { name: /^The ACM Web Conference \(Oral\)\s*, 2026$/ })).toHaveAttribute(
       "href",
-      "https://www2026.thewebconf.org/program/full-schedule.html",
+      "https://dl.acm.org/doi/10.1145/3774904.3792635",
     );
     expect(
       screen.getByRole("link", { name: /^Financial Cryptography and Data Security\s*, 2025$/ }),
-    ).toHaveAttribute("href", "https://fc25.ifca.ai/program.html");
+    ).toHaveAttribute("href", "https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1");
     expect(screen.getByRole("link", { name: /^Financial Innovation\s*, 2024$/ })).toHaveAttribute(
       "href",
-      "https://link.springer.com/journal/40854",
+      "https://link.springer.com/article/10.1186/s40854-024-00635-1",
     );
-    expect(screen.getByRole("link", { name: /^Nanyang Blockchain Conference\s*\(2026\)$/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Nanyang Blockchain Conference 2026" })).toHaveAttribute(
       "href",
       "https://www.ntu.edu.sg/cctf/cctf-community/2026-nanyang-blockchain-conference",
     );
     expect(
-      screen.getByRole("link", { name: /^Sydney Banking and Financial Stability Conference\s*\(2025\)$/ }),
+      screen.getByRole("link", { name: "Sydney Banking and Financial Stability Conference 2025" }),
     ).toHaveAttribute(
       "href",
       "https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/",
@@ -163,7 +163,7 @@ describe("language switching", () => {
   it("lists the TVL paper's Frontiers in DeFi presentation", () => {
     renderAt("/");
 
-    expect(screen.getByRole("link", { name: "Frontiers in DeFi (2025)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Frontiers in DeFi 2025" })).toHaveAttribute(
       "href",
       "https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf",
     );
@@ -171,7 +171,7 @@ describe("language switching", () => {
 
   it("lists XRP Ledger Apex and the Sing Tao Daily coverage", () => {
     const { unmount } = renderAt("/");
-    expect(screen.getByRole("link", { name: "XRP Ledger Apex (2025)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "XRP Ledger Apex 2025" })).toHaveAttribute(
       "href",
       "https://www.ukcbt.org/post/uk-cbt-presents-xrp-ledger-apex-2025-singapore",
     );
@@ -181,8 +181,20 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText(/^媒体报道:/)).toBeInTheDocument();
+    expect(screen.getAllByText(/^媒体报道:/).length).toBe(2);
     expect(screen.getByRole("link", { name: "Sing Tao Daily" })).toBeInTheDocument();
+  });
+
+  it("orders the TVL talks Frontiers in DeFi first, without parentheses, and lists The Capital", () => {
+    renderAt("/");
+
+    const lines = screen.getAllByText(/^Presented at:/).map((p) => p.textContent);
+    expect(lines).toContain("Presented at: Frontiers in DeFi 2025, XRP Ledger Apex 2025");
+    expect(screen.queryByText(/\((2024|2025|2026)\)/)).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "The Capital" })).toHaveAttribute(
+      "href",
+      "https://medium.com/thecapital/correlation-isnt-causation-the-5-most-misleading-metrics-in-on-chain-analytics-8625b8cadb6e",
+    );
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

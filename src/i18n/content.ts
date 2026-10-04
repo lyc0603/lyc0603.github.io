@@ -74,12 +74,10 @@ export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
   title: Localized;
-  /** The published version. Not shown on the page at the moment. */
-  url?: string;
   authors: Localized;
   /** Venue and conference names are never translated. */
   venue?: string;
-  /** The conference program, or the journal's home page. */
+  /** The paper's page at the publisher; the venue name links here. */
   venueUrl?: string;
   year?: string;
   presentations?: { name: string; year?: string; url?: string }[];
@@ -107,13 +105,12 @@ export const publications: Paper[] = [
       en: 'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
       zh: '抵御迷因币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
     },
-    url: 'https://dl.acm.org/doi/10.1145/3774904.3792635',
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Yang Liu',
       zh: '罗奕辰、冯业博、徐家画、刘杨',
     },
     venue: 'The ACM Web Conference (Oral)',
-    venueUrl: 'https://www2026.thewebconf.org/program/full-schedule.html',
+    venueUrl: 'https://dl.acm.org/doi/10.1145/3774904.3792635',
     year: '2026',
     abstract: {
       en: 'This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.',
@@ -144,15 +141,20 @@ export const publications: Paper[] = [
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
       zh: '刺破总锁仓价值的面纱：去中心化金融价值重估',
     },
-    url: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1',
     authors: {
       en: 'Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca',
       zh: '罗奕辰、冯业博、徐家画、Paolo Tasca',
     },
     venue: 'Financial Cryptography and Data Security',
-    venueUrl: 'https://fc25.ifca.ai/program.html',
+    venueUrl: 'https://link.springer.com/chapter/10.1007/978-3-032-07035-7_1',
     year: '2025',
     presentations: [
+      {
+        name: 'Frontiers in DeFi',
+        year: '2025',
+        // HTW Berlin, 18 September 2025, Morning Session 1.
+        url: 'https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf',
+      },
       {
         name: 'XRP Ledger Apex',
         year: '2025',
@@ -160,11 +162,12 @@ export const publications: Paper[] = [
         // listed talks; UK CBT's write-up is the record of this one.
         url: 'https://www.ukcbt.org/post/uk-cbt-presents-xrp-ledger-apex-2025-singapore',
       },
+    ],
+    mediaCoverage: [
       {
-        name: 'Frontiers in DeFi',
-        year: '2025',
-        // HTW Berlin, 18 September 2025, Morning Session 1.
-        url: 'https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf',
+        name: 'The Capital',
+        // "Correlation Isn't Causation", by ChangeNOW.io on Medium, 13 July 2026.
+        url: 'https://medium.com/thecapital/correlation-isnt-causation-the-5-most-misleading-metrics-in-on-chain-analytics-8625b8cadb6e',
       },
     ],
     abstract: {
@@ -198,13 +201,12 @@ export const publications: Paper[] = [
       en: 'ESG Scores, Scandal Probability, and Event Returns',
       zh: 'ESG 评分、丑闻概率与事件收益',
     },
-    url: 'https://link.springer.com/article/10.1186/s40854-024-00635-1',
     authors: {
       en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
       zh: '罗奕辰、孙文雅、姚兆明、俞路平、丁文治',
     },
     venue: 'Financial Innovation',
-    venueUrl: 'https://link.springer.com/journal/40854',
+    venueUrl: 'https://link.springer.com/article/10.1186/s40854-024-00635-1',
     year: '2024',
     mediaCoverage: [
       {

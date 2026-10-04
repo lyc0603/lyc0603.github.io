@@ -161,7 +161,7 @@ const PublicationCard = ({
               {presentations.map((p, i) => (
                 <span key={p.name}>
                   {i > 0 && ', '}
-                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
+                  <ConferenceName name={p.year ? `${p.name} ${p.year}` : p.name} url={p.url} />
                 </span>
               ))}
             </p>
