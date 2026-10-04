@@ -126,17 +126,6 @@ const PublicationCard = ({
               <ConferenceName name={year ? `${venue}, ${year}` : venue} url={venueUrl} />
             </p>
           )}
-          {presentations.length > 0 && (
-            <p className="text-sm text-muted-foreground italic mt-1">
-              {t(ui.presentation)}:{' '}
-              {presentations.map((p, i) => (
-                <span key={p.name}>
-                  {i > 0 && ', '}
-                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
-                </span>
-              ))}
-            </p>
-          )}
 
           {/* Links */}
           {links.length > 0 && (
@@ -160,6 +149,19 @@ const PublicationCard = ({
           {abstract && (
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               {abstract}
+            </p>
+          )}
+
+          {/* Presented at, below the abstract */}
+          {presentations.length > 0 && (
+            <p className="text-sm text-muted-foreground italic mt-2">
+              {t(ui.presentation)}:{' '}
+              {presentations.map((p, i) => (
+                <span key={p.name}>
+                  {i > 0 && ', '}
+                  <ConferenceName name={p.year ? `${p.name} (${p.year})` : p.name} url={p.url} />
+                </span>
+              ))}
             </p>
           )}
         </div>
