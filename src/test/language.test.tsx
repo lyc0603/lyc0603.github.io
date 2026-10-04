@@ -110,7 +110,7 @@ describe("language switching", () => {
     expect(
       screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
     ).toBeInTheDocument();
-    expect(screen.getAllByText(/^Presented at:/).length).toBe(3);
+    expect(screen.getAllByText(/^Presented at:/).length).toBe(4);
     expect(screen.getAllByText(/^Media Coverage:/).length).toBe(2);
   });
 
@@ -194,6 +194,15 @@ describe("language switching", () => {
     expect(screen.getByRole("link", { name: "The Capital" })).toHaveAttribute(
       "href",
       "https://medium.com/thecapital/correlation-isnt-causation-the-5-most-misleading-metrics-in-on-chain-analytics-8625b8cadb6e",
+    );
+  });
+
+  it("lists the WWW'26 paper's NUS Computing seminar", () => {
+    renderAt("/");
+
+    expect(screen.getByRole("link", { name: "NUS Computing Seminar 2026" })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/posts/ubri-ugcPost-7497884809332178944-9Cvf/",
     );
   });
 

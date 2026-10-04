@@ -112,6 +112,15 @@ export const publications: Paper[] = [
     venue: 'The ACM Web Conference (Oral)',
     venueUrl: 'https://dl.acm.org/doi/10.1145/3774904.3792635',
     year: '2026',
+    presentations: [
+      {
+        name: 'NUS Computing Seminar',
+        year: '2026',
+        // NUS publishes no listing for the seminar; UK CBT's post of 25 August 2026
+        // is the record of the talk.
+        url: 'https://www.linkedin.com/posts/ubri-ugcPost-7497884809332178944-9Cvf/',
+      },
+    ],
     abstract: {
       en: 'This paper studies how manipulative bots exploit copy trading in illiquid meme coin markets and introduces a defense framework based on a multi-agent system powered by multimodal large language models (LLMs) and structured chain-of-thought (CoT) reasoning.',
       zh: '本文研究操纵型机器人如何在流动性匮乏的迷因币市场中利用跟单交易牟利，并提出一套防御框架：以多模态大语言模型（LLM）驱动的多智能体系统，结合结构化的思维链（CoT）推理。',
