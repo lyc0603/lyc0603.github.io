@@ -110,7 +110,7 @@ describe("language switching", () => {
     expect(
       screen.getByRole("heading", { name: "Piercing the Veil of TVL: DeFi Reappraised" }),
     ).toBeInTheDocument();
-    expect(screen.getAllByText(/^Presented at:/).length).toBe(2);
+    expect(screen.getAllByText(/^Presented at:/).length).toBe(3);
   });
 
   it("translates the link buttons that are English words", () => {
@@ -157,6 +157,15 @@ describe("language switching", () => {
       "https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/",
     );
     expect(screen.queryByText(/\bSBFC\b/)).not.toBeInTheDocument();
+  });
+
+  it("lists the TVL paper's Frontiers in DeFi presentation", () => {
+    renderAt("/");
+
+    expect(screen.getByRole("link", { name: "Frontiers in DeFi (2025)" })).toHaveAttribute(
+      "href",
+      "https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf",
+    );
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

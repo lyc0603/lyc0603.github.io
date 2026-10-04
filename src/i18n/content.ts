@@ -149,6 +149,14 @@ export const publications: Paper[] = [
     venue: 'Financial Cryptography and Data Security',
     venueUrl: 'https://fc25.ifca.ai/program.html',
     year: '2025',
+    presentations: [
+      {
+        name: 'Frontiers in DeFi',
+        year: '2025',
+        // HTW Berlin, 18 September 2025, Morning Session 1.
+        url: 'https://events.htw-berlin.de/files/Stg/WIKO/Frontiers_in_DeFi/20250821_Programm_DeFi_2025.pdf',
+      },
+    ],
     abstract: {
       en: 'The Total Value Locked (TVL) metric in DeFi is manipulable and systematically distorted due to double counting. We propose Total Value Redeemable (TVR) to measures the truly withdrawable economic value of DeFi.',
       zh: 'DeFi（去中心化金融）中的总锁仓价值（TVL）指标易被操纵，并因重复计算而系统性失真。我们提出可赎回总价值（TVR），用以衡量 DeFi 中真正可提取的经济价值。',
