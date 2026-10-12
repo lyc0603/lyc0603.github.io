@@ -18,7 +18,7 @@ export const ui = {
   name: { en: 'Yichen Luo', zh: '罗奕辰' },
   researchField: { en: 'Blockchain & DeFi', zh: '区块链与去中心化金融' },
   about: { en: 'About Me', zh: '关于我' },
-  position: { en: 'Current Position', zh: '现任职位' },
+  position: { en: 'Positions', zh: '任职经历' },
   education: { en: 'Education', zh: '教育背景' },
   publications: { en: 'Publications', zh: '发表论文' },
   workingPapers: { en: 'Working Papers', zh: '工作论文' },
@@ -50,15 +50,19 @@ export const aboutText: Localized = {
 
 export const positions: Localized[] = [
   {
-    en: 'Visiting Scholar, HKU Business School, 2026, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
-    zh: '访问学者，香港大学经济及工商管理学院，2026 年，合作导师：林晨教授、丁文治教授',
+    en: 'Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
+    zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
+  },
+  {
+    en: 'Visiting Scholar, HKU Business School, 01/2026 - 07/2026',
+    zh: '访问学者，香港大学经济及工商管理学院，2026 年 1 月 - 2026 年 7 月',
   },
 ];
 
 export const education: Localized[] = [
   {
-    en: 'Ph.D. in Computer Science, UCL, 2024 - Now',
-    zh: '计算机科学博士，伦敦大学学院（UCL），2024 年至今',
+    en: 'Ph.D. in Computer Science, UCL, 2024 - 2026',
+    zh: '计算机科学博士，伦敦大学学院（UCL），2024 - 2026',
   },
   {
     en: 'M.Sc. in Banking and Digital Finance, UCL, 2022 - 2023',

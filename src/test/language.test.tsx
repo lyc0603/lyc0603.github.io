@@ -206,6 +206,19 @@ describe("language switching", () => {
     );
   });
 
+  it("shows the HKU postdoc and the completed PhD", () => {
+    const { unmount } = renderAt("/");
+    expect(screen.getByRole("heading", { name: "Positions" })).toBeInTheDocument();
+    expect(screen.getByText(/^Postdoctoral Fellow, HKU Business School, 2026 - Now/)).toBeInTheDocument();
+    expect(screen.getByText("Visiting Scholar, HKU Business School, 01/2026 - 07/2026")).toBeInTheDocument();
+    expect(screen.getByText("Ph.D. in Computer Science, UCL, 2024 - 2026")).toBeInTheDocument();
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByRole("heading", { name: "任职经历" })).toBeInTheDocument();
+    expect(screen.getByText(/^博士后研究员，香港大学经济及工商管理学院/)).toBeInTheDocument();
+  });
+
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");
 
