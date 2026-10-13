@@ -23,14 +23,14 @@ const ProfileSidebar = () => {
         {/* Name and Info */}
         <div className="text-center space-y-0.5">
           <h1 className="text-lg font-semibold">{t(ui.name)}</h1>
-          <p className="text-sm text-muted-foreground">yichen.luo.22@ucl.ac.uk</p>
+          <p className="text-sm text-muted-foreground">ycluo@hku.hk</p>
           <p className="text-sm text-muted-foreground">{t(ui.researchField)}</p>
         </div>
 
         {/* Social Links */}
         <div className="flex justify-center gap-3">
           <a
-            href="mailto:yichen.luo.22@ucl.ac.uk"
+            href="mailto:ycluo@hku.hk"
             className="p-2 rounded-md hover:bg-secondary transition-colors text-foreground"
             aria-label="Email"
           >

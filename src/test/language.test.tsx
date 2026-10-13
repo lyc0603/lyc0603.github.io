@@ -208,6 +208,8 @@ describe("language switching", () => {
 
   it("shows the HKU postdoc and the completed PhD", () => {
     const { unmount } = renderAt("/");
+    expect(screen.getByText("ycluo@hku.hk")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:ycluo@hku.hk");
     expect(screen.getByRole("heading", { name: "Positions" })).toBeInTheDocument();
     expect(screen.getByText(/^Postdoctoral Fellow, HKU Business School, 2026 - Now/)).toBeInTheDocument();
     expect(screen.getByText("Visiting Scholar, HKU Business School, 01/2026 - 07/2026")).toBeInTheDocument();
