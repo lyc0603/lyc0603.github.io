@@ -233,7 +233,8 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("Hai Lu、罗奕辰、俞路平")).toBeInTheDocument();
+    expect(screen.getByText("卢海、罗奕辰、俞路平")).toBeInTheDocument();
+    expect(screen.getByAltText("llm_referee")).toHaveAttribute("src", "/asset/visualization/llm_referee.png");
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

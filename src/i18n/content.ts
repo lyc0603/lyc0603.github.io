@@ -270,7 +270,7 @@ export const workingPapers: Paper[] = [
     },
     authors: {
       en: 'Hai Lu, Yichen Luo, Luping Yu',
-      zh: 'Hai Lu、罗奕辰、俞路平',
+      zh: '卢海、罗奕辰、俞路平',
     },
     year: '2026',
     links: [
@@ -281,8 +281,15 @@ export const workingPapers: Paper[] = [
       { label: 'PDF', url: '/asset/pdf/llm_referee.pdf' },
     ],
     abstract: {
-      en: "Referees increasingly use large language models (LLMs), while finance and accounting journals disagree about whether to allow it. We ask which part of a referee's job the models can do. GPT-4o, whose training data end before the 2024 conference season, referees the papers presented at the 2024 AFA and NBER finance meetings, and we compare its verdicts with publication in the top-three finance journals over the next two years. Papers the model scores one standard deviation higher are 44% more likely to be published, net of author reputation. The result is not driven by look-ahead bias, as the model does not recall the outcomes. The information comes from its judgements of correctness and exposition. Its judgements of originality and significance carry none, and a referee guide that stresses importance does not help. The split between correctness and contribution holds for accounting papers and for a newer model, GPT-5. LLMs can check whether research is right, but not whether it matters. The technical check can go to the model, while the judgement of contribution stays with people.",
-      zh: '审稿人越来越多地使用大语言模型（LLM），而金融与会计学期刊对是否允许这样做意见不一。我们研究模型能胜任审稿工作的哪一部分。我们让训练数据截止于 2024 年会议季之前的 GPT-4o 评审 2024 年 AFA（美国金融学会）年会与 NBER（美国国家经济研究局）金融会议上报告的论文，并将其评审结论与这些论文此后两年内在金融学三大顶级期刊的发表情况相比较。在控制作者声誉后，模型评分高一个标准差的论文发表概率高出 44%。这一结果并非源于前瞻偏差，因为模型并不记得论文的结局。信息来自模型对正确性与表述的判断；它对原创性与重要性的判断不含信息，强调重要性的审稿指南也无济于事。正确性与贡献之间的这一区分同样适用于会计学论文和更新的 GPT-5。大语言模型能检验研究是否正确，却无法判断它是否重要。技术核查可以交给模型，而对贡献的判断仍应由人来完成。',
+      en: 'GPT-4o, whose training data end before the 2024 conference season, referees the papers of the 2024 AFA and NBER finance meetings. Net of author reputation, papers it scores one standard deviation higher are 44% more likely to appear in a top-three finance journal, and the information comes from its judgements of correctness and exposition, not of originality or significance. LLMs can check whether research is right, but not whether it matters.',
+      zh: '我们让训练数据截止于 2024 年会议季之前的 GPT-4o 评审 2024 年 AFA 与 NBER 金融会议的论文。在控制作者声誉后，模型评分高一个标准差的论文在金融学三大顶级期刊发表的概率高出 44%；这一信息来自模型对正确性与表述的判断，而非对原创性与重要性的判断。大语言模型能检验研究是否正确，却无法判断它是否重要。',
+    },
+    // Table 3 of the paper: GPT-4o, Top3Fin, N = 276.
+    visualizationUrl: '/asset/visualization/llm_referee.png',
+    visualizationAlt: 'llm_referee',
+    visualizationCaption: {
+      en: 'Effect of Each GPT-4o Score on Top-3 Publication, with 95% CIs',
+      zh: 'GPT-4o 各项评分对顶刊发表的影响及 95% 置信区间',
     },
   },
   {
