@@ -219,6 +219,23 @@ describe("language switching", () => {
     expect(screen.getByText(/^博士后研究员，香港大学经济及工商管理学院/)).toBeInTheDocument();
   });
 
+  it("lists the LLM peer-review working paper first", () => {
+    const { unmount } = renderAt("/");
+    const section = screen.getByRole("heading", { name: "Working Papers" }).closest("section") as HTMLElement;
+    const titles = within(section).getAllByRole("heading", { level: 3 }).map((h) => h.textContent);
+    expect(titles[0]).toBe(
+      "How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting",
+    );
+    expect(within(section).getAllByRole("link", { name: "SSRN" })[0]).toHaveAttribute(
+      "href",
+      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7607363",
+    );
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByText("Hai Lu、罗奕辰、俞路平")).toBeInTheDocument();
+  });
+
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");
 
