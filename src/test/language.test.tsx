@@ -235,8 +235,27 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("卢海、罗奕辰、俞路平")).toBeInTheDocument();
+    expect(screen.getByText("合作者：卢海、俞路平")).toBeInTheDocument();
     expect(screen.getByAltText("llm_referee")).toHaveAttribute("src", "/asset/visualization/llm_referee.png");
+  });
+
+  it("lists finance co-authors as 'with ...' and computer science authors in full", () => {
+    const { unmount } = renderAt("/");
+    for (const line of [
+      "with Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding",
+      "with Hai Lu, Luping Yu",
+      "with Jiahua Xu, Qiaozhi Ye, Kathy Yuan",
+      "with Wenzhi Ding, Jiahua Xu, Chen Lin",
+    ]) {
+      expect(screen.getByText(line)).toBeInTheDocument();
+    }
+    expect(screen.getAllByText(/^with /).length).toBe(4);
+    expect(screen.getByText("Yichen Luo, Yebo Feng, Jiahua Xu, Paolo Tasca")).toBeInTheDocument();
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByText("合作者：丁文治、徐家画、林晨")).toBeInTheDocument();
+    expect(screen.getAllByText(/^合作者：/).length).toBe(4);
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

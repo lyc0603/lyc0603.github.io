@@ -78,6 +78,7 @@ export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
   title: Localized;
+  /** Finance papers list co-authors only, as "with ..."; computer science papers list everyone. */
   authors: Localized;
   /** Venue and conference names are never translated. */
   venue?: string;
@@ -215,8 +216,8 @@ export const publications: Paper[] = [
       zh: 'ESG 评分、丑闻概率与事件收益',
     },
     authors: {
-      en: 'Yichen Luo, Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
-      zh: '罗奕辰、孙文雅、姚兆明、俞路平、丁文治',
+      en: 'with Wenya Sun, S.M. Yiu, Luping Yu, Wenzhi Ding',
+      zh: '合作者：孙文雅、姚兆明、俞路平、丁文治',
     },
     venue: 'Financial Innovation',
     venueUrl: 'https://link.springer.com/article/10.1186/s40854-024-00635-1',
@@ -269,8 +270,8 @@ export const workingPapers: Paper[] = [
       zh: '大语言模型在同行评审中表现如何？来自金融与会计学的证据',
     },
     authors: {
-      en: 'Hai Lu, Yichen Luo, Luping Yu',
-      zh: '卢海、罗奕辰、俞路平',
+      en: 'with Hai Lu, Luping Yu',
+      zh: '合作者：卢海、俞路平',
     },
     year: '2026',
     links: [
@@ -300,8 +301,8 @@ export const workingPapers: Paper[] = [
       zh: '小股东有话语权吗？去中心化自治组织治理中的审议、委托与价值',
     },
     authors: {
-      en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
-      zh: '罗奕辰、徐家画、叶乔治、Kathy Yuan',
+      en: 'with Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
+      zh: '合作者：徐家画、叶乔治、Kathy Yuan',
     },
     year: '2026',
     presentations: [
@@ -337,8 +338,8 @@ export const workingPapers: Paper[] = [
       zh: '分解市场操纵策略：来自链上迷因币市场的证据',
     },
     authors: {
-      en: 'Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin',
-      zh: '罗奕辰、丁文治、徐家画、林晨',
+      en: 'with Wenzhi Ding, Jiahua Xu, Chen Lin',
+      zh: '合作者：丁文治、徐家画、林晨',
     },
     year: '2025',
     presentations: [
