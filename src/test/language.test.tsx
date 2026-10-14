@@ -235,25 +235,8 @@ describe("language switching", () => {
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("卢海、罗奕辰、俞路平 (按姓氏字母排序)")).toBeInTheDocument();
+    expect(screen.getByText("卢海、罗奕辰、俞路平")).toBeInTheDocument();
     expect(screen.getByAltText("llm_referee")).toHaveAttribute("src", "/asset/visualization/llm_referee.png");
-  });
-
-  it("lists alphabetical working papers in their official order, with a note", () => {
-    const { unmount } = renderAt("/");
-    for (const line of [
-      "Hai Lu, Yichen Luo, Luping Yu (alphabetical order)",
-      "Wenzhi Ding, Chen Lin, Yichen Luo, Jiahua Xu (alphabetical order)",
-      "Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan (alphabetical order)",
-    ]) {
-      expect(screen.getByText(line)).toBeInTheDocument();
-    }
-    // Papers whose official order is not alphabetical get no note.
-    expect(screen.getAllByText(/\(alphabetical order\)$/).length).toBe(3);
-    unmount();
-
-    renderAt("/zh");
-    expect(screen.getByText("丁文治、林晨、罗奕辰、徐家画 (按姓氏字母排序)")).toBeInTheDocument();
   });
 
   it("no longer lists the Warwick presentation for the DAO paper", () => {

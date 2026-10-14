@@ -79,7 +79,6 @@ const Index = () => {
                     badgeColor={badgeColors[paper.badgeColorKey]}
                     title={t(paper.title)}
                     authors={t(paper.authors)}
-                    alphabetical={paper.alphabetical}
                     venue={paper.venue}
                     venueUrl={paper.venueUrl}
                     year={paper.year}
@@ -110,7 +109,6 @@ const Index = () => {
                     badgeColor={badgeColors[paper.badgeColorKey]}
                     title={t(paper.title)}
                     authors={t(paper.authors)}
-                    alphabetical={paper.alphabetical}
                     venue={paper.venue}
                     venueUrl={paper.venueUrl}
                     year={paper.year}
