@@ -13,6 +13,7 @@ interface PublicationCardProps {
   badgeColor?: string;
   title: string;
   authors: string;
+  alphabetical?: boolean;
   venue?: string;
   venueUrl?: string;
   year?: string;
@@ -85,6 +86,7 @@ const PublicationCard = ({
   badgeColor,
   title,
   authors,
+  alphabetical,
   venue,
   venueUrl,
   year,
@@ -122,7 +124,10 @@ const PublicationCard = ({
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-foreground leading-snug">{title}</h3>
-          <p className="text-sm text-muted-foreground mt-1">{authors}</p>
+          <p className="text-sm text-muted-foreground mt-1">
+            {authors}
+            {alphabetical && ` (${t(ui.alphabetical)})`}
+          </p>
           {venue && (
             <p className="text-sm text-muted-foreground italic mt-1">
               <ConferenceName name={year ? `${venue}, ${year}` : venue} url={venueUrl} />

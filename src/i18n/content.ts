@@ -28,6 +28,7 @@ export const ui = {
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
   mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
+  alphabetical: { en: 'alphabetical order', zh: '按姓氏字母排序' },
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
 
@@ -79,6 +80,8 @@ export interface Paper {
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
   title: Localized;
   authors: Localized;
+  /** The paper itself lists its authors alphabetically; shown as a note after the authors. */
+  alphabetical?: boolean;
   /** Venue and conference names are never translated. */
   venue?: string;
   /** The paper's page at the publisher; the venue name links here. */
@@ -272,6 +275,7 @@ export const workingPapers: Paper[] = [
       en: 'Hai Lu, Yichen Luo, Luping Yu',
       zh: '卢海、罗奕辰、俞路平',
     },
+    alphabetical: true,
     year: '2026',
     links: [
       {
@@ -303,6 +307,7 @@ export const workingPapers: Paper[] = [
       en: 'Yichen Luo, Jiahua Xu, Qiaozhi Ye, Kathy Yuan',
       zh: '罗奕辰、徐家画、叶乔治、Kathy Yuan',
     },
+    alphabetical: true,
     year: '2026',
     presentations: [
       {
@@ -337,9 +342,10 @@ export const workingPapers: Paper[] = [
       zh: '分解市场操纵策略：来自链上迷因币市场的证据',
     },
     authors: {
-      en: 'Yichen Luo, Wenzhi Ding, Jiahua Xu, Chen Lin',
-      zh: '罗奕辰、丁文治、徐家画、林晨',
+      en: 'Wenzhi Ding, Chen Lin, Yichen Luo, Jiahua Xu',
+      zh: '丁文治、林晨、罗奕辰、徐家画',
     },
+    alphabetical: true,
     year: '2025',
     presentations: [
       {
