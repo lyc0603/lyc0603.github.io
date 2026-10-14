@@ -263,8 +263,8 @@ describe("language switching", () => {
     const tagOf = (title: string) =>
       screen.getByRole("heading", { name: title }).closest("div.flex.gap-4")?.querySelector(".field-tag")?.textContent;
     expect(tagOf("Piercing the Veil of TVL: DeFi Reappraised")).toBe("CS");
-    expect(tagOf("ESG Scores, Scandal Probability, and Event Returns")).toBe("Finance");
-    expect(tagOf("How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting")).toBe("Finance");
+    expect(tagOf("ESG Scores, Scandal Probability, and Event Returns")).toBe("Fin");
+    expect(tagOf("How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting")).toBe("Fin");
     expect(document.querySelectorAll(".field-tag-finance").length).toBe(4);
     expect(document.querySelectorAll(".field-tag-cs").length).toBe(3);
     unmount();

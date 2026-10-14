@@ -28,7 +28,7 @@ export const ui = {
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
   mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
-  fieldFinance: { en: 'Finance', zh: '金融' },
+  fieldFinance: { en: 'Fin', zh: '金融' },
   fieldCs: { en: 'CS', zh: '计算机' },
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
