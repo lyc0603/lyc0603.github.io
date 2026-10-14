@@ -111,6 +111,21 @@
   }
 
   /* Bordered buttons already change background on hover; no underline. */
+  /* Outlined, the same width as the badge above it. */
+  .field-tag {
+    @apply inline-flex items-center justify-center py-0.5 text-xs font-semibold rounded border w-[72px] whitespace-nowrap;
+  }
+
+  .field-tag-finance {
+    color: #1f4f99;
+    border-color: #1f4f99;
+  }
+
+  .field-tag-cs {
+    color: #0b7fae;
+    border-color: #0b7fae;
+  }
+
   .paper-link-btn {
     @apply inline-flex items-center justify-center px-3 py-1 text-sm border border-border rounded hover:bg-secondary hover:no-underline transition-colors;
   }

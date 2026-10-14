@@ -11,6 +11,7 @@ import {
 interface PublicationCardProps {
   badge?: string;
   badgeColor?: string;
+  field?: 'finance' | 'cs';
   title: string;
   authors: string;
   venue?: string;
@@ -83,6 +84,7 @@ const ConferenceName = ({ name, url }: { name: string; url?: string }) =>
 const PublicationCard = ({
   badge,
   badgeColor,
+  field,
   title,
   authors,
   venue,
@@ -112,10 +114,16 @@ const PublicationCard = ({
       <div className="flex gap-4 py-4">
         {/* Badge */}
         {badge && (
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex flex-col gap-1.5">
             <span className="publication-badge" style={badgeColor ? { backgroundColor: badgeColor } : undefined}>
               {badge}
             </span>
+            {/* Field tag, by where the paper is published or submitted. */}
+            {field && (
+              <span className={`field-tag field-tag-${field}`}>
+                {t(field === 'finance' ? ui.fieldFinance : ui.fieldCs)}
+              </span>
+            )}
           </div>
         )}
 

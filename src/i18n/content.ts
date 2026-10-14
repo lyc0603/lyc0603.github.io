@@ -28,6 +28,8 @@ export const ui = {
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
   mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
+  fieldFinance: { en: 'Finance', zh: '金融' },
+  fieldCs: { en: 'CS', zh: '计算机' },
   bibtexTitle: { en: 'BibTeX Citation', zh: 'BibTeX 引用' },
 } satisfies Record<string, Localized>;
 
@@ -77,6 +79,8 @@ export const education: Localized[] = [
 export interface Paper {
   badge: string;
   badgeColorKey: 'conference' | 'journal' | 'workingPaper';
+  /** Field, by where the paper is published or submitted rather than by topic. */
+  field: 'finance' | 'cs';
   title: Localized;
   /** Finance papers list co-authors only, as "with ..."; computer science papers list everyone. */
   authors: Localized;
@@ -106,6 +110,7 @@ export const publications: Paper[] = [
   {
     badge: "WWW'26",
     badgeColorKey: 'conference',
+    field: 'cs',
     title: {
       en: 'Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning',
       zh: '抵御迷因币跟单交易中的操纵型机器人：基于思维链推理的多智能体方法',
@@ -151,6 +156,7 @@ export const publications: Paper[] = [
   {
     badge: "FC'25",
     badgeColorKey: 'conference',
+    field: 'cs',
     title: {
       en: 'Piercing the Veil of TVL: DeFi Reappraised',
       zh: '刺破总锁仓价值的面纱：去中心化金融价值重估',
@@ -211,6 +217,7 @@ export const publications: Paper[] = [
   {
     badge: 'FI',
     badgeColorKey: 'journal',
+    field: 'finance',
     title: {
       en: 'ESG Scores, Scandal Probability, and Event Returns',
       zh: 'ESG 评分、丑闻概率与事件收益',
@@ -265,6 +272,7 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'finance',
     title: {
       en: 'How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting',
       zh: '大语言模型在同行评审中表现如何？来自金融与会计学的证据',
@@ -296,6 +304,7 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'finance',
     title: {
       en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
       zh: '小股东有话语权吗？去中心化自治组织治理中的审议、委托与价值',
@@ -333,6 +342,7 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'finance',
     title: {
       en: 'Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market',
       zh: '分解市场操纵策略：来自链上迷因币市场的证据',
@@ -371,6 +381,7 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'cs',
     title: {
       en: 'LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management',
       zh: '基于大语言模型的多智能体系统：加密资产组合的自动化管理',

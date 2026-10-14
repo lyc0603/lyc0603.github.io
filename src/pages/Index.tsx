@@ -77,6 +77,7 @@ const Index = () => {
                     key={paper.title.en}
                     badge={paper.badge}
                     badgeColor={badgeColors[paper.badgeColorKey]}
+                    field={paper.field}
                     title={t(paper.title)}
                     authors={t(paper.authors)}
                     venue={paper.venue}
@@ -107,6 +108,7 @@ const Index = () => {
                     key={paper.title.en}
                     badge={paper.badge}
                     badgeColor={badgeColors[paper.badgeColorKey]}
+                    field={paper.field}
                     title={t(paper.title)}
                     authors={t(paper.authors)}
                     venue={paper.venue}

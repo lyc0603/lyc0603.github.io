@@ -258,6 +258,22 @@ describe("language switching", () => {
     expect(screen.getAllByText(/^合作者：/).length).toBe(4);
   });
 
+  it("tags each paper with its field", () => {
+    const { unmount } = renderAt("/");
+    const tagOf = (title: string) =>
+      screen.getByRole("heading", { name: title }).closest("div.flex.gap-4")?.querySelector(".field-tag")?.textContent;
+    expect(tagOf("Piercing the Veil of TVL: DeFi Reappraised")).toBe("CS");
+    expect(tagOf("ESG Scores, Scandal Probability, and Event Returns")).toBe("Finance");
+    expect(tagOf("How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting")).toBe("Finance");
+    expect(document.querySelectorAll(".field-tag-finance").length).toBe(4);
+    expect(document.querySelectorAll(".field-tag-cs").length).toBe(3);
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getAllByText("金融").length).toBe(4);
+    expect(screen.getAllByText("计算机").length).toBe(3);
+  });
+
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");
 
