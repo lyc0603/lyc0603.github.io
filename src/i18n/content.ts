@@ -344,8 +344,8 @@ export const workingPapers: Paper[] = [
     badgeColorKey: 'workingPaper',
     field: 'finance',
     title: {
-      en: 'Decompose Market Manipulation Strategies: Evidence from On-chain Meme Coin Market',
-      zh: '分解市场操纵策略：来自链上迷因币市场的证据',
+      en: 'Decomposing and Deterring Market Manipulation: Evidence from On-chain Trading',
+      zh: '分解与遏制市场操纵：来自链上交易的证据',
     },
     authors: {
       en: 'with Wenzhi Ding, Jiahua Xu, Chen Lin',
@@ -359,6 +359,11 @@ export const workingPapers: Paper[] = [
         // The organisers' site now shows 2026; this snapshot still lists the paper.
         url: 'https://web.archive.org/web/20251201220400/https://sbfc.sydney.edu.au/program/',
       },
+      {
+        // As listed on Wenzhi Ding's homepage, which gives no link for it.
+        name: 'NSFC Major Project "Research on Antitrust Theory and Policy in the Digital Economy" Workshop',
+        year: '2025',
+      },
     ],
     links: [
       {
@@ -368,8 +373,9 @@ export const workingPapers: Paper[] = [
       { label: 'PDF', url: '/asset/pdf/meme.pdf' },
     ],
     abstract: {
-      en: 'Use blockchain account-level transaction data to decompose the effects of several market manipulation strategies on asset performance and participant profits. These strategies are popular yet hard to measure in traditional financial markets. Meme coin market provides some evaluations that can be applied to the traditional market.',
-      zh: '本文利用区块链账户级交易数据，分解多种市场操纵策略对资产表现与参与者收益的影响。这些策略在传统金融市场中很常见，却难以度量；迷因币市场提供了可迁移到传统市场的量化评估。',
+      // The brief on Wenzhi Ding's homepage.
+      en: "Using account-level data for 6,000 meme coin projects on the blockchain, we decompose the effects of two families of market manipulation: position manipulation and attention manipulation. The platform has (1) increased the cost of attention manipulation and (2) adopted our algorithm to disclose position manipulation; these two interventions close the manipulators' profit gap with other traders by 75% and 44%, respectively.",
+      zh: '我们利用区块链上 6,000 个迷因币项目的账户级数据，分解两类市场操纵的影响：仓位操纵与注意力操纵。平台（1）提高了注意力操纵的成本，并（2）采用我们的算法披露仓位操纵；这两项干预使操纵者相对其他交易者的收益差距分别缩小了 75% 和 44%。',
     },
     visualizationUrl: '/asset/visualization/meme.png',
     visualizationAlt: 'meme',

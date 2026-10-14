@@ -274,6 +274,18 @@ describe("language switching", () => {
     expect(screen.getAllByText("计算机").length).toBe(3);
   });
 
+  it("shows the Decompose paper as on Wenzhi Ding's homepage", () => {
+    renderAt("/");
+
+    const card = screen
+      .getByRole("heading", { name: "Decomposing and Deterring Market Manipulation: Evidence from On-chain Trading" })
+      .closest("div.flex.gap-4") as HTMLElement;
+    expect(within(card).getByText(/75% and 44%/)).toBeInTheDocument();
+    expect(card).toHaveTextContent(
+      'Presented at: Sydney Banking and Financial Stability Conference 2025, NSFC Major Project "Research on Antitrust Theory and Policy in the Digital Economy" Workshop 2025',
+    );
+  });
+
   it("no longer lists the Warwick presentation for the DAO paper", () => {
     renderAt("/");
 
