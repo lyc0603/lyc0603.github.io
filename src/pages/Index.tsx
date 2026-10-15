@@ -13,6 +13,11 @@ import {
   workingPapers,
 } from '@/i18n/content';
 import { useLanguage } from '@/i18n/LanguageContext';
+import type { Paper } from '@/i18n/content';
+
+/** Finance papers first, otherwise in the order of the data (Array.sort is stable). */
+const financeFirst = (papers: Paper[]) =>
+  [...papers].sort((a, b) => Number(a.field !== 'finance') - Number(b.field !== 'finance'));
 
 const Index = () => {
   const { t } = useLanguage();
@@ -72,7 +77,7 @@ const Index = () => {
             {/* Publications */}
             <Section id="publications" title={t(ui.publications)}>
               <div className="divide-y divide-border">
-                {publications.map((paper) => (
+                {financeFirst(publications).map((paper) => (
                   <PublicationCard
                     key={paper.title.en}
                     badge={paper.badge}
@@ -103,7 +108,7 @@ const Index = () => {
             {/* Working Papers */}
             <Section id="working-papers" title={t(ui.workingPapers)}>
               <div className="divide-y divide-border">
-                {workingPapers.map((paper) => (
+                {financeFirst(workingPapers).map((paper) => (
                   <PublicationCard
                     key={paper.title.en}
                     badge={paper.badge}

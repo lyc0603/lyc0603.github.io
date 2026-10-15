@@ -127,7 +127,8 @@ describe("language switching", () => {
   it("still opens the BibTeX dialog from the translated 引用 button", () => {
     renderAt("/zh");
 
-    fireEvent.click(screen.getAllByRole("link", { name: "引用" })[0]);
+    const card = screen.getByRole("heading", { name: /^抵御迷因币跟单交易/ }).closest("div.flex.gap-4") as HTMLElement;
+    fireEvent.click(within(card).getByRole("link", { name: "引用" }));
 
     expect(screen.getByRole("dialog")).toHaveTextContent("BibTeX 引用");
     expect(screen.getByRole("dialog")).toHaveTextContent("luo2026resisting");
@@ -221,15 +222,30 @@ describe("language switching", () => {
     expect(screen.getByText(/^博士后研究员，香港大学经济及工商管理学院/)).toBeInTheDocument();
   });
 
-  it("lists the newest working papers first", () => {
+  it("lists finance publications first", () => {
+    renderAt("/");
+    const section = screen.getByRole("heading", { name: "Publications" }).closest("section") as HTMLElement;
+    expect(within(section).getAllByRole("heading", { level: 3 }).map((h) => h.textContent)).toEqual([
+      "ESG Scores, Scandal Probability, and Event Returns",
+      "Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning",
+      "Piercing the Veil of TVL: DeFi Reappraised",
+    ]);
+  });
+
+  it("lists finance working papers first", () => {
     const { unmount } = renderAt("/");
     const section = screen.getByRole("heading", { name: "Working Papers" }).closest("section") as HTMLElement;
     const titles = within(section).getAllByRole("heading", { level: 3 }).map((h) => h.textContent);
-    expect(titles.slice(0, 2)).toEqual([
-      "From Algorithms to Agents: A Survey of LLM-Based Trading Systems",
+    // Finance first, then computer science, each newest first.
+    expect(titles).toEqual([
       "How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting",
+      "Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance",
+      "Decomposing and Deterring Market Manipulation: Evidence from On-chain Trading",
+      "From Algorithms to Agents: A Survey of LLM-Based Trading Systems",
+      "SwingGuard: Risk-Conditioned Multi-Agent Swing Trading with Dual-Timescale Governance",
+      "LLM-Powered Multi-Agent System for Automated Crypto Portfolio Management",
     ]);
-    expect(within(section).getAllByRole("link", { name: "SSRN" })[1]).toHaveAttribute(
+    expect(within(section).getAllByRole("link", { name: "SSRN" })[0]).toHaveAttribute(
       "href",
       "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7607363",
     );
