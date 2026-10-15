@@ -46,8 +46,8 @@ export const linkLabels: Record<string, Localized> = {
 };
 
 export const aboutText: Localized = {
-  en: 'I conduct interdisciplinary research at the intersection of computer science and finance. I am interested in turning news events, market narratives, and practitioner anecdotes into rigorous research. If you come across compelling or counterintuitive financial anecdotes, I would love to hear about them.',
-  zh: '我从事计算机科学与金融交叉领域的研究，热衷于把新闻事件、市场叙事以及业界见闻转化为严谨的学术研究。如果你遇到有趣或反直觉的金融现象，欢迎与我交流。',
+  en: 'I conduct interdisciplinary research at the intersection of computer science and finance.',
+  zh: '我从事计算机科学与金融交叉领域的研究。',
 };
 
 /** A position line; `link` turns the first occurrence of its label in the text into a link. */

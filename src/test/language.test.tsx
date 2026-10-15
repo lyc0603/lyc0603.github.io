@@ -366,6 +366,18 @@ describe("language switching", () => {
     expect(screen.getByText("金融科技")).toBeInTheDocument();
   });
 
+  it("keeps About Me to its first sentence", () => {
+    const { unmount } = renderAt("/");
+    const about = screen.getByRole("heading", { name: "About Me" }).closest("section") as HTMLElement;
+    expect(about.querySelector("p")?.textContent).toBe(
+      "I conduct interdisciplinary research at the intersection of computer science and finance.",
+    );
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByText("我从事计算机科学与金融交叉领域的研究。")).toBeInTheDocument();
+  });
+
   it("shows the survey's Chinese author names", () => {
     renderAt("/zh");
     expect(screen.getByText("苏俊洲、罗奕辰、冯业博、李腾、徐家画")).toBeInTheDocument();
