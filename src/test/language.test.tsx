@@ -85,8 +85,8 @@ describe("language switching", () => {
     ).toBeInTheDocument();
   });
 
-  // ESG reads as itself in Chinese and stays untranslated.
-  const titleLatinAllowlist = ["ESG"];
+  // ESG reads as itself in Chinese, and SwingGuard is a system name; both stay untranslated.
+  const titleLatinAllowlist = ["ESG", "SwingGuard"];
 
   it.each([...publications, ...workingPapers])(
     "keeps the Chinese title of $title.en free of untranslated Latin script",
@@ -267,12 +267,12 @@ describe("language switching", () => {
     expect(tagOf("ESG Scores, Scandal Probability, and Event Returns")).toBe("Fin");
     expect(tagOf("How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting")).toBe("Fin");
     expect(document.querySelectorAll(".field-tag-finance").length).toBe(4);
-    expect(document.querySelectorAll(".field-tag-cs").length).toBe(4);
+    expect(document.querySelectorAll(".field-tag-cs").length).toBe(5);
     unmount();
 
     renderAt("/zh");
     expect(screen.getAllByText("金融").length).toBe(4);
-    expect(screen.getAllByText("计算机").length).toBe(4);
+    expect(screen.getAllByText("计算机").length).toBe(5);
   });
 
   it("shows the Decompose paper as on Wenzhi Ding's homepage", () => {
@@ -298,6 +298,16 @@ describe("language switching", () => {
       "href",
       "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7610285",
     );
+  });
+
+  it("lists SwingGuard as a CS working paper with its arXiv link", () => {
+    renderAt("/");
+    const card = screen
+      .getByRole("heading", { name: "SwingGuard: Risk-Conditioned Multi-Agent Swing Trading with Dual-Timescale Governance" })
+      .closest("div.flex.gap-4") as HTMLElement;
+    expect(card.querySelector(".field-tag")?.textContent).toBe("CS");
+    expect(within(card).getByText("Junzhou Su, Yichen Luo, Yebo Feng, Teng Li, Jiahua Xu")).toBeInTheDocument();
+    expect(within(card).getByRole("link", { name: "ArXiv" })).toHaveAttribute("href", "https://arxiv.org/abs/2610.12988");
   });
 
   it("shows the survey's Chinese author names", () => {

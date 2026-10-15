@@ -336,6 +336,35 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'cs',
+    title: {
+      en: 'SwingGuard: Risk-Conditioned Multi-Agent Swing Trading with Dual-Timescale Governance',
+      zh: 'SwingGuard：基于双时间尺度治理的风险条件多智能体波段交易',
+    },
+    authors: {
+      en: 'Junzhou Su, Yichen Luo, Yebo Feng, Teng Li, Jiahua Xu',
+      zh: 'Junzhou Su、罗奕辰、冯业博、Teng Li、徐家画',
+    },
+    year: '2026',
+    links: [
+      { label: 'ArXiv', url: 'https://arxiv.org/abs/2610.12988' },
+      { label: 'PDF', url: '/asset/pdf/swingguard.pdf' },
+    ],
+    abstract: {
+      en: 'SwingGuard is a dual-timescale, long-only multi-agent framework for cryptocurrency swing trading. Analyst agents and a Portfolio Architect form a target position conditioned on current risk, and a five-minute Risk Controller keeps governing the position between strategy revisions. On BTC and ETH it stays profitable after transaction costs with shallow drawdowns, and the exposure-capped joint portfolio reaches a Sharpe ratio of 2.98, against 2.79 when risk is assessed only after the strategy is formed.',
+      zh: 'SwingGuard 是一个面向加密货币波段交易的双时间尺度、只做多的多智能体框架。分析师智能体与投资组合架构师在当前风险约束下形成目标仓位，每五分钟运行一次的风险控制器则在两次策略修订之间持续管控仓位。在 BTC 与 ETH 上，扣除交易成本后它仍保持盈利且回撤较浅；限定敞口的联合组合夏普比率达 2.98，而仅在策略形成后才评估风险的版本为 2.79。',
+    },
+    // The "Capped portfolio" column of Figure 4 in the arXiv HTML version.
+    visualizationUrl: '/asset/visualization/swingguard.png',
+    visualizationAlt: 'swingguard',
+    visualizationCaption: {
+      en: 'Net Value (Top) and Drawdown in % (Bottom) of the Capped BTC-ETH Portfolio, After Costs',
+      zh: '限定敞口的 BTC-ETH 联合组合扣除成本后的净值（上）与回撤 %（下）',
+    },
+  },
+  {
+    badge: 'WP',
+    badgeColorKey: 'workingPaper',
     field: 'finance',
     title: {
       en: 'Do Small Shareholders Have a Voice? Deliberation, Delegation, and Value in DAO Governance',
