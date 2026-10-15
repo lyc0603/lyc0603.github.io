@@ -343,7 +343,7 @@ export const workingPapers: Paper[] = [
     },
     authors: {
       en: 'Junzhou Su, Yichen Luo, Yebo Feng, Teng Li, Jiahua Xu',
-      zh: 'Junzhou Su、罗奕辰、冯业博、Teng Li、徐家画',
+      zh: '苏俊洲、罗奕辰、冯业博、Teng Li、徐家画',
     },
     year: '2026',
     links: [
