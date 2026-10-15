@@ -53,7 +53,24 @@ const Index = () => {
                 {positions.map((position) => (
                   <li key={position.en} className="flex items-start gap-3">
                     <Building2 className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-                    <span>{t(position)}</span>
+                    <span>
+                      {position.link
+                        ? (() => {
+                            const text = t(position);
+                            const label = t(position.link.label);
+                            const i = text.indexOf(label);
+                            return (
+                              <>
+                                {text.slice(0, i)}
+                                <a href={position.link.url} target="_blank" rel="noopener noreferrer">
+                                  {label}
+                                </a>
+                                {text.slice(i + label.length)}
+                              </>
+                            );
+                          })()
+                        : t(position)}
+                    </span>
                   </li>
                 ))}
               </ul>

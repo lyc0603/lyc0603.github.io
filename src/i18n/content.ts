@@ -50,10 +50,18 @@ export const aboutText: Localized = {
   zh: '我从事计算机科学与金融交叉领域的研究，热衷于把新闻事件、市场叙事以及业界见闻转化为严谨的学术研究。如果你遇到有趣或反直觉的金融现象，欢迎与我交流。',
 };
 
-export const positions: Localized[] = [
+/** A position line; `link` turns the first occurrence of its label in the text into a link. */
+export type Position = Localized & { link?: { label: Localized; url: string } };
+
+export const positions: Position[] = [
   {
     en: 'Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
     zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
+  },
+  {
+    en: 'Co-founder, BlockEye',
+    zh: '联合创始人，博视智能（BlockEye）',
+    link: { label: { en: 'BlockEye', zh: '博视智能（BlockEye）' }, url: 'https://www.blockeye.ai/' },
   },
   {
     en: 'Visiting Scholar, HKU Business School, 01/2026 - 07/2026',

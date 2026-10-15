@@ -332,6 +332,18 @@ describe("language switching", () => {
     expect(within(card).getByRole("link", { name: "ArXiv" })).toHaveAttribute("href", "https://arxiv.org/abs/2610.12988");
   });
 
+  it("lists the BlockEye co-founder role with a link", () => {
+    const { unmount } = renderAt("/");
+    const section = screen.getByRole("heading", { name: "Positions" }).closest("section") as HTMLElement;
+    const items = within(section).getAllByRole("listitem").map((li) => li.textContent);
+    expect(items[1]).toBe("Co-founder, BlockEye");
+    expect(within(section).getByRole("link", { name: "BlockEye" })).toHaveAttribute("href", "https://www.blockeye.ai/");
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByRole("link", { name: "博视智能（BlockEye）" })).toHaveAttribute("href", "https://www.blockeye.ai/");
+  });
+
   it("shows the survey's Chinese author names", () => {
     renderAt("/zh");
     expect(screen.getByText("苏俊洲、罗奕辰、冯业博、李腾、徐家画")).toBeInTheDocument();
