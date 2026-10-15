@@ -396,8 +396,8 @@ export const workingPapers: Paper[] = [
     visualizationUrl: '/asset/visualization/dynamic_delegation.png',
     visualizationAlt: 'dynamic_delegation',
     visualizationCaption: {
-      en: 'Small-Holder Participation Rises After Delegation is Enabled',
-      zh: '开放委托后小额持有者参与度上升',
+      en: 'DID Treatment Effects of Delegation on Small-Holder Participation',
+      zh: '委托对小额持有者参与度的双重差分处理效应',
     },
   },
   {

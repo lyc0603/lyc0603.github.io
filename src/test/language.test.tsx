@@ -222,6 +222,12 @@ describe("language switching", () => {
     expect(screen.getByText(/^博士后研究员，香港大学经济及工商管理学院/)).toBeInTheDocument();
   });
 
+  it("captions both event-study figures as DID treatment effects", () => {
+    renderAt("/");
+    expect(screen.getByText("DID Treatment Effects of Delegation on Small-Holder Participation")).toBeInTheDocument();
+    expect(screen.getByText("DID Treatment Effects of Manipulative Bot on Trader Participation")).toBeInTheDocument();
+  });
+
   it("lists finance publications first", () => {
     renderAt("/");
     const section = screen.getByRole("heading", { name: "Publications" }).closest("section") as HTMLElement;
