@@ -72,6 +72,7 @@ const Index = () => {
                           })()
                         : t(position)}
                     </span>
+                    <span className="ml-auto pl-4 text-muted-foreground whitespace-nowrap">{t(position.date)}</span>
                   </li>
                 ))}
               </ul>
@@ -88,6 +89,7 @@ const Index = () => {
                       <img src={degree.logo.src} alt={degree.logo.alt} className="max-w-full max-h-full object-contain" />
                     </span>
                     <span>{t(degree)}</span>
+                    <span className="ml-auto pl-4 text-muted-foreground whitespace-nowrap">{t(degree.date)}</span>
                   </li>
                 ))}
               </ul>

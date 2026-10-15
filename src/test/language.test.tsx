@@ -212,9 +212,10 @@ describe("language switching", () => {
     expect(screen.getByText("ycluo@hku.hk")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:ycluo@hku.hk");
     expect(screen.getByRole("heading", { name: "Positions" })).toBeInTheDocument();
-    expect(screen.getByText(/^Postdoctoral Fellow, HKU Business School, 2026 - Now/)).toBeInTheDocument();
-    expect(screen.getByText("Visiting Scholar, HKU Business School, 01/2026 - 07/2026")).toBeInTheDocument();
-    expect(screen.getByText("Ph.D. in Computer Science, UCL, 2024 - 2026")).toBeInTheDocument();
+    expect(screen.getByText(/^Postdoctoral Fellow, HKU Business School, Hosted by/)).toBeInTheDocument();
+    expect(screen.getByText("Visiting Scholar, HKU Business School")).toBeInTheDocument();
+    expect(screen.getByText("Ph.D. in Computer Science, UCL")).toBeInTheDocument();
+    expect(screen.getByText("2024 - 2026")).toBeInTheDocument();
     unmount();
 
     renderAt("/zh");
@@ -337,10 +338,14 @@ describe("language switching", () => {
     const section = screen.getByRole("heading", { name: "Positions" }).closest("section") as HTMLElement;
     const items = within(section).getAllByRole("listitem").map((li) => li.textContent);
     expect(items).toEqual([
-      "Co-founder, BlockEye, 07/2026 - Now",
-      "Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding",
-      "Visiting Scholar, HKU Business School, 01/2026 - 07/2026",
+      "Co-founder, BlockEye07/2026 - Now",
+      "Postdoctoral Fellow, HKU Business School, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding10/2026 - Now",
+      "Visiting Scholar, HKU Business School01/2026 - 07/2026",
     ]);
+    // Dates sit in their own right-aligned span.
+    const dates = within(section).getAllByRole("listitem").map((li) => li.lastElementChild);
+    expect(dates.map((d) => d?.textContent)).toEqual(["07/2026 - Now", "10/2026 - Now", "01/2026 - 07/2026"]);
+    expect(dates.every((d) => d?.classList.contains("ml-auto"))).toBe(true);
     expect(within(section).getAllByRole("img").map((i) => i.getAttribute("alt"))).toEqual(["BlockEye", "HKU", "HKU"]);
     const education = screen.getByRole("heading", { name: "Education" }).closest("section") as HTMLElement;
     expect(within(education).getAllByRole("img").map((i) => i.getAttribute("alt"))).toEqual(["UCL", "UCL", "Durham University"]);

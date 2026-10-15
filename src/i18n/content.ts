@@ -51,7 +51,7 @@ export const aboutText: Localized = {
 };
 
 /** A position line; `link` turns the first occurrence of its label in the text into a link. */
-export type Position = Localized & { link?: { label: Localized; url: string }; logo: Logo };
+export type Position = Localized & { date: Localized; link?: { label: Localized; url: string }; logo: Logo };
 
 /** Logo shown before a position or degree; files live in public/asset/logo. */
 export type Logo = { src: string; alt: string };
@@ -65,37 +65,43 @@ const LOGO = {
 
 export const positions: Position[] = [
   {
-    en: 'Co-founder, BlockEye, 07/2026 - Now',
-    zh: '联合创始人，博视智能（BlockEye），2026 年 7 月至今',
+    en: 'Co-founder, BlockEye',
+    zh: '联合创始人，博视智能（BlockEye）',
+    date: { en: '07/2026 - Now', zh: '2026 年 7 月至今' },
     link: { label: { en: 'BlockEye', zh: '博视智能（BlockEye）' }, url: 'https://www.blockeye.ai/' },
     logo: LOGO.blockeye,
   },
   {
-    en: 'Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
-    zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
+    en: 'Postdoctoral Fellow, HKU Business School, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
+    zh: '博士后研究员，香港大学经济及工商管理学院，合作导师：林晨教授、丁文治教授',
+    date: { en: '10/2026 - Now', zh: '2026 年 10 月至今' },
     logo: LOGO.hku,
   },
   {
-    en: 'Visiting Scholar, HKU Business School, 01/2026 - 07/2026',
-    zh: '访问学者，香港大学经济及工商管理学院，2026 年 1 月 - 2026 年 7 月',
+    en: 'Visiting Scholar, HKU Business School',
+    zh: '访问学者，香港大学经济及工商管理学院',
+    date: { en: '01/2026 - 07/2026', zh: '2026 年 1 月 - 2026 年 7 月' },
     logo: LOGO.hku,
   },
 ];
 
-export const education: (Localized & { logo: Logo })[] = [
+export const education: (Localized & { date: Localized; logo: Logo })[] = [
   {
-    en: 'Ph.D. in Computer Science, UCL, 2024 - 2026',
-    zh: '计算机科学博士，伦敦大学学院（UCL），2024 - 2026',
+    en: 'Ph.D. in Computer Science, UCL',
+    zh: '计算机科学博士，伦敦大学学院（UCL）',
+    date: { en: '2024 - 2026', zh: '2024 - 2026' },
     logo: LOGO.ucl,
   },
   {
-    en: 'M.Sc. in Banking and Digital Finance, UCL, 2022 - 2023',
-    zh: '银行与数字金融理学硕士，伦敦大学学院（UCL），2022 - 2023',
+    en: 'M.Sc. in Banking and Digital Finance, UCL',
+    zh: '银行与数字金融理学硕士，伦敦大学学院（UCL）',
+    date: { en: '2022 - 2023', zh: '2022 - 2023' },
     logo: LOGO.ucl,
   },
   {
-    en: 'B.Sc. in Finance, Durham University, 2019 - 2022',
-    zh: '金融学理学学士，杜伦大学，2019 - 2022',
+    en: 'B.Sc. in Finance, Durham University',
+    zh: '金融学理学学士，杜伦大学',
+    date: { en: '2019 - 2022', zh: '2019 - 2022' },
     logo: LOGO.durham,
   },
 ];
