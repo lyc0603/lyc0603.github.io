@@ -2,7 +2,6 @@ import ProfileSidebar from '@/components/ProfileSidebar';
 import Section from '@/components/Section';
 import PublicationCard from '@/components/PublicationCard';
 import LanguageToggle from '@/components/LanguageToggle';
-import { GraduationCap, Building2 } from 'lucide-react';
 import {
   aboutText,
   badgeColors,
@@ -52,7 +51,9 @@ const Index = () => {
               <ul className="space-y-2">
                 {positions.map((position) => (
                   <li key={position.en} className="flex items-start gap-3">
-                    <Building2 className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+                    <span className="w-10 h-6 flex-shrink-0 flex items-center justify-center">
+                      <img src={position.logo.src} alt={position.logo.alt} className="max-w-full max-h-full object-contain" />
+                    </span>
                     <span>
                       {position.link
                         ? (() => {
@@ -83,7 +84,9 @@ const Index = () => {
               <ul className="space-y-3">
                 {education.map((degree) => (
                   <li key={degree.en} className="flex items-start gap-3">
-                    <GraduationCap className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+                    <span className="w-10 h-6 flex-shrink-0 flex items-center justify-center">
+                      <img src={degree.logo.src} alt={degree.logo.alt} className="max-w-full max-h-full object-contain" />
+                    </span>
                     <span>{t(degree)}</span>
                   </li>
                 ))}

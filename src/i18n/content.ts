@@ -51,36 +51,52 @@ export const aboutText: Localized = {
 };
 
 /** A position line; `link` turns the first occurrence of its label in the text into a link. */
-export type Position = Localized & { link?: { label: Localized; url: string } };
+export type Position = Localized & { link?: { label: Localized; url: string }; logo: Logo };
+
+/** Logo shown before a position or degree; files live in public/asset/logo. */
+export type Logo = { src: string; alt: string };
+
+const LOGO = {
+  hku: { src: '/asset/logo/hku.png', alt: 'HKU' },
+  blockeye: { src: '/asset/logo/blockeye.png', alt: 'BlockEye' },
+  ucl: { src: '/asset/logo/ucl.png', alt: 'UCL' },
+  durham: { src: '/asset/logo/durham.png', alt: 'Durham University' },
+} satisfies Record<string, Logo>;
 
 export const positions: Position[] = [
-  {
-    en: 'Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
-    zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
-  },
   {
     en: 'Co-founder, BlockEye, 07/2026 - Now',
     zh: '联合创始人，博视智能（BlockEye），2026 年 7 月至今',
     link: { label: { en: 'BlockEye', zh: '博视智能（BlockEye）' }, url: 'https://www.blockeye.ai/' },
+    logo: LOGO.blockeye,
+  },
+  {
+    en: 'Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding',
+    zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
+    logo: LOGO.hku,
   },
   {
     en: 'Visiting Scholar, HKU Business School, 01/2026 - 07/2026',
     zh: '访问学者，香港大学经济及工商管理学院，2026 年 1 月 - 2026 年 7 月',
+    logo: LOGO.hku,
   },
 ];
 
-export const education: Localized[] = [
+export const education: (Localized & { logo: Logo })[] = [
   {
     en: 'Ph.D. in Computer Science, UCL, 2024 - 2026',
     zh: '计算机科学博士，伦敦大学学院（UCL），2024 - 2026',
+    logo: LOGO.ucl,
   },
   {
     en: 'M.Sc. in Banking and Digital Finance, UCL, 2022 - 2023',
     zh: '银行与数字金融理学硕士，伦敦大学学院（UCL），2022 - 2023',
+    logo: LOGO.ucl,
   },
   {
     en: 'B.Sc. in Finance, Durham University, 2019 - 2022',
     zh: '金融学理学学士，杜伦大学，2019 - 2022',
+    logo: LOGO.durham,
   },
 ];
 

@@ -332,15 +332,18 @@ describe("language switching", () => {
     expect(within(card).getByRole("link", { name: "ArXiv" })).toHaveAttribute("href", "https://arxiv.org/abs/2610.12988");
   });
 
-  it("lists the BlockEye co-founder role with a link", () => {
+  it("lists the BlockEye co-founder role first, with a link, and logos", () => {
     const { unmount } = renderAt("/");
     const section = screen.getByRole("heading", { name: "Positions" }).closest("section") as HTMLElement;
     const items = within(section).getAllByRole("listitem").map((li) => li.textContent);
     expect(items).toEqual([
-      "Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding",
       "Co-founder, BlockEye, 07/2026 - Now",
+      "Postdoctoral Fellow, HKU Business School, 2026 - Now, Hosted by Prof. Chen Lin and Prof. Wenzhi Ding",
       "Visiting Scholar, HKU Business School, 01/2026 - 07/2026",
     ]);
+    expect(within(section).getAllByRole("img").map((i) => i.getAttribute("alt"))).toEqual(["BlockEye", "HKU", "HKU"]);
+    const education = screen.getByRole("heading", { name: "Education" }).closest("section") as HTMLElement;
+    expect(within(education).getAllByRole("img").map((i) => i.getAttribute("alt"))).toEqual(["UCL", "UCL", "Durham University"]);
     expect(within(section).getByRole("link", { name: "BlockEye" })).toHaveAttribute("href", "https://www.blockeye.ai/");
     unmount();
 
