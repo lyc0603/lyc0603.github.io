@@ -348,6 +348,16 @@ describe("language switching", () => {
     expect(screen.getByRole("link", { name: "博视智能（BlockEye）" })).toHaveAttribute("href", "https://www.blockeye.ai/");
   });
 
+  it("shows Fintech as the research field in the sidebar", () => {
+    const { unmount } = renderAt("/");
+    expect(screen.getByText("Fintech")).toBeInTheDocument();
+    expect(screen.queryByText("Blockchain & DeFi")).not.toBeInTheDocument();
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByText("金融科技")).toBeInTheDocument();
+  });
+
   it("shows the survey's Chinese author names", () => {
     renderAt("/zh");
     expect(screen.getByText("苏俊洲、罗奕辰、冯业博、李腾、徐家画")).toBeInTheDocument();
