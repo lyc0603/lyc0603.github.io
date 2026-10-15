@@ -221,14 +221,15 @@ describe("language switching", () => {
     expect(screen.getByText(/^博士后研究员，香港大学经济及工商管理学院/)).toBeInTheDocument();
   });
 
-  it("lists the LLM peer-review working paper first", () => {
+  it("lists the newest working papers first", () => {
     const { unmount } = renderAt("/");
     const section = screen.getByRole("heading", { name: "Working Papers" }).closest("section") as HTMLElement;
     const titles = within(section).getAllByRole("heading", { level: 3 }).map((h) => h.textContent);
-    expect(titles[0]).toBe(
+    expect(titles.slice(0, 2)).toEqual([
+      "From Algorithms to Agents: A Survey of LLM-Based Trading Systems",
       "How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting",
-    );
-    expect(within(section).getAllByRole("link", { name: "SSRN" })[0]).toHaveAttribute(
+    ]);
+    expect(within(section).getAllByRole("link", { name: "SSRN" })[1]).toHaveAttribute(
       "href",
       "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7607363",
     );
@@ -266,12 +267,12 @@ describe("language switching", () => {
     expect(tagOf("ESG Scores, Scandal Probability, and Event Returns")).toBe("Fin");
     expect(tagOf("How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting")).toBe("Fin");
     expect(document.querySelectorAll(".field-tag-finance").length).toBe(4);
-    expect(document.querySelectorAll(".field-tag-cs").length).toBe(3);
+    expect(document.querySelectorAll(".field-tag-cs").length).toBe(4);
     unmount();
 
     renderAt("/zh");
     expect(screen.getAllByText("金融").length).toBe(4);
-    expect(screen.getAllByText("计算机").length).toBe(3);
+    expect(screen.getAllByText("计算机").length).toBe(4);
   });
 
   it("shows the Decompose paper as on Wenzhi Ding's homepage", () => {
@@ -283,6 +284,19 @@ describe("language switching", () => {
     expect(within(card).getByText(/75% and 44%/)).toBeInTheDocument();
     expect(card).toHaveTextContent(
       'Presented at: Sydney Banking and Financial Stability Conference 2025, NSFC Major Project "Research on Antitrust Theory and Policy in the Digital Economy" Workshop 2025',
+    );
+  });
+
+  it("lists the LLM trading survey as a CS working paper", () => {
+    renderAt("/");
+    const card = screen
+      .getByRole("heading", { name: "From Algorithms to Agents: A Survey of LLM-Based Trading Systems" })
+      .closest("div.flex.gap-4") as HTMLElement;
+    expect(card.querySelector(".field-tag")?.textContent).toBe("CS");
+    expect(within(card).getByText(/^Yebo Feng, Yichen Luo, /)).toBeInTheDocument();
+    expect(within(card).getByRole("link", { name: "SSRN" })).toHaveAttribute(
+      "href",
+      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7610285",
     );
   });
 

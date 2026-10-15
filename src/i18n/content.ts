@@ -272,6 +272,38 @@ export const workingPapers: Paper[] = [
   {
     badge: 'WP',
     badgeColorKey: 'workingPaper',
+    field: 'cs',
+    title: {
+      en: 'From Algorithms to Agents: A Survey of LLM-Based Trading Systems',
+      zh: '从算法到智能体：基于大语言模型的交易系统综述',
+    },
+    authors: {
+      en: 'Yebo Feng, Yichen Luo, Jingyang Dai, Chien-Chih Chen, Guangyan Gan, Jiahua Xu, Lin William Cong, Yang Liu',
+      zh: '冯业博、罗奕辰、Jingyang Dai、Chien-Chih Chen、Guangyan Gan、徐家画、丛林、刘杨',
+    },
+    year: '2026',
+    links: [
+      {
+        label: 'SSRN',
+        url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7610285',
+      },
+      { label: 'PDF', url: '/asset/pdf/llm_trading_survey.pdf' },
+    ],
+    abstract: {
+      en: 'Large language models (LLMs) now drive trading systems, from signal extractors to autonomous agents. This survey organizes the literature by capability and by six markets, maps 47 systems, and audits their evaluation against traditional quantitative baselines. The margins of independently re-run agents shrink or vanish, the best-supported role for the LLM is upstream of the trade, and controlled comparisons do not establish a multi-agent advantage.',
+      zh: '大语言模型（LLM）正驱动从信号提取到自主智能体的各类交易系统。本综述按能力与六类市场梳理文献，归纳 47 个系统，并对照传统量化基准审视其评估方法。独立重跑后，智能体的超额表现缩小乃至消失；证据最充分的做法是把大语言模型放在交易的上游；而受控比较并未证明多智能体具有优势。',
+    },
+    // Panel a of figures/reported_vs_reeval.pdf in the survey repository.
+    visualizationUrl: '/asset/visualization/llm_trading_survey.png',
+    visualizationAlt: 'llm_trading_survey',
+    visualizationCaption: {
+      en: 'Reported vs. Re-run Sharpe Ratios of LLM Trading Agents',
+      zh: '大语言模型交易智能体的报告与重跑夏普比率',
+    },
+  },
+  {
+    badge: 'WP',
+    badgeColorKey: 'workingPaper',
     field: 'finance',
     title: {
       en: 'How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting',
