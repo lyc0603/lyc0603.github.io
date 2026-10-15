@@ -59,8 +59,8 @@ export const positions: Position[] = [
     zh: '博士后研究员，香港大学经济及工商管理学院，2026 年至今，合作导师：林晨教授、丁文治教授',
   },
   {
-    en: 'Co-founder, BlockEye',
-    zh: '联合创始人，博视智能（BlockEye）',
+    en: 'Co-founder, BlockEye, 07/2026 - Now',
+    zh: '联合创始人，博视智能（BlockEye），2026 年 7 月至今',
     link: { label: { en: 'BlockEye', zh: '博视智能（BlockEye）' }, url: 'https://www.blockeye.ai/' },
   },
   {
