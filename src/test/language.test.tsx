@@ -334,7 +334,7 @@ describe("language switching", () => {
 
   it("shows the survey's Chinese author names", () => {
     renderAt("/zh");
-    expect(screen.getByText("苏俊洲、罗奕辰、冯业博、Teng Li、徐家画")).toBeInTheDocument();
+    expect(screen.getByText("苏俊洲、罗奕辰、冯业博、李腾、徐家画")).toBeInTheDocument();
     expect(screen.getByText("冯业博、罗奕辰、戴婧扬、Chien-Chih Chen、甘广燕、徐家画、丛林、刘杨")).toBeInTheDocument();
   });
 
