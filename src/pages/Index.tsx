@@ -15,7 +15,8 @@ import {
 import { useLanguage } from '@/i18n/LanguageContext';
 import type { Paper } from '@/i18n/content';
 
-/** Finance papers first, otherwise in the order of the data (Array.sort is stable). */
+/** Working papers: finance first, otherwise in the order of the data (Array.sort is stable).
+ * Publications keep the data's order, computer science first. */
 const financeFirst = (papers: Paper[]) =>
   [...papers].sort((a, b) => Number(a.field !== 'finance') - Number(b.field !== 'finance'));
 
@@ -77,7 +78,7 @@ const Index = () => {
             {/* Publications */}
             <Section id="publications" title={t(ui.publications)}>
               <div className="divide-y divide-border">
-                {financeFirst(publications).map((paper) => (
+                {publications.map((paper) => (
                   <PublicationCard
                     key={paper.title.en}
                     badge={paper.badge}

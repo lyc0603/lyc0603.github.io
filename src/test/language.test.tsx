@@ -228,13 +228,13 @@ describe("language switching", () => {
     expect(screen.getByText("DID Treatment Effects of Manipulative Bot on Trader Participation")).toBeInTheDocument();
   });
 
-  it("lists finance publications first", () => {
+  it("lists computer science publications first", () => {
     renderAt("/");
     const section = screen.getByRole("heading", { name: "Publications" }).closest("section") as HTMLElement;
     expect(within(section).getAllByRole("heading", { level: 3 }).map((h) => h.textContent)).toEqual([
-      "ESG Scores, Scandal Probability, and Event Returns",
       "Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning",
       "Piercing the Veil of TVL: DeFi Reappraised",
+      "ESG Scores, Scandal Probability, and Event Returns",
     ]);
   });
 
