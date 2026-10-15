@@ -59,7 +59,7 @@ export type Logo = { src: string; alt: string };
 const LOGO = {
   hku: { src: '/asset/logo/hku.png', alt: 'HKU' },
   blockeye: { src: '/asset/logo/blockeye.png', alt: 'BlockEye' },
-  ucl: { src: '/asset/logo/ucl.png', alt: 'UCL' },
+  ucl: { src: '/asset/logo/ucl-portico.png', alt: 'UCL' },
   durham: { src: '/asset/logo/durham.png', alt: 'Durham University' },
 } satisfies Record<string, Logo>;
 
