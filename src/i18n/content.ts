@@ -279,7 +279,7 @@ export const workingPapers: Paper[] = [
     },
     authors: {
       en: 'Yebo Feng, Yichen Luo, Jingyang Dai, Chien-Chih Chen, Guangyan Gan, Jiahua Xu, Lin William Cong, Yang Liu',
-      zh: '冯业博、罗奕辰、Jingyang Dai、Chien-Chih Chen、Guangyan Gan、徐家画、丛林、刘杨',
+      zh: '冯业博、罗奕辰、戴婧扬、Chien-Chih Chen、甘广燕、徐家画、丛林、刘杨',
     },
     year: '2026',
     links: [

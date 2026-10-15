@@ -294,6 +294,11 @@ describe("language switching", () => {
       .closest("div.flex.gap-4") as HTMLElement;
     expect(card.querySelector(".field-tag")?.textContent).toBe("CS");
     expect(within(card).getByText(/^Yebo Feng, Yichen Luo, /)).toBeInTheDocument();
+  });
+
+  it("shows the survey's Chinese author names", () => {
+    renderAt("/zh");
+    expect(screen.getByText("冯业博、罗奕辰、戴婧扬、Chien-Chih Chen、甘广燕、徐家画、丛林、刘杨")).toBeInTheDocument();
     expect(within(card).getByRole("link", { name: "SSRN" })).toHaveAttribute(
       "href",
       "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7610285",
