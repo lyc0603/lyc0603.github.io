@@ -210,7 +210,11 @@ describe("language switching", () => {
   it("shows the HKU postdoc and the completed PhD", () => {
     const { unmount } = renderAt("/");
     expect(screen.getByText("ycluo@hku.hk")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:ycluo@hku.hk");
+    expect(screen.queryByRole("link", { name: "Email" })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Google Scholar" })).toHaveAttribute(
+      "href",
+      "https://scholar.google.com/citations?user=_oQ5ynAAAAAJ&hl=en",
+    );
     expect(screen.getByRole("heading", { name: "Positions" })).toBeInTheDocument();
     expect(screen.getByText(/^Postdoctoral Fellow, HKU Business School, Hosted by/)).toBeInTheDocument();
     expect(screen.getByText("Visiting Scholar, HKU Business School")).toBeInTheDocument();

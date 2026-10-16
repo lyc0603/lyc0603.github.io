@@ -1,4 +1,4 @@
-import { Github, Mail, FileText, Linkedin } from 'lucide-react';
+import { Github, FileText, Linkedin } from 'lucide-react';
 import { ui } from '@/i18n/content';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -30,13 +30,6 @@ const ProfileSidebar = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-3">
           <a
-            href="mailto:ycluo@hku.hk"
-            className="p-2 rounded-md hover:bg-secondary transition-colors text-foreground"
-            aria-label="Email"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
-          <a
             href="https://github.com/lyc0603"
             className="p-2 rounded-md hover:bg-secondary transition-colors text-foreground"
             aria-label="GitHub"
@@ -49,6 +42,16 @@ const ProfileSidebar = () => {
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=_oQ5ynAAAAAJ&hl=en"
+            className="p-2 rounded-md hover:bg-secondary transition-colors text-foreground"
+            aria-label="Google Scholar"
+          >
+            {/* Google Scholar mark (Simple Icons); lucide-react has no Scholar icon */}
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+              <path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+            </svg>
           </a>
         </div>
 
