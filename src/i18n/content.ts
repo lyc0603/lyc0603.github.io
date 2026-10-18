@@ -16,7 +16,7 @@ export const ui = {
   },
   mainPage: { en: 'Main Page', zh: '主页' },
   name: { en: 'Yichen Luo', zh: '罗奕辰' },
-  researchField: { en: 'Fintech', zh: '金融科技' },
+  researchField: { en: 'FinTech & AI', zh: '金融科技与人工智能' },
   about: { en: 'About Me', zh: '关于我' },
   position: { en: 'Positions', zh: '任职经历' },
   education: { en: 'Education', zh: '教育背景' },

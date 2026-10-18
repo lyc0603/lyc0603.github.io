@@ -360,14 +360,14 @@ describe("language switching", () => {
     expect(screen.getByRole("link", { name: "博视智能（BlockEye）" })).toHaveAttribute("href", "https://www.blockeye.ai/");
   });
 
-  it("shows Fintech as the research field in the sidebar", () => {
+  it("shows FinTech & AI as the research field in the sidebar", () => {
     const { unmount } = renderAt("/");
-    expect(screen.getByText("Fintech")).toBeInTheDocument();
+    expect(screen.getByText("FinTech & AI")).toBeInTheDocument();
     expect(screen.queryByText("Blockchain & DeFi")).not.toBeInTheDocument();
     unmount();
 
     renderAt("/zh");
-    expect(screen.getByText("金融科技")).toBeInTheDocument();
+    expect(screen.getByText("金融科技与人工智能")).toBeInTheDocument();
   });
 
   it("keeps About Me to its first sentence", () => {
