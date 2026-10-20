@@ -160,17 +160,18 @@ const Index = () => {
 
             <div className="section-divider" />
 
-            {/* Photography: two masonry columns, so each photo keeps its own proportions */}
+            {/* Photography: a regular grid of 3:2 cells, read left to right; the full photo opens on click */}
             <Section id="photography" title={t(ui.photography)}>
-              <div className="columns-1 sm:columns-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {photos.map((photo) => (
-                  <figure key={photo.src} className="mb-4 break-inside-avoid">
+                  <figure key={photo.src}>
                     <a href={photo.src} target="_blank" rel="noopener noreferrer">
                       <img
                         src={photo.src}
                         alt={t(photo.alt)}
                         loading="lazy"
-                        className="w-full h-auto rounded border border-border"
+                        className="w-full aspect-[3/2] object-cover rounded border border-border"
+                        style={photo.focus ? { objectPosition: photo.focus } : undefined}
                       />
                     </a>
                     <figcaption className="mt-1.5 text-sm text-muted-foreground">{t(photo.location)}</figcaption>

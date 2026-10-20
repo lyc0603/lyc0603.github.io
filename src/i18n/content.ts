@@ -515,7 +515,8 @@ export const workingPapers: Paper[] = [
 const OSBORNE: Localized = { en: 'Osborne House, Isle of Wight, UK', zh: '英国怀特岛奥斯本宫' };
 const ALUM_BAY: Localized = { en: 'Alum Bay, Isle of Wight, UK', zh: '英国怀特岛阿勒姆湾' };
 
-export const photos: { src: string; alt: Localized; location: Localized }[] = [
+/** `focus` is the CSS object-position used when the photo is cropped to the 3:2 grid cell. */
+export const photos: { src: string; alt: Localized; location: Localized; focus?: string }[] = [
   {
     src: '/asset/photo/osborne_window.jpg',
     alt: { en: 'A window at Osborne House looking out over the gardens', zh: '奥斯本宫的一扇窗，窗外是花园' },
@@ -525,6 +526,8 @@ export const photos: { src: string; alt: Localized; location: Localized }[] = [
     src: '/asset/photo/osborne_staircase.jpg',
     alt: { en: 'The oval spiral staircase at Osborne House, looking up to the skylight', zh: '奥斯本宫的椭圆形旋转楼梯，仰望天窗' },
     location: OSBORNE,
+    // Portrait: keep the top of the arch and the skylight lamp in the 3:2 crop.
+    focus: 'center 30%',
   },
   {
     src: '/asset/photo/osborne_stairwell_above.jpg',
