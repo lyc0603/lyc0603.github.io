@@ -2,9 +2,9 @@ import ProfileSidebar from '@/components/ProfileSidebar';
 import Section from '@/components/Section';
 import PublicationCard from '@/components/PublicationCard';
 import LanguageToggle from '@/components/LanguageToggle';
+import PhotoGallery from '@/components/PhotoGallery';
 import {
   aboutText,
-  photos,
   badgeColors,
   education,
   positions,
@@ -160,24 +160,9 @@ const Index = () => {
 
             <div className="section-divider" />
 
-            {/* Photography: a regular grid of 3:2 cells, read left to right; the full photo opens on click */}
+            {/* Photography, laid out like wenzhi-ding.com/blog */}
             <Section id="photography" title={t(ui.photography)}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {photos.map((photo) => (
-                  <figure key={photo.src}>
-                    <a href={photo.src} target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={photo.src}
-                        alt={t(photo.alt)}
-                        loading="lazy"
-                        className="w-full aspect-[3/2] object-cover rounded border border-border"
-                        style={photo.focus ? { objectPosition: photo.focus } : undefined}
-                      />
-                    </a>
-                    <figcaption className="mt-1.5 text-sm text-muted-foreground">{t(photo.location)}</figcaption>
-                  </figure>
-                ))}
-              </div>
+              <PhotoGallery />
             </Section>
           </main>
         </div>

@@ -382,19 +382,24 @@ describe("language switching", () => {
     expect(screen.getByText("我从事计算机科学与金融交叉领域的研究。")).toBeInTheDocument();
   });
 
-  it("shows the photography section with locations", () => {
+  it("shows the photo gallery as cards and opens the full photo", () => {
     const { unmount } = renderAt("/");
     const section = screen.getByRole("heading", { name: "Photography" }).closest("section") as HTMLElement;
-    const imgs = within(section).getAllByRole("img");
-    expect(imgs.map((i) => i.getAttribute("src"))).toEqual([
-      "/asset/photo/osborne_window.jpg",
-      "/asset/photo/osborne_staircase.jpg",
-      "/asset/photo/osborne_stairwell_above.jpg",
-      "/asset/photo/alum_bay_chalk_path.jpg",
+    const cards = within(section).getAllByRole("button");
+    expect(cards.map((c) => c.textContent)).toEqual([
+      "WindowOsborne House, Isle of Wight, UK",
+      "StaircaseOsborne House, Isle of Wight, UK",
+      "StairwellOsborne House, Isle of Wight, UK",
+      "Chalk PathAlum Bay, Isle of Wight, UK",
     ]);
-    expect(within(section).getAllByText("Osborne House, Isle of Wight, UK").length).toBe(3);
-    expect(within(section).getByText("Alum Bay, Isle of Wight, UK")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Photography" })).toHaveAttribute("href", "#photography");
+    expect(within(cards[1]).getByRole("img")).toHaveAttribute("src", "/asset/photo/thumbs/osborne_staircase.jpg");
+
+    fireEvent.click(cards[1]);
+    const dialog = screen.getByRole("dialog");
+    expect(within(dialog).getByRole("heading", { name: "Staircase" })).toBeInTheDocument();
+    expect(within(dialog).getByAltText(/oval spiral staircase/)).toHaveAttribute("src", "/asset/photo/osborne_staircase.jpg");
+    fireEvent.click(within(dialog).getByRole("button", { name: "Next photo" }));
+    expect(within(screen.getByRole("dialog")).getByRole("heading", { name: "Stairwell" })).toBeInTheDocument();
     unmount();
 
     renderAt("/zh");

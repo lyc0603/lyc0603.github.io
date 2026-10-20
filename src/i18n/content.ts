@@ -27,6 +27,8 @@ export const ui = {
   navPublications: { en: 'Publications', zh: '发表论文' },
   navWorkingPapers: { en: 'Working Papers', zh: '工作论文' },
   navPhotography: { en: 'Photography', zh: '摄影' },
+  previousPhoto: { en: 'Previous photo', zh: '上一张' },
+  nextPhoto: { en: 'Next photo', zh: '下一张' },
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
   mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
@@ -515,27 +517,45 @@ export const workingPapers: Paper[] = [
 const OSBORNE: Localized = { en: 'Osborne House, Isle of Wight, UK', zh: '英国怀特岛奥斯本宫' };
 const ALUM_BAY: Localized = { en: 'Alum Bay, Isle of Wight, UK', zh: '英国怀特岛阿勒姆湾' };
 
-/** `focus` is the CSS object-position used when the photo is cropped to the 3:2 grid cell. */
-export const photos: { src: string; alt: Localized; location: Localized; focus?: string }[] = [
+/**
+ * `thumb` is the grid thumbnail (covers a 480x360 card); `src` is the full photo shown in the lightbox.
+ * `focus` is the CSS object-position used when the thumbnail is cropped to the 4:3 card.
+ */
+export const photos: {
+  src: string;
+  thumb: string;
+  title: Localized;
+  alt: Localized;
+  location: Localized;
+  focus?: string;
+}[] = [
   {
     src: '/asset/photo/osborne_window.jpg',
+    thumb: '/asset/photo/thumbs/osborne_window.jpg',
+    title: { en: 'Window', zh: '窗' },
     alt: { en: 'A window at Osborne House looking out over the gardens', zh: '奥斯本宫的一扇窗，窗外是花园' },
     location: OSBORNE,
   },
   {
     src: '/asset/photo/osborne_staircase.jpg',
+    thumb: '/asset/photo/thumbs/osborne_staircase.jpg',
+    title: { en: 'Staircase', zh: '旋转楼梯' },
     alt: { en: 'The oval spiral staircase at Osborne House, looking up to the skylight', zh: '奥斯本宫的椭圆形旋转楼梯，仰望天窗' },
     location: OSBORNE,
-    // Portrait: keep the top of the arch and the skylight lamp in the 3:2 crop.
+    // Portrait: keep the top of the arch and the skylight lamp in the 4:3 card.
     focus: 'center 30%',
   },
   {
     src: '/asset/photo/osborne_stairwell_above.jpg',
+    thumb: '/asset/photo/thumbs/osborne_stairwell_above.jpg',
+    title: { en: 'Stairwell', zh: '楼梯井' },
     alt: { en: 'The stairwell at Osborne House seen from above, with red carpet and a white statue', zh: '俯瞰奥斯本宫的楼梯井，红地毯与白色雕像' },
     location: OSBORNE,
   },
   {
     src: '/asset/photo/alum_bay_chalk_path.jpg',
+    thumb: '/asset/photo/thumbs/alum_bay_chalk_path.jpg',
+    title: { en: 'Chalk Path', zh: '白垩小径' },
     alt: { en: 'A chalk path along the cliffs above Alum Bay in fog', zh: '雾中阿勒姆湾崖顶的白垩小径' },
     location: ALUM_BAY,
   },
