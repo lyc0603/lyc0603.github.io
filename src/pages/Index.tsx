@@ -4,6 +4,7 @@ import PublicationCard from '@/components/PublicationCard';
 import LanguageToggle from '@/components/LanguageToggle';
 import {
   aboutText,
+  photos,
   badgeColors,
   education,
   positions,
@@ -153,6 +154,27 @@ const Index = () => {
                       paper.visualizationCaption && t(paper.visualizationCaption)
                     }
                   />
+                ))}
+              </div>
+            </Section>
+
+            <div className="section-divider" />
+
+            {/* Photography: two masonry columns, so each photo keeps its own proportions */}
+            <Section id="photography" title={t(ui.photography)}>
+              <div className="columns-1 sm:columns-2 gap-4">
+                {photos.map((photo) => (
+                  <figure key={photo.src} className="mb-4 break-inside-avoid">
+                    <a href={photo.src} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={photo.src}
+                        alt={t(photo.alt)}
+                        loading="lazy"
+                        className="w-full h-auto rounded border border-border"
+                      />
+                    </a>
+                    <figcaption className="mt-1.5 text-sm text-muted-foreground">{t(photo.location)}</figcaption>
+                  </figure>
                 ))}
               </div>
             </Section>

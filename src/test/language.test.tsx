@@ -382,6 +382,26 @@ describe("language switching", () => {
     expect(screen.getByText("我从事计算机科学与金融交叉领域的研究。")).toBeInTheDocument();
   });
 
+  it("shows the photography section with locations", () => {
+    const { unmount } = renderAt("/");
+    const section = screen.getByRole("heading", { name: "Photography" }).closest("section") as HTMLElement;
+    const imgs = within(section).getAllByRole("img");
+    expect(imgs.map((i) => i.getAttribute("src"))).toEqual([
+      "/asset/photo/osborne_window.jpg",
+      "/asset/photo/osborne_staircase.jpg",
+      "/asset/photo/osborne_stairwell_above.jpg",
+      "/asset/photo/alum_bay_chalk_path.jpg",
+    ]);
+    expect(within(section).getAllByText("Osborne House, Isle of Wight, UK").length).toBe(3);
+    expect(within(section).getByText("Alum Bay, Isle of Wight, UK")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Photography" })).toHaveAttribute("href", "#photography");
+    unmount();
+
+    renderAt("/zh");
+    expect(screen.getByRole("heading", { name: "摄影" })).toBeInTheDocument();
+    expect(screen.getAllByText("英国怀特岛奥斯本宫").length).toBe(3);
+  });
+
   it("shows the survey's Chinese author names", () => {
     renderAt("/zh");
     expect(screen.getByText("苏俊洲、罗奕辰、冯业博、李腾、徐家画")).toBeInTheDocument();

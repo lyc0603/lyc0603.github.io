@@ -66,6 +66,9 @@ const ProfileSidebar = () => {
           <a href="#working-papers" className="block py-1.5 text-center text-sm hover:text-link-hover text-foreground">
             {t(ui.navWorkingPapers)}
           </a>
+          <a href="#photography" className="block py-1.5 text-center text-sm hover:text-link-hover text-foreground">
+            {t(ui.navPhotography)}
+          </a>
         </nav>
 
         {/* CV Link */}

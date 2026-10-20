@@ -22,9 +22,11 @@ export const ui = {
   education: { en: 'Education', zh: '教育背景' },
   publications: { en: 'Publications', zh: '发表论文' },
   workingPapers: { en: 'Working Papers', zh: '工作论文' },
+  photography: { en: 'Photography', zh: '摄影' },
   navAbout: { en: 'About', zh: '关于' },
   navPublications: { en: 'Publications', zh: '发表论文' },
   navWorkingPapers: { en: 'Working Papers', zh: '工作论文' },
+  navPhotography: { en: 'Photography', zh: '摄影' },
   cv: { en: 'Curriculum Vitae', zh: '个人简历' },
   presentation: { en: 'Presented at', zh: '会议报告' },
   mediaCoverage: { en: 'Media Coverage', zh: '媒体报道' },
@@ -503,5 +505,35 @@ export const workingPapers: Paper[] = [
       en: 'Risk-Return Profile of MAS Strategies vs. Single-Agent and Deep Learning Baselines',
       zh: '多智能体策略与单智能体、深度学习基准的风险收益对比',
     },
+  },
+];
+
+/**
+ * Photography section. Web copies live in public/asset/photo (long edge 2000px, EXIF removed);
+ * the originals are in ~/Desktop/photo. Locations come from the file names and the images.
+ */
+const OSBORNE: Localized = { en: 'Osborne House, Isle of Wight, UK', zh: '英国怀特岛奥斯本宫' };
+const ALUM_BAY: Localized = { en: 'Alum Bay, Isle of Wight, UK', zh: '英国怀特岛阿勒姆湾' };
+
+export const photos: { src: string; alt: Localized; location: Localized }[] = [
+  {
+    src: '/asset/photo/osborne_window.jpg',
+    alt: { en: 'A window at Osborne House looking out over the gardens', zh: '奥斯本宫的一扇窗，窗外是花园' },
+    location: OSBORNE,
+  },
+  {
+    src: '/asset/photo/osborne_staircase.jpg',
+    alt: { en: 'The oval spiral staircase at Osborne House, looking up to the skylight', zh: '奥斯本宫的椭圆形旋转楼梯，仰望天窗' },
+    location: OSBORNE,
+  },
+  {
+    src: '/asset/photo/osborne_stairwell_above.jpg',
+    alt: { en: 'The stairwell at Osborne House seen from above, with red carpet and a white statue', zh: '俯瞰奥斯本宫的楼梯井，红地毯与白色雕像' },
+    location: OSBORNE,
+  },
+  {
+    src: '/asset/photo/alum_bay_chalk_path.jpg',
+    alt: { en: 'A chalk path along the cliffs above Alum Bay in fog', zh: '雾中阿勒姆湾崖顶的白垩小径' },
+    location: ALUM_BAY,
   },
 ];
