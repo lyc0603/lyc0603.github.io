@@ -45,14 +45,19 @@ const PhotoGallery = () => {
       <Dialog open={photo !== null} onOpenChange={(o) => !o && setOpen(null)}>
         {photo && (
           <DialogContent
-            className="max-w-5xl w-[95vw] p-0 gap-0 overflow-hidden flex flex-col md:flex-row"
+            // Sized to the photo, so portrait photos get no bars at the sides.
+            className="w-auto max-w-[95vw] p-0 gap-0 overflow-hidden flex flex-col md:flex-row"
             onKeyDown={(e) => {
               if (e.key === 'ArrowRight') step(1);
               if (e.key === 'ArrowLeft') step(-1);
             }}
           >
-            <div className="relative flex-1 bg-black flex items-center justify-center min-h-[40vh]">
-              <img src={photo.src} alt={t(photo.alt)} className="max-h-[80vh] w-auto max-w-full object-contain" />
+            <div className="relative flex-shrink-0">
+              <img
+                src={photo.src}
+                alt={t(photo.alt)}
+                className="block h-auto w-auto max-h-[85vh] max-w-[95vw] md:max-w-[calc(95vw-16rem)]"
+              />
               <button
                 type="button"
                 onClick={() => step(-1)}
@@ -70,7 +75,7 @@ const PhotoGallery = () => {
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
-            <div className="md:w-64 p-5 pr-10 space-y-3">
+            <div className="md:w-64 flex-shrink-0 p-5 pr-10 space-y-3">
               <DialogTitle className="text-base">{t(photo.title)}</DialogTitle>
               <p className="inline-flex items-center gap-1.5 rounded bg-secondary px-2 py-1 text-xs text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5" />
