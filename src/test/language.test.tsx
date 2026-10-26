@@ -391,8 +391,8 @@ describe("language switching", () => {
       "StaircaseOsborne House, Isle of Wight, UK",
       "StairwellOsborne House, Isle of Wight, UK",
       "Chalk PathAlum Bay, Isle of Wight, UK",
-      "StatueSligachan, Isle of Skye, UK",
-      "CausewayEilean Donan Castle, Scotland, UK",
+      "MountaineersSligachan, Isle of Skye, UK",
+      "Eilean Donan CastleEilean Donan Castle, Scotland, UK",
     ]);
     expect(within(cards[1]).getByRole("img")).toHaveAttribute("src", "/asset/photo/thumbs/osborne_staircase.jpg");
 
@@ -406,6 +406,8 @@ describe("language switching", () => {
 
     renderAt("/zh");
     expect(screen.getByRole("heading", { name: "摄影" })).toBeInTheDocument();
+    expect(screen.getByText("登山家们")).toBeInTheDocument();
+    expect(screen.getByText("艾琳多南城堡")).toBeInTheDocument();
     expect(screen.getAllByText("英国怀特岛奥斯本宫").length).toBe(3);
   });
 

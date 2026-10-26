@@ -564,17 +564,17 @@ export const photos: {
   {
     src: '/asset/photo/skye_sligachan_statue.jpg',
     thumb: '/asset/photo/thumbs/skye_sligachan_statue.jpg',
-    title: { en: 'Statue', zh: '雕像' },
+    title: { en: 'Mountaineers', zh: '登山家们' },
     alt: {
-      en: 'The Collie and Mackenzie statue at Sligachan in silhouette, under storm clouds over the Cuillin',
-      zh: '斯莱加汉的科利与麦肯齐雕像剪影，库林山上空乌云翻滚',
+      en: 'Two mountaineers gaze toward the mountain; overhead, clear sky meets storm clouds, setting adventure against the unknown.',
+      zh: '两位登山家望向那座山，头顶晴天与乌云交错，冒险与未知形成对比。',
     },
     location: SLIGACHAN,
   },
   {
     src: '/asset/photo/eilean_donan_causeway.jpg',
     thumb: '/asset/photo/thumbs/eilean_donan_causeway.jpg',
-    title: { en: 'Causeway', zh: '石桥' },
+    title: { en: 'Eilean Donan Castle', zh: '艾琳多南城堡' },
     alt: { en: 'The stone causeway to Eilean Donan Castle in rain', zh: '雨中通往艾琳多南城堡的石桥' },
     location: EILEAN_DONAN,
   },
