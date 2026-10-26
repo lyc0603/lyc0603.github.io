@@ -516,6 +516,8 @@ export const workingPapers: Paper[] = [
  */
 const OSBORNE: Localized = { en: 'Osborne House, Isle of Wight, UK', zh: '英国怀特岛奥斯本宫' };
 const ALUM_BAY: Localized = { en: 'Alum Bay, Isle of Wight, UK', zh: '英国怀特岛阿勒姆湾' };
+const SLIGACHAN: Localized = { en: 'Sligachan, Isle of Skye, UK', zh: '英国斯凯岛斯莱加汉' };
+const EILEAN_DONAN: Localized = { en: 'Eilean Donan Castle, Scotland, UK', zh: '英国苏格兰艾琳多南城堡' };
 
 /**
  * `thumb` is the grid thumbnail (covers a 480x360 card); `src` is the full photo shown in the lightbox.
@@ -558,5 +560,22 @@ export const photos: {
     title: { en: 'Chalk Path', zh: '白垩小径' },
     alt: { en: 'A chalk path along the cliffs above Alum Bay in fog', zh: '雾中阿勒姆湾崖顶的白垩小径' },
     location: ALUM_BAY,
+  },
+  {
+    src: '/asset/photo/skye_sligachan_statue.jpg',
+    thumb: '/asset/photo/thumbs/skye_sligachan_statue.jpg',
+    title: { en: 'Statue', zh: '雕像' },
+    alt: {
+      en: 'The Collie and Mackenzie statue at Sligachan in silhouette, under storm clouds over the Cuillin',
+      zh: '斯莱加汉的科利与麦肯齐雕像剪影，库林山上空乌云翻滚',
+    },
+    location: SLIGACHAN,
+  },
+  {
+    src: '/asset/photo/eilean_donan_causeway.jpg',
+    thumb: '/asset/photo/thumbs/eilean_donan_causeway.jpg',
+    title: { en: 'Causeway', zh: '石桥' },
+    alt: { en: 'The stone causeway to Eilean Donan Castle in rain', zh: '雨中通往艾琳多南城堡的石桥' },
+    location: EILEAN_DONAN,
   },
 ];

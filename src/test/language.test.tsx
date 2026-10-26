@@ -391,6 +391,8 @@ describe("language switching", () => {
       "StaircaseOsborne House, Isle of Wight, UK",
       "StairwellOsborne House, Isle of Wight, UK",
       "Chalk PathAlum Bay, Isle of Wight, UK",
+      "StatueSligachan, Isle of Skye, UK",
+      "CausewayEilean Donan Castle, Scotland, UK",
     ]);
     expect(within(cards[1]).getByRole("img")).toHaveAttribute("src", "/asset/photo/thumbs/osborne_staircase.jpg");
 
